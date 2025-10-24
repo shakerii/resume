@@ -1,0 +1,5 @@
+i have a resume that i built with pure html and css and it's really simple
+can you help me make a nextjs website with no backend, tailwind, shadcn components, next-intl for multilanguage (fa and en), language files, and any data should be in a bunch of constant so that i can edit it later (types could be defined like: export type Item = (typeof list)[number])
+and please make it as pretty as possible, i just need a src/app/[locale]/page.tsx as a result (please give me other files too but result can be in one page)
+also please give me an export pdf (you can use react-pdf) so that it generates a formal and pretty pdf with a link to resume (ramtin.dev)?
+here is the code:

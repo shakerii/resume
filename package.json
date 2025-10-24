@@ -1,0 +1,17 @@
+{
+  "name": "resume",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "clean": "git clean -xdf .next node_modules",
+    "dev": "next dev",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "start": "next start -p 3000",
+    "type:check": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
