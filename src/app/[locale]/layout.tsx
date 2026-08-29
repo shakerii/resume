@@ -1,42 +1,33 @@
-import type { Metadata, Viewport } from "next";
-import { env } from "~/env";
+import type {Metadata, Viewport} from "next";
+import {NextIntlClientProvider} from "next-intl";
+import {getMessages, getTranslations} from "next-intl/server";
+import {routing} from "~/utils/navigation";
 
-export const generateMetadata = async (): Promise<Metadata> => {
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("global");
-  return {
-    title: t("title"),
-    description: t("description"),
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      siteName: t("title"),
-    },
-    twitter: {
-      card: "summary_large_image",
-    },
-  };
-};
+  return {title: t("title"), description: t("description")};
+}
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  themeColor: [{media: "(prefers-color-scheme: light)", color: "white"}],
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
+}
+
+export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{locale: string}>;
 }) {
-  const direction = useTextDirection();
-  const messages = useMessages();
-
+  const {locale} = await params;
+  const messages = await getMessages();
   return (
-    <html lang={locale} dir={direction}>
-      <body className={local.className}></body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <div lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>{children}</div>
+    </NextIntlClientProvider>
   );
 }
