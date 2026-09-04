@@ -1,14 +1,19 @@
-import baseConfig, { restrictEnvAccess } from "@fb/eslint-config/base.js";
-import nextjsConfig from "@fb/eslint-config/nextjs.js";
-import reactConfig from "@fb/eslint-config/react.js";
+import js from "@eslint/js";
+import tseslint from "typescript-eslint";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
 
-/** @type {import('typescript-eslint').Config} */
-export default [
+export default tseslint.config(
+  { ignores: [".next/**", "node_modules/**"] },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    ignores: [".next/**"],
+    files: ["**/*.{ts,tsx}"],
+    plugins: { "react-hooks": reactHooks, "react-refresh": reactRefresh },
+    rules: {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react-refresh/only-export-components": "off",
+    },
   },
-  ...baseConfig,
-  ...reactConfig,
-  ...nextjsConfig,
-  ...restrictEnvAccess,
-];
+);

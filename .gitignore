@@ -1,0 +1,8 @@
+.env
+.env.local
+.next/
+node_modules/
+*.tsbuildinfo
+prisma/*.db
+prisma/*.db-journal
+npm-debug.log*

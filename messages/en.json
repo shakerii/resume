@@ -1,1 +1,39 @@
-{}
+{
+  "global": {
+    "title": "Ramtin Shakeri — Software Engineer",
+    "description": "Full-stack software engineer building AI-driven products."
+  },
+  "nav": {
+    "resume": "Resume",
+    "projects": "Projects",
+    "admin": "Admin",
+    "download": "Download PDF",
+    "language": "Language"
+  },
+  "resume": {
+    "eyebrow": "Software Engineer",
+    "summary": "Full-stack Software Engineer with 7+ years of experience building AI-driven applications, scalable platforms, and user-focused web solutions.",
+    "experience": "Work Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "education": "Education",
+    "languages": "Languages",
+    "present": "Present"
+  },
+  "admin": {
+    "title": "Resume Admin",
+    "subtitle": "Manage your resume content and project pages.",
+    "items": "Resume items",
+    "projects": "Projects",
+    "active": "Active",
+    "inactive": "Inactive",
+    "newProject": "New project",
+    "edit": "Edit",
+    "save": "Save changes",
+    "back": "Back to resume",
+    "title": "Title",
+    "slug": "Slug",
+    "content": "Content",
+    "tech": "Technologies"
+  }
+}

@@ -1,18 +1,24 @@
-import type {Locale} from "@fb/utils/navigation";
-import {locales} from "@fb/utils/navigation";
+"use client";
 import { useLocale, useTranslations } from "next-intl";
-
+import { locales, type Locale } from "~/utils/navigation";
 import { useChangeLocale } from "~/hooks/change-locale";
 
-/** Switch between locales component */
-export const SwitchLocales = () => {
-  const t = useTranslations("pages.dashboard.customize.locale");
-  const currentLocale = useLocale();
+export function SwitchLocales() {
+  const t = useTranslations("nav");
+  const current = useLocale();
   const change = useChangeLocale();
-
   return (
-    <select aria-label={t("label")} value={currentLocale} onChange={(e) => change(e.target.value as Locale)}>
-      {locales.map((locale) => <option key={locale} value={locale}>{t(locale)}</option>)}
+    <select
+      aria-label={t("language")}
+      value={current}
+      onChange={(e) => change(e.target.value as Locale)}
+      className="rounded-lg border border-slate-300 bg-white px-2 py-1 text-sm"
+    >
+      {locales.map((l) => (
+        <option key={l} value={l}>
+          {l === "fa" ? "فارسی" : "English"}
+        </option>
+      ))}
     </select>
   );
-};
+}
