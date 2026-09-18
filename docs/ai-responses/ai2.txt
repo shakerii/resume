@@ -1,0 +1,689 @@
+# Your relocation-focused software engineering portfolio
+
+Ramtin, you have enough experience to build a serious international job application. The problem isn't that you need more projects. It's that your experience is currently scattered across closed-source work, and you need to turn it into a clear, credible professional profile.
+
+Your three steps are exactly the right starting point:
+
+1. LinkedIn — Make recruiters understand your value in 10 seconds.
+
+2. GitHub — Prove your engineering ability through public work.
+
+3. Resume website — Tell the deeper story of your projects and technical decisions.
+
+I'd add one more thing: a strong, targeted CV. Your LinkedIn and website support it, but the CV is what you'll use for most applications.
+
+## 1. Your professional positioning
+
+Based on your experience, I would position you as:
+
+Recommended professional positioning
+
+# Senior Full-stack Engineer · AI & Data Systems
+
+Building production-oriented web applications, data platforms, and AI-powered business tools with TypeScript, Next.js, NestJS, Python, and SQL.
+
+TypeScript
+
+React / Next.js
+
+Node.js / NestJS
+
+Python
+
+AI / LLM Systems
+
+Data Platforms
+
+### Why this positioning fits
+
+You aren't just a frontend developer who learned AI recently. Your experience covers:
+
+* Full-stack product development.
+
+* Leading small engineering teams.
+
+* Data-heavy enterprise dashboards.
+
+* Python ML services.
+
+* LLM workflows and database querying.
+
+* Architecture, backend, frontend, and developer tooling.
+
+Your strongest professional story is:
+
+> I build complex software products from architecture to user-facing interfaces, with particular strength in data-heavy applications and AI-powered business systems.
+
+That's more valuable than simply listing every framework you've used.
+
+# 2. Your experience, rewritten for a resume
+
+This is a first draft of your professional history. It is deliberately concise, but it highlights the engineering impact instead of just describing tasks.
+
+## Farbonyan
+
+Feb 2024 – Present
+
+Full-stack & AI Developer
+
+Developing AI-powered business intelligence, enterprise management, and B2B commerce systems using Next.js, React, TypeScript, Python, and LLM technologies.
+
+* Built a conversational AI reporting assistant using LangChain and LangGraph, supporting natural-language data queries, report generation, charts, and written analysis.
+
+* Developed data-heavy B2B commerce interfaces with advanced table capabilities, including virtualization, filtering, grouping, aggregation, exports, and inline editing.
+
+* Engineered enterprise reporting and management dashboards connected to subsidiary-company data warehouses.
+
+* Built a code generation system that automated CRUD models, forms, list views, and tRPC APIs, saving an estimated three months of development effort.
+
+## Interactive 10
+
+Jun 2022 – Feb 2024
+
+Team Lead & Software Engineer · Remote
+
+Led a small product development team building a real estate data-gathering platform.
+
+* Designed and implemented a full-stack platform using Next.js, tRPC, Prisma, and PlanetScale.
+
+* Built a React Native mobile application and web-based property collection workflows.
+
+* Developed browser-based property extraction tools using a Plasmo extension and a Python extraction worker.
+
+* Led a team of two frontend developers and one designer, managing requirements, task planning, meetings, and technical delivery.
+
+## Matap
+
+Mar 2022 – Jun 2022
+
+Team Lead & Backend Developer
+
+* Designed the backend architecture for a doctor reservation and medicine prescription platform.
+
+* Led a team of one designer and two frontend developers.
+
+* Implemented backend services using NestJS.
+
+## Freelance
+
+2020 – 2022
+
+Software Engineer
+
+Worked on several startup and product concepts, including a neural-network stock prediction project, a coffee bean distribution platform, and a learning website.
+
+## Raymon Co.
+
+2019 – 2020
+
+WordPress & React Developer
+
+* Developed custom WooCommerce functionality for a B2B FMCG product platform.
+
+* Transitioned from backend development to React frontend engineering.
+
+* Built administrative and customer-facing dashboards.
+
+## Tinext Co.
+
+2018
+
+Laravel Developer
+
+* Developed an online order tracking application using PHP, HTML, CSS, and JavaScript.
+
+* Learned and adopted Laravel for backend development.
+
+## Amirkabir IoT Lab
+
+2016 – 2017
+
+Research & Development
+
+* Contributed to a Python/Flask service-based IoT application for logging smart-home events.
+
+* Worked on the design of a system capable of handling multiple smart-home devices.
+
+### What I'd change before using this on a real CV
+
+The draft is good for structure, but it still needs measurable results. For example:
+
+|
+Current wording
+
+|
+
+Stronger with evidence
+
+|
+| --- | --- |
+|
+
+Built an AI reporting assistant
+
+|
+
+Built an AI reporting assistant used by X users, generating Y reports per month
+
+|
+|
+
+Developed a complex data table
+
+|
+
+Supported 100k+ rows with virtualization and X table operations
+
+|
+|
+
+Led a team
+
+|
+
+Led 3 developers, delivered X releases over Y months
+
+|
+|
+
+Saved 3 months of development
+
+|
+
+Automated X model/API workflows, reducing estimated development effort by 3 months
+
+|
+
+Don't invent metrics. If you don't know the exact numbers, we can use honest descriptions of scale and technical complexity.
+
+# 3. Your strongest projects for the website
+
+You have a lot of projects. You should not give every project equal space.
+
+I'd build the website around these three flagship projects.
+
+![AI-Powered Operations Intelligence – AI Boss](https://images.openai.com/static-rsc-4/ifKkEdcZ2ir98Cxk54e6cT9hPkpi7OXsk0RlAMr8ikUTElNHIulaiAkzZHUXIN2sy5myZxzxgxRK1Yzk16rq_bg950wMRfFB_hAwf7XKNKiwNlvoYNh9pwu5dOdWHPhRFIkUtY0m_iWJBEhnPSTQEyaPfA3SoUxp-AYLW7PcwMc?purpose=inline)
+
+Flagship project 01
+
+Farbonyan · SABI
+
+# SABI — AI Business Intelligence Assistant
+
+An AI-powered reporting system that lets business users ask questions about their data, generate reports, and explore insights through conversation.
+
+Next.js
+
+LangChain
+
+LangGraph
+
+Python
+
+SQL
+
+What makes it compelling
+
+* Natural-language-to-SQL workflow.
+
+* Permission-aware database querying.
+
+* Conversational report builder.
+
+* Dynamic tables, charts, and written analysis.
+
+* Knowledge graph for domain context.
+
+![Chart Type Switcher | Marketplace | Sisense](https://images.openai.com/static-rsc-4/-x9PhsTQd1F3SQyNb0uUSBAjvsdDRJkW0E89-uPCDkjOX9jJPZmCf0gKzR5P2OAJAnAYxkMhxX43XLQkbLChRnNWs2h3R6zkjsV6eCYHW3BrYe3Vgi1u7VR_VqQwXQGoZgqAoVrhw821OmtUH7c_YlfdnnqTmI9WAYxgvn3Pxvo?purpose=inline)
+
+Flagship project 02
+
+Farbonyan · HMS / FIS
+
+# Enterprise Data Platform & B2B Commerce
+
+A full-stack enterprise platform combining data warehousing, dynamic reporting, complex data tables, and B2B commerce workflows.
+
+React
+
+Next.js
+
+TypeScript
+
+TanStack Table
+
+Prisma
+
+MSSQL
+
+What makes it compelling
+
+* Data warehouse synchronization across subsidiary companies.
+
+* Dynamic pivot reporting without engineering intervention.
+
+* Virtualized tables for 100k+ rows.
+
+* Custom tab-based frontend architecture.
+
+* Code generation that saved an estimated three months.
+
+![PropFinder Real Estate Portal Case Study](https://images.openai.com/static-rsc-4/I2lCT7ghizgrmr4ETptoWOyYj2M3tCGI42QqHqejIcXtF8LzLBhLLZhN29prC3pa6WUjXJQcnXUi34IoowOSWT9j6HaIq4esNfVn_pE9VynOlywByP5lQ4Oy8M0JsYoyLRq3HnFEZhST0fYsx9Wi09AnUDc2l-Q6W8BD5QVUiLE?purpose=inline)
+
+Flagship project 03
+
+Interactive 10
+
+# Real Estate Data-Gathering Platform
+
+A multi-platform product that allowed users to collect property listings from external real estate websites through web and mobile workflows.
+
+Next.js
+
+tRPC
+
+Prisma
+
+React Native
+
+Python
+
+Vite
+
+What makes it compelling
+
+* Full-stack architecture from frontend to database.
+
+* Browser extension and mobile webview integrations.
+
+* Python HTML extraction worker.
+
+* User-triggered data collection.
+
+* Team leadership and product delivery.
+
+### Why not make Smart Catalog your main project?
+
+It's a good project to include, but it was not launched and the company failed before launch. That's okay — it still demonstrates full-stack skills.
+
+However, your SABI and HMS work show more complex engineering challenges, especially AI workflows, enterprise data, permissions, and reporting. Those should get the most attention.
+
+# 4. How to explain each project in a short format
+
+For the website, use this consistent structure:
+
+## Project case study template
+
+1. What is it?
+
+One or two sentences describing the product and the problem it solves.
+
+2. My role
+
+What you personally designed, built, or led.
+
+3. Technical highlights
+
+Three to five important engineering decisions or challenges.
+
+4. Results
+
+Real numbers, scale, time saved, or what the system enabled.
+
+5. Technologies
+
+A short list of relevant tools.
+
+Example for SABI:
+
+SABI — AI Business Intelligence Assistant
+
+## SABI — AI Business Intelligence Assistant
+
+**Role:** Full-stack & AI Developer
+
+SABI is an AI-powered reporting assistant that helps business users explore company data through natural-language conversations. It generates database-backed reports, charts, and written analysis.
+
+### What I built
+
+* Designed a LangGraph workflow for intent detection, scope selection, schema understanding, SQL generation, validation, and execution.
+
+* Built a conversational report builder that supports follow-up questions and report modifications.
+
+* Implemented dynamic report generation with tables, charts, and written insights.
+
+* Developed database permission controls to restrict accessible tables and rows.
+
+* Integrated knowledge graph search to provide domain context for LLM workflows.
+
+**Tech:** Next.js, TypeScript, LangChain, LangGraph, Python, SQL
+
+**Note:** This project was developed as part of my work at Farbonyan. Some implementation details and source code are proprietary.
+
+That's the right length for a case study introduction. You can expand the technical architecture beneath it.
+
+# 5. GitHub strategy: Don't publish fake projects
+
+This is important: you do not need to open-source your previous employer's code to prove your experience.
+
+Your GitHub should demonstrate that you can build things now.
+
+I recommend creating three portfolio projects.
+
+## Project A — AI analytics platform
+
+Build a public, simplified version of your SABI experience.
+
+![Analytics Dashboard - AI Chatbot Feature - SiteSpeakAI](https://images.openai.com/static-rsc-4/bwTR9LiPhCFNfiQEZUIULZWBpet4FYwQT6WQi7NsW9l0BfhbnW8M-hCQJ45CyN399oK2e9F4akcw18N2hUQ8PB282oRMri8oZI1MkM6fZ4Mnd4dEeNJAgQoWvYpSXZd90p97SNIafSwWrwATQxO8nZ31I5Mwg9pt4DnaQac2mIo?purpose=inline)
+
+### AI Report Builder
+
+A public demo where users ask questions about a sample database and receive tables, charts, and explanations.
+
+Suggested stack
+
+Next.js · TypeScript · Python · LangGraph · PostgreSQL · Docker
+
+Features worth building:
+
+* Natural language → structured report definition.
+
+* Structured report definition → SQL.
+
+* SQL → table/chart output.
+
+* Conversation state.
+
+* Query validation.
+
+* Seeded demo dataset.
+
+Do not build a generic chatbot. Build something that demonstrates your experience with structured data and reporting.
+
+## Project B — Advanced data table library
+
+This could be a very strong public GitHub repository.
+
+You already built a complex table with:
+
+* 100k+ rows.
+
+* Virtualization.
+
+* Sorting and filtering.
+
+* Multi-level grouping.
+
+* Aggregations.
+
+* Column pinning and ordering.
+
+* Excel/PDF exports.
+
+* Batch actions.
+
+* Inline editing.
+
+Turn the reusable ideas into a clean, standalone project. You can use synthetic data and build it from scratch without exposing employer code.
+
+Possible repository name: `react-enterprise-data-grid`
+
+This would directly showcase your frontend engineering ability.
+
+## Project C — AI document knowledge graph
+
+A smaller but technically interesting project.
+
+![How to build a knowledge graph for AI | Blog | SurrealDB](https://images.openai.com/static-rsc-4/DWpcI4DtBXuvszq0r7yRPr28fbpUmHqQ-MBxNsO-BQXCJbsWk6xAL-IOIlN1B2r58JzkFEbKBEWInbHjZLc-uihONGvkBBPuCw45-aHSAHZkiCQ_aiEcolvEWlBafb60FwqtLTMte6caIqdQvyfRuaITLzDdZEx0ukc4Dgpcdc4?purpose=inline)
+
+## Document → Knowledge Graph
+
+Upload a PDF or text document, extract entities and relationships, store them in a graph structure, and use the graph to answer questions.
+
+Python
+
+LLM
+
+Graph algorithms
+
+RAG
+
+This is useful because it demonstrates that you understand more than prompting an LLM. You understand data extraction, structured representations, retrieval, and context.
+
+### What about Ping Enhancement?
+
+Include it in your website's projects section, but don't make it a major portfolio project yet. The routing and policy engine is interesting, but since the implementation wasn't finished, it should be described honestly as a work-in-progress or experimental project.
+
+# 6. LinkedIn: The profile structure I'd use
+
+Your LinkedIn needs to target recruiters from foreign companies. The profile should be in English.
+
+## Headline
+
+Use something like:
+
+Writing
+
+Senior Full-stack Engineer | AI & Data Systems | TypeScript, Next.js, NestJS, Python | Building Enterprise Platforms & AI-Powered Products
+
+Alternative, if you want to target AI roles more aggressively:
+
+Writing
+
+Senior Full-stack & AI Engineer | LLM Applications, Data Platforms & Business Intelligence | TypeScript, Next.js, Python
+
+I'd use the first one for now because it leaves more room for both full-stack and AI opportunities.
+
+## About section
+
+Writing
+
+I'm a software engineer with experience building full-stack products, enterprise data platforms, and AI-powered business applications.
+
+My primary stack is TypeScript, React, Next.js, Node.js, NestJS, Python, and SQL. I enjoy working on systems where product requirements meet complex engineering challenges — from designing backend architectures and data workflows to building user-facing interfaces.
+
+Over the past several years, I've worked on:
+
+* AI-powered reporting assistants using LangChain and LangGraph.
+
+* Enterprise data platforms with dynamic reporting and data warehouses.
+
+* B2B commerce platforms with complex data tables and workflow automation.
+
+* Full-stack real estate data-gathering products.
+
+* Python-based machine learning services.
+
+* Small-team technical leadership and product delivery.
+
+I enjoy understanding the full system, not just one layer of it. My interests include AI engineering, data-intensive applications, distributed systems, and building reliable software that people can use.
+
+Currently open to international software engineering opportunities, including relocation and remote roles with relocation potential.
+
+Tech: TypeScript, React, Next.js, Node.js, NestJS, Python, PostgreSQL, MSSQL, Prisma, LangChain, LangGraph, Docker.
+
+### LinkedIn checklist
+
+* Professional profile photo.
+
+* English headline.
+
+* About section.
+
+* All companies and dates added.
+
+* Each job has three to five concise bullets.
+
+* Add the portfolio website URL.
+
+* Add GitHub.
+
+* Set job preferences for relocation and remote opportunities.
+
+* Turn on Open to Work for recruiters if you're comfortable.
+
+# 7. Resume website structure
+
+I would make it a clean, fast, minimal website. Not a fancy animated portfolio.
+
+## Your portfolio website
+
+### Ramtin — Software Engineer
+
+Senior Full-stack Engineer · AI & Data Systems
+
+1. Hero
+
+   Short introduction, tech stack, and links to GitHub, LinkedIn, and CV.
+
+2. Featured projects
+
+   SABI, HMS/FIS, Interactive 10.
+
+3. Experience
+
+   Your professional timeline with concise descriptions.
+
+4. Technical projects
+
+   Smart Catalog, Ping Enhancement, IoT Lab, freelance work.
+
+5. Engineering notes
+
+   Optional blog posts about architecture, AI workflows, and data systems.
+
+6. Contact
+
+   Email, LinkedIn, GitHub, and CV download.
+
+### Suggested tech stack for the website
+
+* Next.js
+
+* TypeScript
+
+* Tailwind CSS
+
+* MDX for project case studies
+
+* Vercel for deployment
+
+You already know this stack, so the website should be a quick project, not a six-week engineering exercise.
+
+# 8. Your relocation job search strategy
+
+Since you're based in Iran and want to move with your fiancé, you need to distinguish between:
+
+1. Companies that hire remotely from Iran.
+
+2. Companies that can sponsor a visa and relocate you.
+
+3. Companies that hire you remotely first and may relocate later.
+
+These are not interchangeable.
+
+For the countries you're considering, I'd investigate roles with keywords such as:
+
+* Senior Full-stack Engineer — Relocation.
+
+* Senior TypeScript Engineer — Visa Sponsorship.
+
+* AI Engineer — Relocation.
+
+* Backend Engineer — International Candidates.
+
+* Software Engineer — EU Blue Card.
+
+* Highly Skilled Migrant — Netherlands.
+
+* Skilled Worker Visa — UK.
+
+You should also be prepared for the possibility that a company can sponsor you but has restrictions on hiring someone currently living in Iran. That is something to check with recruiters early rather than after several interviews.
+
+### What I would prioritize in your application
+
+Your strongest selling points:
+
+* Several years of professional development experience.
+
+* Team leadership.
+
+* Enterprise data and reporting.
+
+* AI application development.
+
+* Full-stack ownership.
+
+* TypeScript and Next.js expertise.
+
+* Python and LLM experience.
+
+Your weaker points to improve:
+
+* No public GitHub portfolio yet.
+
+* Most work is proprietary.
+
+* Some project metrics are missing.
+
+* Some AI work is still relatively new.
+
+* You need a polished English CV and LinkedIn.
+
+None of these are fatal. They are simply the things your portfolio should address.
+
+# 9. Your next 30 days
+
+## Execution plan
+
+Week 1
+
+Positioning & CV
+
+Finalize your title, LinkedIn headline, About section, and first CV draft.
+
+Week 2
+
+Portfolio foundation
+
+Create your Next.js website, add experience, and write the SABI/HMS case studies.
+
+Week 3
+
+GitHub proof
+
+Start the AI report builder or data-grid project. Add a clear README, architecture diagram, and screenshots.
+
+Week 4
+
+Applications
+
+Polish LinkedIn, deploy your website, prepare tailored CV versions, and begin applying to relocation-friendly roles.
+
+## My honest recommendation
+
+Don't wait until your GitHub has five polished open-source projects before applying. You already have enough professional experience to start.
+
+The ideal order is:
+
+CV + LinkedIn → Portfolio website → One strong GitHub project → Applications.
+
+And for the website, don't hide your closed-source experience. Explain the architecture, your role, the technical problems, and what you personally built. That's completely legitimate.
+
+### Let's build your actual application materials
+
+I can help you create the whole thing step by step, but the next useful deliverable should be a real, polished document rather than more general advice.
+
+Which should we build first?
+
+1. Professional CV / Resume
+
+Build an ATS-friendly resume for international jobs.
+
+2. Resume website
+
+Design and build your portfolio in Next.js.
+
+3. LinkedIn profile
+
+Optimize your profile to attract recruiters.

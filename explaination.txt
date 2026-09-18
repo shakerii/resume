@@ -67,558 +67,204 @@ Built dashboards and visualizations enabling non-technical users to gain insight
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Absolutely. Your raw experience is actually **stronger than the way it’s currently described**. The main problem is that it reads like a chronology of tasks rather than an engineering career.
-
-For foreign-job applications, I’d structure each project around:
-
-**Context → Technical problem → What you built → Technical decisions → Scale/complexity → Result**
-
-And we should avoid underselling things like “simple panel,” “worked on,” or “learned React.” Those are useful background details, but they don't communicate engineering capability.
-
-Before I rewrite everything, I want to extract the technical details that will make your LinkedIn, GitHub, resume, and website much stronger.
-
-## 1. Your overall technical profile
-
-Answer these first:
+# 1. Your overall technical profile
 
 1. What is your **primary stack today**?
-
-   * TypeScript/JavaScript?
-   * React/Next.js?
-   * Node/NestJS?
-   * Python?
-   * Go?
-   * SQL/NoSQL?
-   * Other?
+TypeScript, React/Next.js, Node/NestJS, Python, prisma (mssql, postgres)
 
 2. Roughly how many years would you consider yourself:
-
-   * Backend engineer
-   * Frontend engineer
-   * Full-stack engineer
-   * Team lead
+Full-stack and AI engineer
 
 3. What kind of roles are you targeting?
+Senior Full-stack Engineer and AI Engineer
 
-   * Senior Software Engineer
-   * Senior Full-stack Engineer
-   * Backend Engineer
-   * Frontend Engineer
-   * Tech Lead
-   * AI Engineer
-   * Founding Engineer
-   * Anything else?
-
-4. Which countries are you considering? This matters because CV conventions and hiring expectations vary somewhat.
+4. Which countries are you considering?
+USA is my goal but not possible rn, so Netherlands, Spain, Poland, UK, etc.
 
 5. Are you targeting **remote jobs that could eventually relocate you**, or primarily companies willing to sponsor relocation/visa?
-
----
-
-# 2. Amirkabir IoT Lab
-
-You have:
-
-> Flask service-based Python app for smart-home event logging
-> System capable of handling many smart devices
-
-I need:
-
-1. What did the architecture look like?
-
-   * REST API?
-   * Microservices?
-   * Message queues?
-   * MQTT?
-   * WebSockets?
-   * Database?
-
-2. What database did you use?
-
-3. What did an "event" look like?
-
-4. What kind of events were being handled?
-
-   * Sensors?
-   * Motion?
-   * Temperature?
-   * Device state?
-   * User actions?
-
-5. Approximately how many devices/events were you designing for?
-
-6. Did you personally design the architecture, or was it a team decision?
-
-7. Any interesting engineering problems?
-
-   * concurrency
-   * distributed systems
-   * unreliable devices
-   * event ordering
-   * scalability
-   * fault tolerance
-
----
-
-# 3. Tinext
-
-The current description is too thin to be useful.
-
-Tell me:
-
-1. What exactly did the order-tracking system do?
-
-2. Did you build it alone?
-
-3. What backend architecture did you use?
-
-4. What database?
-
-5. What did Laravel introduce compared with your previous PHP implementation?
-
-6. Did the application have:
-
-   * authentication
-   * roles/permissions
-   * admin dashboard
-   * order state machine
-   * notifications
-   * APIs
-   * payment integration?
-
-7. Was it actually deployed/used by customers?
-
----
-
-# 4. Raymon
-
-This one could become a **very good early-career story**, because there's a clear transition from WordPress/PHP → React.
-
-I need:
-
-1. What was the B2B FMCG platform actually doing?
-
-2. How many users/customers/vendors approximately?
-
-3. What did the backend handle?
-
-4. What custom WooCommerce functionality did you implement?
-
-5. When you moved to React:
-
-   * Which React version?
-   * Redux?
-   * Context?
-   * REST API?
-   * TypeScript or JavaScript?
-   * Any component library?
-
-6. What did the customer panel allow users to do?
-
-7. What did the admin panel manage?
-
-8. Did you design the frontend architecture yourself?
-
-9. Was this production software?
-
----
-
-# 5. Freelance 2020–2022
-
-Don't write:
-
-> "I worked on startups but none of them worked."
-
-That's honest, but terrible resume positioning.
-
-Instead, this can become something like **Independent Software Engineer / Startup Projects**, and failure isn't necessarily relevant.
-
-For each project, tell me:
-
-### Stock prediction
-
-* What data?
-* What neural-network architecture?
-* Python framework? PyTorch/TensorFlow/Keras?
-* How did you prepare the dataset?
-* What exactly was being predicted?
-* Did you build data pipelines?
-* How did you evaluate it?
-
-### Coffee distribution
-
-* What was the platform?
-* Who were the users?
-* Architecture?
-* Stack?
-* What did you personally build?
-
-### Learning platform
-
-Same questions.
-
-Also: were these solo projects or did you have collaborators?
-
----
-
-# 6. Matap
-
-This could be your first **real leadership/architecture** story.
-
-You said:
-
-> Designed architecture for doctor reservation and medicine prescription, lead a team and implemented backend with NestJS.
-
-I need:
-
-1. What was the complete system?
-
-2. How did doctor reservation work?
-
-   * availability
-   * scheduling
-   * conflicts
-   * cancellation
-   * payment
-   * reminders?
-
-3. What did the prescription system do?
-
-4. What database?
-
-5. Authentication/authorization?
-
-6. REST or GraphQL?
-
-7. Did you use Redis, queues, cron jobs, etc.?
-
-8. How did you structure the NestJS application?
-
-9. How did you divide work between yourself and the two frontend developers?
-
-10. How did you perform technical leadership?
-
-* architecture
-* code review
-* task breakdown
-* Git workflow
-* mentoring
-* planning
-
-11. Why did you leave after ~3 months?
-
-You don't necessarily need to put the reason on the resume, but I want to understand the story.
-
----
+I want to get out of this country!
 
 # 7. Interactive 10
-
-This is potentially **one of your strongest experiences**.
-
-You currently say:
-
-> real estate data gathering platform
-
-I want much more detail.
 
 ### Architecture
 
 1. Give me the architecture as you remember it.
+Next.js → tRPC → Node → Prisma → PlanetScale
 
-For example:
+2. What database? PlanetScale (mysql)
 
-`Next.js → tRPC → Nest/Node → Prisma → PostgreSQL`
+3. What cloud/infrastructure? vercel
 
-or whatever it actually was.
+4. Docker? yes
 
-2. What database?
+5. CI/CD? yes (vercel)
 
-3. What cloud/infrastructure?
+6. Authentication? next-auth
 
-4. Docker?
+7. Background jobs? data fetching was a background vercel job
 
-5. CI/CD?
-
-6. Authentication?
-
-7. Background jobs?
-
-8. Queues?
+8. Queues? yes but in db not mq
 
 ### Scraping platform
 
-This is particularly interesting.
-
 1. What websites were scraped?
+Rightmove, Zoopla, PropertyFinder, Bayut, Dubizzle, DxbInteract
 
 2. How did scraping work technically?
-
-3. Python? Node? Playwright? Puppeteer? Selenium?
+   a. app:
+      there was a webview in app (website opener) that would inject a js file that added save button to every property, and that would send the html to backend
+      the js was a react build with vite
+   b. web:
+      i wrote an plasmo extension that detects websites, and added the save button
+   c. extraction:
+      there was a python worker that would read the html and extract data (autoscraper)
+      the autoscraper was trained by a bunch of sample htmls from those websites
 
 4. How did you deal with:
-
-   * dynamic websites
-   * pagination
-   * duplicate listings
-   * rate limits
-   * failed requests
-   * changing HTML structures
-   * proxies
-   * scheduling?
+we would read the data with user commands (save) cause we didnt want to scrape all the properties
+and those website didnt change their structure that much
 
 5. How frequently did the system collect data?
-
-6. Roughly how much data?
-
-7. Did you implement the scraper architecture yourself?
-
-### Product
-
-1. What could users actually do with the collected data?
-
-2. Search/filter?
-
-3. Alerts?
-
-4. Saved properties?
-
-5. Analytics?
-
-6. Maps?
-
-7. Data comparison?
-
-8. How many users/customers?
+it was a command base extraction
 
 ### Leadership
 
 How many developers did you lead?
+2 frontends (1 mid, 1 junior), 1 designer, 1 marketing
+and i was the fullstack
 
 And what did "lead" mean in practice?
-
----
+Analyzing requirements, creating tasks, managing them, managing meetings, etc.
 
 # 8. Farbonyan
 
-This is where I suspect your CV can become **very compelling for 2026 hiring**, especially if you're targeting senior/full-stack/AI-oriented roles.
-
-But we need to be precise about what you actually engineered versus what the product does.
-
-First:
-
 ### Your role
 
-You wrote:
-
-> Full-stack & AI Developer
-
-Tell me the actual breakdown.
-
-For example:
-
-* 60% frontend
-* 20% backend
-* 20% AI/data
-
-Or whatever is accurate.
-
----
+* 40% frontend
+* 30% backend
+* 30% AI/data
 
 ## 8A. FIS
 
-This sounds significantly more impressive than:
-
-> "React-based B2B e-commerce platform."
-
-I want:
-
 ### Frontend architecture
 
-1. Next.js or React? Which version?
+1. Next.js or React? Which version? nextjs, 18, then 19
 
-2. TypeScript?
+2. TypeScript? YES!
 
-3. TanStack Query?
+3. TanStack Query? YES
 
-4. Zustand/Redux/etc?
+4. Zustand/Redux/etc? no, i used react context
 
 5. UI framework?
+no, i used shadcn and customized it (rtl handling) and added a BUNCH of components to it
 
 6. How did you architect the tab-based interface?
+i created a list of tabs (pages) with a zod for tab props, then wrote a tab manager provider.
+when user clicked on menu, or did an action that required opening of a tab, i used a useTabOpener and opened another tab with props 
 
 7. How complex was the data table?
+i'm handling:
+global filtering
+column filtering
+pagination
+column ordering
+column sizing
+column pinning
+column visibility
+row actions
+batch actions
+global actions
+selection
+exporting excel and pdf
+tree-like data
+multi-level grouping and aggregations (count, sum, )
+more than 100k rows of data in one page (virtualization)
+for the convenience of the backend developer, it was all client side!
 
-You mentioned:
-
-> filters, sorts, multi-grouping, column ordering
-
-Excellent. Tell me whether it also supported:
-
-* server-side pagination
-* server-side filtering
-* virtualization
-* column pinning
-* column visibility
-* inline editing
-* bulk actions
-* export
-* saved views
-* dynamic columns
-* nested data
+columns are passed to table for each table so it's dynamic
+and also there were few cases of inline editing
 
 ### Scale
 
-You said:
-
-> hundreds of SKUs and multiple vendors
-
-Can you give me actual numbers if possible?
-
-Even approximate:
-
-> ~5,000 SKUs / 20 vendors / X orders per month
-
-is much better.
+Can you give me actual numbers if possible? 200 vendors (20 active), idk about number of orders now!
 
 ### AI
 
-The **car-part attribute extractor** is interesting.
+1. What was the input? the name of the part (persian name)
 
-Tell me:
+2. What attributes did the model extract? it was dynamically defined in admin panel
 
-1. What was the input?
+3. What model architecture? i was using torch with help of ai
 
-For example:
+4. What framework? flask with torch
 
-> "BMW F30 320i 2015 front left..."
-
-2. What attributes did the model extract?
-
-3. What model architecture?
-
-4. What framework?
-
-5. Did you train it yourself?
+5. Did you train it yourself? yes
 
 6. What dataset?
+pre-defined parts in platform
+also i used token-search for seeding first attributes (with hand written logics)
 
-7. How large?
+7. How large? 2k parts
 
-8. What was the output format?
+8. What was the output format? it was an array of predicted attributes
 
-9. How accurate was it?
+9. How accurate was it? low, around 70% (im guessing)
 
-10. How did you integrate Python ML into the main application?
+10. How did you integrate Python ML into the main application? it was a separate service
 
-This could potentially be a strong portfolio case study.
-
----
+This could potentially be a strong portfolio case study
+I don't think so...
 
 # 8B. HMS
 
-This is another potentially strong architecture project.
-
 ### Data warehouse
 
-Tell me:
+1. What databases were involved? almost all of subsidiary companies' applications were mssql, one is SAP but we haven't started that yet
 
-1. What databases were involved?
+2. How was data collected from subsidiaries? at night by sql job (this part of database was written by my cto)
 
-2. How was data collected from subsidiaries?
+6. How much data? now one of client's data is around 1TB
 
-3. API? Database replication? Files? ETL?
-
-4. What was the data pipeline?
-
-5. What did the warehouse look like?
-
-6. How much data?
-
-7. How frequently was it synchronized?
+7. How frequently was it synchronized? every night
 
 ### Pivot reporting
 
-This sounds particularly interesting.
+Users could dynamically select dimensions and measures to generate arbitrary reports without engineering intervention.
+and dimensions were: 
 
-Explain what users could do.
-
-For example:
-
-> Users could dynamically select dimensions and measures to generate arbitrary reports without engineering intervention.
-
-If that's approximately accurate, that's **much stronger language** than "pivot table."
-
-Tell me:
-
-* what dimensions?
-* what aggregations?
-* filtering?
-* grouping?
-* calculated fields?
-* export?
-* charts?
-* permissions?
+* what dimensions? filters, rows, values, groups
+* what aggregations? sum, avg, count, min, max
+* filtering? yes, user could set default filter OR move the filter to form when fetching the report
+* grouping? yes
+* calculated fields? no
+* export? it was from the DataTable i mentioned before
+* charts? yes, user could choose x axis from rows, and y from values, and could aggregate results by grouping them by other rows
 
 ### Code generator
-
-You mentioned Mustache.
-
-Tell me exactly what it generated.
-
-For example:
-
-> Given a base model/schema, generated CRUD endpoints, DTOs, services, repositories, frontend forms, etc.
-
 What did it generate?
+a model like user, product, etc. and it was generating the list view, the create/update form and delete api
+and in trpc side, it was generating all the apis
 
-And roughly how much development time did it save?
-
----
+And roughly how much development time did it save? around 3 months of development (there were sooo much base models)
 
 # 8C. SABI
-
-This is probably the **most important project on your current resume**.
-
-"AI-powered reporting assistant" is a good starting point, but we need to make the engineering underneath it visible.
 
 ### LLM
 
 1. Which models?
-
-   * OpenAI?
-   * Claude?
-   * Gemini?
-   * local models?
+llama4 maverick (we wanted a small/downloadable model)
 
 2. LangChain specifically how?
+we were using langchain and langgraph for decision making (does user have permission, is this question related, etc.)
 
 3. Did you use:
-
-   * agents
-   * tools
-   * structured output
-   * RAG
-   * function calling
-   * embeddings
-   * vector database
-   * memory?
+   * agents : no... i wanted to but i didn't have time to implement it
+   * tools: yes, database query, notification, report creation
+   * structured output: YES, all the steps' output was structured
+   * RAG: yes, for entity searching and knowledge graph search
 
 ### Database querying
-
-This is particularly important.
 
 How does:
 
@@ -626,239 +272,142 @@ How does:
 
 work?
 
-For example:
+User question → LLM → Scope → Tables related to that scope → schema understanding → SQL generation → validation → execution → result → visualization
 
-`User question → LLM → schema understanding → SQL generation → validation → execution → result → visualization`
-
-Is that roughly your architecture?
-
-What database(s)?
+What databases?
+i had a database rules table that had all the tips to querying a table, so the database selection was user's choice
 
 How did you prevent bad/unsafe queries?
+i wasn't handling this logic back then (just by those database rules and replacing where clauses to user-accessed row ids)
+BUT now i have a query builder (pivot-table i mentioned) and i want to switch it to that
+if model handles querying by giving me structure of a pivot table, that would not happen at all
 
 ### Report generation
 
 What exactly does it generate?
-
-* tables
+* tables (with all the features of DataTable)
 * charts
-* KPIs
 * written analysis
-* dashboards
-* PDF
-* Excel?
 
 ### Conversational report builder
 
 What does a conversation look like?
 
 For example:
-
-> "Show me sales by region."
-
-> "Only last quarter."
-
-> "Compare it with the previous quarter."
-
-Does the system maintain conversational state and modify the existing report?
+> "Show me sales by region"
+> "Only last quarter"
+> "Compare it with the previous quarter"
+> "Save this report"
+> "Give me sale comparison of these products"
+> "What company did better last year"
+Does the system maintain conversational state and modify the existing report? YES
 
 ### Knowledge graph
 
-This is another **big keyword**, but I need to know what you actually built.
-
 1. What entities/nodes?
+user would pass a doc (pdf, word, etc) and i ran a prompt in each paragraph to extract nodes and relations between them
+NodeType:
+   - concept
+   - definition
+   - formula
+   - entity
+   - purpose
+NodePurpose:
+   - context
+   - query
+   - visualization
+   - analysis
+RelationType:
+   - includes
+   - excludes
+   - dependent
+   - same_as
+   - related_to
+   - mapped_to
 
-2. What relationships?
-
-3. Which graph database?
+3. Which graph database? i saved the graph locally (cause we live in iran!)
 
 4. How did the graph interact with the LLM?
+for this step the graph is being called in one of the first steps of langgraph
+but now i want to implement an agentic flow and pass graph as a tool
 
 5. What problem did it solve?
+for the test stage, understanding the basic logics of accounting
+cause the model was too dumb to know almost anything!
 
 ### Permission control
 
 How granular?
+i read database at first and extract all the tables and columns
+after that user select some tables as "permission" and in user form, they would be shown as permission selector for user
+after that, all the queries would check for those tables/rows
 
-* organization
-* user
-* role
-* database
-* table
-* row
-* column
-* report?
-
-This could be very important because enterprise AI + data access is a major engineering concern.
-
----
 
 # 9. Smart Catalog
 
-This is a good portfolio project because it's independently explainable.
-
-Tell me:
-
 1. How does the catalog designer work?
+by uploading images, then drag and drop them as components in each page of each catalog
+after that user could modify each component's attributes like:
+shadow, enter/exit animation, 
 
 2. What does drag-and-drop actually manipulate?
+image-id, x (percentage), y (percentage)
 
 3. Is the catalog stored as a JSON/schema representation?
+there was a sql:
+catalog -1~n-> page -1~n-> component
 
 4. How does rendering work?
-
-5. What kind of dynamic filters?
+there was no render! all the images were added on load (i was preloading related pages)
 
 6. What can users export?
+pdf of the catalog
 
 7. What does real-time preview mean technically?
+i was editing the attributes when-ever user change them (it's not impressive)
 
 8. Why tRPC?
+type-safty
 
 9. Why MySQL?
+it was postgres and i actually don't know... my first choice is that db!
 
 10. Docker deployment?
+yes
 
 11. Was this production?
-
-12. Rough number of users/products/catalogs if known.
+no! actually that company failed before launching this project!
 
 ---
 
 # 10. Ping Enhancement
 
-This one could be **very interesting technically**, especially for a software-engineering portfolio.
-
-You said:
-
-> game ping enhancement app with router application
-
-I need to understand the architecture.
-
 1. What exactly does the router application do?
+re-route user's packages of the game
 
 2. Golang where?
+in routers
 
 3. MongoDB where?
+in backend (fastapi) to store logs
 
 4. Does the router intercept traffic?
+yes, not implemented yet but it should check the policies
 
-5. Does it modify routes?
+5. Does it modify routes? yes
 
-6. How does it determine the optimal route?
+6. How does it determine the optimal route? it's admin's responsibility
 
 7. What are the "policies"?
-
-8. What happens before a game connection?
+game being active, user being active, user having access to that game
+voice access, chat access, game-play access
 
 9. What games/protocols?
+we are adding games constantly
+protocol is wireguad for transforming data (singbox in client)
 
 10. How does it handle voice/chat traffic?
-
-11. Did you work with:
-
-* TCP/UDP
-* routing tables
-* DNS
-* NAT
-* network interfaces
-* packet inspection
-* VPN/tunneling
-* proxies?
+like other packages, but we are researching still in that area
 
 12. What was your responsibility as team lead?
-
----
-
-# 11. One more important thing: numbers
-
-For **every project**, give me numbers wherever possible.
-
-Even approximate numbers are useful:
-
-* users
-* customers
-* developers
-* requests/sec
-* records
-* SKUs
-* vendors
-* database size
-* scraping frequency
-* jobs/day
-* deployment frequency
-* response-time improvements
-* development-time reduction
-* model accuracy
-* percentage improvements
-
-For example:
-
-> "Built a dynamic reporting engine"
-
-is okay.
-
-But:
-
-> "Built a dynamic reporting engine processing ~2M warehouse records and allowing non-technical users to generate multi-dimensional reports without engineering support"
-
-is dramatically better.
-
----
-
-## What I'll produce after your answers
-
-I wouldn't just rewrite your existing paragraphs. I'd turn your experience into **three different levels of presentation**:
-
-### 1. Resume
-
-Very concise, ATS-friendly bullets.
-
-Something like:
-
-> **Farbonyan — Full-stack & AI Engineer | 2024–Present**
->
-> * Architected and developed enterprise data-analysis and reporting platforms using Next.js, TypeScript, Python, and LangChain.
-> * Built an AI reporting assistant capable of translating natural-language questions into database queries and dynamically generating analytical reports and visualizations.
-> * Developed a metadata-driven reporting engine with dynamic pivoting, filtering, grouping, and aggregation over centralized warehouse data.
-> * Built a Python-based ML pipeline for extracting structured automotive-part attributes from unstructured product data.
-
-That's the **style**, not the final version yet.
-
-### 2. LinkedIn
-
-More narrative and human, while still technical.
-
-It should tell a coherent story:
-
-**PHP → Laravel → React → full-stack → team leadership → distributed/data systems → AI/data engineering**
-
-That progression is actually valuable.
-
-### 3. Personal website
-
-Here I'd go much deeper.
-
-Each major project can have a case-study page:
-
-**Problem → Architecture → Technical challenges → Decisions → Implementation → Results → Lessons**
-
-And importantly, because much of your professional work is closed-source, your website can demonstrate your engineering ability **without exposing proprietary code**.
-
-We can also create **sanitized architecture diagrams**, technical write-ups, pseudocode, and small open-source companion projects where appropriate.
-
----
-
-### One thing I'd change immediately
-
-Don't position yourself as merely:
-
-> **Full-stack & AI Developer**
-
-Your history suggests something closer to:
-
-> **Senior Software Engineer / Full-stack Engineer with experience in distributed systems, data platforms, AI-assisted analytics, and technical leadership.**
-
-But we'll determine the exact positioning after I get the answers above.
-
-**Start with sections 1–8 if that's easier.** You don't need polished answers—give me messy technical notes. I'll turn them into professional material and ask follow-up questions only where there's something worth extracting.
+Analyzing requirements, creating tasks, managing them, managing meetings, helping developers with technical problems, etc.
