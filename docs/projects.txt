@@ -1,5 +1,6 @@
-1. Server Side Data Table
-2. UI Builder (Data Table, Form, Page, Menu)
-3. Workflow Automation (Dashboard, Tab-base Website)
-4. AI Assistant (Document/Database)
-5. Smart Catalog Builder
+1. AI Language Learner (Duolingo) 
+2. AI Planner (Money, Workout, Side: Piano, English, Portfolio)
+3. Server Side Data Table
+4. UI Builder (Data Table, Form, Page, Menu)
+5. Workflow Automation (Dashboard, Tab-base Website)
+6. Smart Catalog Builder

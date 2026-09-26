@@ -1,7 +1,10 @@
 1. add trpc in server folder and handle requests in app with that
+  a. separate files of each router
+  b. use methods: all, single, create, update, delete, other methods
+  c. only admin can access modification or sensitive data 
 2. models should be: basic info (key, value), experience, project (+ technologies), skills (+ skill group), education, languages
-3. check template/index.html for sample
+3. check template/index.html for sample (full data is in README.md)
 4. add admin page and trpc route for every model (also fix seed data, nothing should be hard coded, even name)
-5. add shadcn components
-6. all texts should be translated
+5. add and use shadcn components, use folders to separate other components (ui, forms, charts, resume, etc.)
+6. all texts in html should be translated, and all names in database should be localizedText (Locale = "fa" | "en", LocalizedText = Record<Locale, string>, fallbackLocale = "en")
 7. add tiptap editor for project single page (editor should have image, link handling, other default editor stuff (font, color, etc.))
