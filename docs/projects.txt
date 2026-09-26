@@ -1,0 +1,5 @@
+1. Server Side Data Table
+2. UI Builder (Data Table, Form, Page, Menu)
+3. Workflow Automation (Dashboard, Tab-base Website)
+4. AI Assistant (Document/Database)
+5. Smart Catalog Builder

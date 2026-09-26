@@ -48,7 +48,7 @@ It translates your experience into high-impact international recruiter standards
 * **Frontend:** React, Next.js (App/Pages Router), TanStack Query/Table, Tailwind CSS, shadcn/ui, Redux Toolkit/Context, React Native
 * **Backend & Systems:** Node.js, NestJS, tRPC, Express, FastAPI, Flask, WireGuard, REST, GraphQL
 * **AI & Data:** LangChain, LangGraph, Knowledge Graphs, PyTorch, RAG Pipelines, Vector DBs, Pandas
-* **Databases & ORM:** PostgreSQL, Microsoft SQL Server, MySQL (PlanetScale), MongoDB, Prisma, TypeMySQL)** deployed on Vercel with zero-downtime CI/CD.
+* **Databases & ORM:** PostgreSQL, Microsoft SQL Server, MySQL (PlanetScale), MongoDB, Prisma.
 * **Distributed Scraping & Data Extraction Pipeline:** Engineered an on-demand multi-platform data extraction ecosystem:
   * Built a **Plasmo Chrome Extension** and **React Native WebView script injector** to capture listings from major property portals (Rightmove, Zoopla, Bayut).
   * Built a Python automated extraction microservice with pre-trained parsing models to normalize real estate data.
