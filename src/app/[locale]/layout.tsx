@@ -1,6 +1,7 @@
 import type {Metadata, Viewport} from "next";
 import {NextIntlClientProvider} from "next-intl";
 import {getMessages, getTranslations} from "next-intl/server";
+import {TrpcProvider} from "~/trpc/react";
 import {routing} from "~/utils/navigation";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,7 +28,11 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   return (
     <NextIntlClientProvider messages={messages}>
-      <div lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>{children}</div>
+      <TrpcProvider>
+        <div lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className={locale === "fa" ? "font-vazir" : "font-inter"}>
+          {children}
+        </div>
+      </TrpcProvider>
     </NextIntlClientProvider>
   );
 }

@@ -1,32 +1,62 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { prisma } from "~/server/db";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { ProjectStudio } from "~/components/editor/project-studio";
+import { ProjectArticle } from "~/components/resume/project-article";
+import { loadProject } from "~/server/resume";
+import { asLocalized, localize } from "~/utils/localized";
+import { locales, type Locale } from "~/utils/navigation";
 
 export const dynamic = "force-dynamic";
+
+function asLocale(value: string): Locale {
+  return locales.includes(value as Locale) ? (value as Locale) : "fa";
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const t = await getTranslations("global");
+  const loaded = await loadProject(slug);
+  if (!loaded) return { title: t("title") };
+  return { title: localize(loaded.project.title, asLocale(locale)) };
+}
 
 export default async function ProjectPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const t = await getTranslations("admin");
-  const p = await prisma.project.findUnique({
-    where: { slug, isActive: true },
-  });
-  if (!p) notFound();
-  return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
-      <Link href="/fa" className="text-sm text-indigo-600">← {t("back")}</Link>
-      <h1 className="mt-8 text-4xl font-bold">{p.title}</h1>
-      {p.technologies && (
-        <p className="mt-3 text-sm text-indigo-600">{p.technologies}</p>
-      )}
-      <article
-        className="prose prose-slate mt-8 max-w-none"
-        dangerouslySetInnerHTML={{ __html: p.content }}
+  const { locale, slug } = await params;
+  const current = asLocale(locale);
+  const loaded = await loadProject(slug);
+  if (!loaded) notFound();
+  const { project, isAdmin } = loaded;
+  if (isAdmin) {
+    return (
+      <ProjectStudio
+        project={{
+          id: project.id,
+          slug: project.slug,
+          active: project.active,
+          title: asLocalized(project.title),
+          excerpt: asLocalized(project.excerpt),
+          content: asLocalized(project.content),
+          technologies: project.technologies.map((item) => asLocalized(item.name)),
+        }}
       />
-    </main>
+    );
+  }
+  return (
+    <ProjectArticle
+      locale={current}
+      title={localize(project.title, current)}
+      excerpt={localize(project.excerpt, current)}
+      content={localize(project.content, current)}
+      technologies={project.technologies.map((item) => localize(item.name, current))}
+    />
   );
 }
