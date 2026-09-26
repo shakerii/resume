@@ -57,16 +57,20 @@ const experiences: Array<{
 }> = [
   {
     company: text("Farbonyan", "فربنیان"),
-    role: text("Software Engineer & AI Developer", "مهندس نرم‌افزار و توسعه‌دهنده هوش مصنوعی"),
+    role: text("Full-Stack & AI Developer", "توسعه‌دهنده فول‌استک و هوش مصنوعی"),
     period: text("Feb 2024 – Present", "فوریه ۲۰۲۴ – اکنون"),
     description: bullets([
       [
-        "Built dashboards and visualizations enabling non-technical users to gain insights from company data.",
-        "داشبورد و مصورسازی ساختم تا کاربران غیرفنی از داده‌های شرکت بینش بگیرند.",
+        "Build AI-assisted analysis and reporting products with LangChain and Next.js, and dashboards that let non-technical staff read company data directly.",
+        "محصول‌های تحلیل و گزارش‌گیری مبتنی بر هوش مصنوعی را با LangChain و Next.js می‌سازم، همراه با داشبوردهایی که کارکنان غیرفنی داده شرکت را مستقیم می‌خوانند.",
       ],
       [
-        "Developing AI-powered data analysis and reporting tools using LangChain and Next.js.",
-        "ابزارهای تحلیل داده و گزارش‌گیری مبتنی بر هوش مصنوعی را با LangChain و Next.js توسعه می‌دهم.",
+        "The work splits about 40% frontend, 30% backend, and 30% AI and data.",
+        "تقسیم کار حدود ۴۰٪ فرانت‌اند، ۳۰٪ بک‌اند و ۳۰٪ هوش مصنوعی و داده است.",
+      ],
+      [
+        "Delivered a B2B commerce platform for automotive parts, a holding-wide reporting system on a nightly data warehouse, and a conversational business-intelligence assistant.",
+        "پلتفرم فروش B2B قطعات خودرو، سامانه گزارش‌گیری هلدینگ روی انبار داده شبانه، و دستیار گفتگومحور هوش تجاری را تحویل دادم.",
       ],
     ]),
   },
@@ -76,12 +80,20 @@ const experiences: Array<{
     period: text("Jun 2022 – Feb 2024", "ژوئن ۲۰۲۲ – فوریه ۲۰۲۴"),
     description: bullets([
       [
-        "Led a distributed development team delivering SaaS platforms for interactive media clients.",
-        "یک تیم توسعه توزیع‌شده را رهبری کردم و پلتفرم‌های SaaS را برای مشتریان رسانه تعاملی تحویل دادم.",
+        "Led a distributed team delivering SaaS products for interactive-media and real-estate clients.",
+        "تیم توزیع‌شده‌ای را رهبری کردم و محصول‌های SaaS را برای مشتریان رسانه تعاملی و املاک تحویل دادم.",
       ],
       [
-        "Implemented CI/CD pipelines and scalable backend services, reducing the release cycle by 70%.",
-        "خط لوله CI/CD و سرویس‌های بک‌اند مقیاس‌پذیر را پیاده کردم و چرخه انتشار را ۷۰٪ کاهش دادم.",
+        "Shipped a Next.js, tRPC, and Prisma web app, a React Native client, and a command-based collector for listings on Rightmove, Zoopla, PropertyFinder, Bayut, Dubizzle, and DxbInteract.",
+        "وب‌اپ Next.js و tRPC و Prisma، کلاینت React Native، و گردآورنده آگهی از Rightmove و Zoopla و PropertyFinder و Bayut و Dubizzle و DxbInteract را تحویل دادم.",
+      ],
+      [
+        "Introduced CI/CD and containerized backend services and shortened the release cycle by about 70%.",
+        "CI/CD و سرویس‌های بک‌اند کانتینری را راه انداختم و چرخه انتشار را حدود ۷۰٪ کوتاه کردم.",
+      ],
+      [
+        "Led two frontend developers, a designer, and a marketing partner, and owned requirements, planning, and full-stack delivery.",
+        "دو توسعه‌دهنده فرانت‌اند، یک طراح و یک همکار بازاریابی را هدایت کردم و نیازها، برنامه‌ریزی و تحویل فول‌استک را خودم بر عهده داشتم.",
       ],
     ]),
   },
@@ -91,8 +103,12 @@ const experiences: Array<{
     period: text("Mar 2022 – Jun 2022", "مارس ۲۰۲۲ – ژوئن ۲۰۲۲"),
     description: bullets([
       [
-        "Designed architecture for B2B web platforms and implemented core backend services.",
-        "معماری پلتفرم‌های وب B2B را طراحی کردم و سرویس‌های اصلی بک‌اند را پیاده کردم.",
+        "Designed the architecture for a clinic platform covering appointment booking and medicine prescriptions.",
+        "معماری پلتفرمی برای نوبت‌دهی درمانگاه و نسخه دارو را طراحی کردم.",
+      ],
+      [
+        "Led a designer and two frontend developers and implemented the core backend in NestJS.",
+        "یک طراح و دو توسعه‌دهنده فرانت‌اند را رهبری کردم و بک‌اند اصلی را با NestJS پیاده کردم.",
       ],
     ]),
   },
@@ -102,19 +118,27 @@ const experiences: Array<{
     period: text("2020 – 2022", "۲۰۲۰ – ۲۰۲۲"),
     description: bullets([
       [
-        "Delivered custom web applications for clients using React, Node.js, and PHP/Laravel.",
+        "Delivered custom web applications for clients with React, Node.js, and PHP/Laravel.",
         "اپلیکیشن‌های وب سفارشی را برای مشتریان با React و Node.js و PHP/Laravel تحویل دادم.",
+      ],
+      [
+        "Took early products through implementation, including a stock-prediction neural network, a coffee-bean distribution platform, and a learning website.",
+        "محصول‌های اولیه را تا پیاده‌سازی پیش بردم، از جمله یک شبکه عصبی پیش‌بینی سهام، یک پلتفرم توزیع دانه قهوه، و یک وب‌سایت آموزشی.",
       ],
     ]),
   },
   {
     company: text("Raymon Co.", "شرکت رایمون"),
-    role: text("WordPress & ReactJS Developer", "توسعه‌دهنده وردپرس و React"),
+    role: text("WordPress & React Developer", "توسعه‌دهنده وردپرس و React"),
     period: text("2019 – 2020", "۲۰۱۹ – ۲۰۲۰"),
     description: bullets([
       [
-        "Built an admin panel and a customer panel for an FMCG B2B product, starting from a WooCommerce MVP and moving the interface to React.",
-        "پنل مدیریت و پنل مشتریان را برای یک محصول B2B در حوزه کالاهای تندمصرف ساختم؛ کار از MVP ووکامرس شروع شد و رابط به React منتقل شد.",
+        "Started a B2B admin for FMCG products as a WooCommerce MVP and a custom plugin.",
+        "پنل B2B کالاهای تندمصرف را با MVP ووکامرس و یک افزونه سفارشی شروع کردم.",
+      ],
+      [
+        "Moved the product to React within a month and built the admin panel and the customer panel alongside a dedicated backend developer.",
+        "ظرف یک ماه محصول را به React بردم و پنل مدیریت و پنل مشتریان را در کنار یک توسعه‌دهنده بک‌اند ساختم.",
       ],
     ]),
   },
@@ -124,8 +148,8 @@ const experiences: Array<{
     period: text("2018", "۲۰۱۸"),
     description: bullets([
       [
-        "Created an online order-tracking application with HTML, CSS, JavaScript, and PHP, then continued development with Laravel.",
-        "یک سامانه پیگیری سفارش آنلاین با HTML و CSS و JavaScript و PHP ساختم و بعد توسعه را با Laravel ادامه دادم.",
+        "Built an online order-tracking application with HTML, CSS, JavaScript, and PHP, then continued the product in Laravel.",
+        "سامانه پیگیری سفارش آنلاین را با HTML و CSS و JavaScript و PHP ساختم و سپس محصول را با Laravel ادامه دادم.",
       ],
     ]),
   },
@@ -135,8 +159,12 @@ const experiences: Array<{
     period: text("2016 – 2017", "۲۰۱۶ – ۲۰۱۷"),
     description: bullets([
       [
-        "Worked on a service-based Python application with Flask for smart-home event logging, and on a design that could handle many in-home devices.",
-        "روی یک اپلیکیشن پایتون مبتنی بر سرویس با Flask برای ثبت رویدادهای خانه هوشمند کار کردم و سیستمی برای مدیریت تعداد زیاد دستگاه در خانه طراحی کردم.",
+        "On the university IoT team, built a Flask service that logged smart-home events.",
+        "در تیم اینترنت اشیاء دانشگاه، سرویسی با Flask برای ثبت رویدادهای خانه هوشمند ساختم.",
+      ],
+      [
+        "Designed a system meant to coordinate a large number of in-home devices.",
+        "سیستمی طراحی کردم که قرار بود تعداد زیادی دستگاه داخل خانه را هماهنگ کند.",
       ],
     ]),
   },
@@ -151,141 +179,265 @@ const projects: Array<{
 }> = [
   {
     slug: "sabi",
-    title: text("SABI", "SABI"),
-    excerpt: text(
-      "Developed an AI-powered reporting assistant that generates business insights from company data. Built conversational workflows, automated chart and report generation, and integrated database querying.",
-      "دستیار گزارش‌گیری مبتنی بر هوش مصنوعی ساختم که از داده‌های شرکت بینش کسب‌وکار تولید می‌کند. گردش کار گفتگومحور، ساخت خودکار نمودار و گزارش، و پرس‌وجوی یکپارچه پایگاه داده را پیاده کردم.",
+    title: text(
+      "SABI — Smart Assistant for Business Intelligence",
+      "SABI — دستیار هوشمند هوش تجاری",
     ),
-    technologies: tech(["LangChain", "LangGraph", "Next.js", "tRPC", "Redis", "Docker"]),
+    excerpt: text(
+      "Conversational assistant that answers questions about company data with charts, tables, and written analysis, under row-level access control.",
+      "دستیار گفتگومحور که به سؤال‌ها درباره داده شرکت با نمودار، جدول و تحلیل نوشتاری جواب می‌دهد، با کنترل دسترسی در سطح ردیف.",
+    ),
+    technologies: tech([
+      "LangChain",
+      "LangGraph",
+      "Next.js",
+      "tRPC",
+      "FastAPI",
+      "Redis",
+      "Docker",
+    ]),
     content: article([
       { h: ["Overview", "معرفی"] },
       {
         p: [
-          "SABI is a personal assistant for businesses. A chatbot connects to company databases and answers employee questions with text, tables, and charts. Each company can supply its own instructions for how calculations should work.",
-          "SABI یک دستیار برای کسب‌وکارهاست. چت‌بات به پایگاه داده شرکت وصل می‌شود و به سؤال کارکنان با متن، جدول و نمودار جواب می‌دهد. هر شرکت می‌تواند دستور خودش را برای نحوه محاسبه بدهد.",
+          "SABI is a business assistant. Employees ask questions in chat and receive text, audio, tables, and charts. A question about sales, for example, produces a chart and then an explanation of it. Each company supplies its own instructions for how calculations should be done, and the assistant follows those definitions instead of inventing business rules.",
+          "SABI یک دستیار کسب‌وکار است. کارکنان در گفتگو سؤال می‌پرسند و متن، صوت، جدول و نمودار می‌گیرند. مثلاً سؤال درباره فروش، یک نمودار و بعد توضیح آن را می‌سازد. هر شرکت دستور خودش را برای نحوه محاسبه می‌دهد و دستیار به همان تعریف‌ها تکیه می‌کند، نه به قواعدی که خودش بسازد.",
         ],
       },
-      { h: ["What it includes", "امکانات"] },
+      { h: ["What shipped", "آنچه تحویل شد"] },
       {
         items: [
-          [
-            "Chat-based report builder that keeps conversational state and updates the current report.",
-            "گزارش‌ساز گفتگومحور که وضعیت مکالمه را نگه می‌دارد و گزارش جاری را به‌روز می‌کند.",
-          ],
-          [
-            "Query flow from the question through scope, schema, SQL generation, validation, execution, and visualization.",
-            "مسیر پرس‌وجو از سؤال تا محدوده، شما، تولید SQL، اعتبارسنجی، اجرا و مصورسازی.",
-          ],
-          [
-            "Knowledge graph built from uploaded documents, plus row-level access control for each user.",
-            "گراف دانش از سندهای بارگذاری‌شده، به‌همراه کنترل دسترسی در سطح ردیف برای هر کاربر.",
-          ],
+          ["Chat-based report builder that keeps the thread and updates the current report.", "گزارش‌ساز گفتگومحور که رشته مکالمه را نگه می‌دارد و گزارش جاری را به‌روز می‌کند."],
+          ["Report generator for tables, charts, and written analysis.", "مولد گزارش برای جدول، نمودار و تحلیل نوشتاری."],
+          ["Permission control and a knowledge graph of company documents.", "کنترل دسترسی و گراف دانش از سندهای شرکت."],
+          ["Calendar management, file upload, and multiple languages.", "مدیریت تقویم، بارگذاری فایل و چند زبان."],
+          ["Personal reports that a user can save and pin to a dashboard.", "گزارش‌های شخصی که کاربر ذخیره می‌کند و به داشبورد سنجاق می‌کند."],
         ],
       },
+      { h: ["Model and tools", "مدل و ابزارها"] },
       {
         p: [
-          "The system does not let the model invent business rules. Technical definitions are provided, and the model refers back to them while answering. LangChain and LangGraph handle the decision steps, and every step returns structured output.",
-          "سیستم اجازه نمی‌دهد مدل قواعد کسب‌وکار را از خودش بسازد. تعریف‌های فنی به مدل داده می‌شود و مدل هنگام پاسخ به همان تعریف‌ها برمی‌گردد. LangChain و LangGraph گام‌های تصمیم را جلو می‌برند و هر گام خروجی ساخت‌یافته برمی‌گرداند.",
+          "The assistant runs Llama 4 Maverick, chosen because the model had to be small enough to download and run locally. LangChain and LangGraph decide whether the user is permitted to ask and whether the question is in scope. The shipped flow uses tools for database queries, notifications, and report creation. Every step returns structured output. Retrieval-augmented generation covers entity search and knowledge-graph search. An agent loop was designed and left for a later iteration.",
+          "دستیار روی Llama 4 Maverick اجرا می‌شود، چون مدل باید آن‌قدر کوچک می‌بود که دانلود و محلی اجرا شود. LangChain و LangGraph تصمیم می‌گیرند کاربر اجازه پرسش دارد یا نه و سؤال در محدوده است یا نه. جریان تحویل‌شده از ابزار برای پرس‌وجوی پایگاه داده، اعلان و ساخت گزارش استفاده می‌کند. هر گام خروجی ساخت‌یافته برمی‌گرداند. تولید تقویت‌شده با بازیابی، جستجوی موجودیت و گراف دانش را پوشش می‌دهد. حلقه عامل طراحی شد و برای مرحله بعد ماند.",
+        ],
+      },
+      { h: ["Querying data", "پرس‌وجوی داده"] },
+      {
+        p: [
+          "A question moves from the model to a scope, then to the tables in that scope, then through schema understanding, SQL generation, validation, execution, and visualization. A rules table stores how each source table should be queried, and the user chooses the database. Safety was enforced with those rules and by rewriting filters to the row IDs each user can access. The next step is to have the model emit a pivot specification, using the report builder already in production, instead of free-form SQL.",
+          "سؤال از مدل به یک محدوده می‌رود، بعد به جدول‌های همان محدوده، بعد فهم شما، تولید SQL، اعتبارسنجی، اجرا و مصورسازی. یک جدول قواعد می‌گوید هر جدول منبع چطور پرس‌وجو شود و کاربر پایگاه داده را انتخاب می‌کند. ایمنی با همان قواعد و با بازنویسی فیلترها روی شناسه ردیف‌هایی که کاربر به آن‌ها دسترسی دارد اعمال شد. گام بعد این است که مدل به‌جای SQL آزاد، ساختار یک جدول محوری بدهد و از گزارش‌سازی که همین حالا در محصول است استفاده کند.",
+        ],
+      },
+      { h: ["Knowledge graph", "گراف دانش"] },
+      {
+        p: [
+          "Uploaded PDF, Word, and text files are split into paragraphs. A prompt extracts nodes and relations from each paragraph. Node types are concept, definition, formula, entity, and purpose. Purposes are context, query, visualization, and analysis. Relations are includes, excludes, dependent, same as, related to, and mapped to. The graph is stored locally and consulted in an early LangGraph step. In testing it supplied the accounting definitions the model did not already have. The planned follow-up is to expose the graph as a tool in an agent flow.",
+          "فایل‌های PDF و Word و متن به بند تقسیم می‌شوند. یک پرامپت از هر بند گره و رابطه استخراج می‌کند. نوع گره‌ها مفهوم، تعریف، فرمول، موجودیت و هدف است. هدف‌ها زمینه، پرس‌وجو، مصورسازی و تحلیل‌اند. رابطه‌ها شامل، مستثنی، وابسته، یکسان، مرتبط و نگاشت‌شده است. گراف محلی ذخیره می‌شود و در یکی از گام‌های ابتدایی LangGraph خوانده می‌شود. در آزمون، تعریف‌های حسابداری را که مدل از قبل نداشت تأمین کرد. ادامه کار این است که گراف به‌صورت یک ابزار در جریان عاملی در دسترس باشد.",
+        ],
+      },
+      { h: ["Access control", "کنترل دسترسی"] },
+      {
+        p: [
+          "The system reads the database schema, and an administrator marks tables as permission-bearing. Those tables appear on the user form. Every later query checks both the allowed tables and the allowed rows.",
+          "سیستم شمای پایگاه داده را می‌خواند و مدیر برخی جدول‌ها را به‌عنوان مجوز علامت می‌زند. همان جدول‌ها روی فرم کاربر ظاهر می‌شوند. هر پرس‌وجوی بعدی هم جدول مجاز و هم ردیف مجاز را بررسی می‌کند.",
         ],
       },
     ]),
   },
   {
     slug: "fis",
-    title: text("FIS (Farbonyan Intelligent Sales)", "FIS (فروش هوشمند فربنیان)"),
+    title: text("FIS — Farbonyan Intelligent Sales", "FIS — فروش هوشمند فربنیان"),
     excerpt: text(
-      "Engineered a React-based B2B e-commerce platform for car parts sales, inventory, and shipment management. Improved user workflows and automated order handling, supporting hundreds of SKUs and multiple vendors.",
-      "یک پلتفرم تجارت الکترونیک B2B با React برای فروش، موجودی و حمل قطعات خودرو ساختم. گردش کار کاربران را بهتر کردم و ثبت سفارش را خودکار کردم؛ سامانه صدها کالا و چند فروشنده را پوشش می‌دهد.",
+      "Next.js B2B platform for automotive-parts sales, inventory, and shipment, with access-controlled tabs and a virtualized data table for very large catalogs.",
+      "پلتفرم B2B با Next.js برای فروش، موجودی و حمل قطعات خودرو، با تب‌های کنترل‌شده با دسترسی و جدول داده مجازی برای کاتالوگ‌های بسیار بزرگ.",
     ),
-    technologies: tech(["React", "React Table", "React Query", "REST APIs", "Docker"]),
+    technologies: tech([
+      "Next.js",
+      "React",
+      "TypeScript",
+      "TanStack Table",
+      "TanStack Query",
+      "shadcn",
+      "REST",
+      "Docker",
+      "Flask",
+      "PyTorch",
+    ]),
     content: article([
       { h: ["Platform", "پلتفرم"] },
       {
         p: [
-          "FIS is a Next.js frontend for B2B car-parts sales. The interface is organized as tabs. Menus and options follow access rights, and application state lives in React context. The UI is built with shadcn, customized for right-to-left layout.",
-          "FIS فرانت‌اند Next.js برای فروش B2B قطعات خودروست. رابط به‌صورت تب سازماندهی شده است. منوها و گزینه‌ها با سطح دسترسی کنترل می‌شوند و وضعیت برنامه در React context نگه داشته می‌شود. رابط با shadcn و با پشتیبانی از راست‌به‌چپ ساخته شده است.",
+          "FIS is the frontend for B2B sales of automotive parts, including inventory and shipment. It supports hundreds of SKUs and about 200 vendors, of which about 20 are active. The interface is a tabbed workspace: menus and options follow access rights, and a customizable dashboard sits on top. Opening a menu, or any action that needs another view, calls useTabOpener with props validated by Zod.",
+          "FIS فرانت‌اند فروش B2B قطعات خودرو است، شامل موجودی و حمل. صدها کالا و حدود ۲۰۰ فروشنده را پوشش می‌دهد که حدود ۲۰ تای آن‌ها فعال‌اند. رابط یک فضای کاری تب‌دار است: منوها و گزینه‌ها تابع دسترسی‌اند و یک داشبورد قابل تنظیم روی آن قرار دارد. باز کردن منو، یا هر عملی که نمای دیگری بخواهد، useTabOpener را با ویژگی‌هایی صدا می‌زند که Zod اعتبارسنجی می‌کند.",
+        ],
+      },
+      { h: ["Frontend", "فرانت‌اند"] },
+      {
+        p: [
+          "The app is Next.js and React 19 with TypeScript and TanStack Query. Application state lives in React context. The interface is shadcn, extended for right-to-left layout and for components the product needed beyond the defaults. There is no separate UI kit and no Zustand or Redux.",
+          "برنامه Next.js و React 19 با TypeScript و TanStack Query است. وضعیت برنامه در React context است. رابط shadcn است و برای راست‌به‌چپ و برای جزءهایی که محصول علاوه بر پیش‌فرض‌ها لازم داشت گسترش یافته است. کیت رابط جدا و Zustand یا Redux در کار نیست.",
         ],
       },
       { h: ["Data table", "جدول داده"] },
       {
         items: [
           [
-            "Global and column filtering, sorting, pagination, column ordering, sizing, pinning, and visibility.",
-            "فیلتر سراسری و ستونی، مرتب‌سازی، صفحه‌بندی، ترتیب و اندازه و سنجاق و نمایش ستون‌ها.",
+            "Global and column search, sorting, pagination, column order, size, pinning, and visibility.",
+            "جستجوی سراسری و ستونی، مرتب‌سازی، صفحه‌بندی، ترتیب و اندازه و سنجاق و نمایش ستون‌ها.",
           ],
           [
             "Row actions, batch actions, global actions, selection, and export to Excel and PDF.",
-            "عملیات ردیف، عملیات دسته‌ای، عملیات سراسری، انتخاب ردیف و خروجی Excel و PDF.",
+            "عملیات ردیف، عملیات دسته‌ای، عملیات سراسری، انتخاب و خروجی Excel و PDF.",
           ],
           [
-            "Tree data, multi-level grouping, aggregations, and virtualization for very large client-side tables.",
-            "داده درختی، گروه‌بندی چندسطحی، تجمیع و مجازی‌سازی برای جدول‌های خیلی بزرگ در سمت کلاینت.",
+            "Tree data, multi-level grouping, and aggregations: count, sum, mean, max, and min.",
+            "داده درختی، گروه‌بندی چندسطحی و تجمیع: تعداد، جمع، میانگین، بیشینه و کمینه.",
+          ],
+          [
+            "Client-side virtualization for more than 100,000 rows on one page. Columns are supplied per table, and a few screens edit cells inline.",
+            "مجازی‌سازی سمت کلاینت برای بیش از ۱۰۰هزار ردیف در یک صفحه. ستون‌ها برای هر جدول جدا داده می‌شوند و چند صفحه سلول را درجا ویرایش می‌کنند.",
           ],
         ],
       },
+      { h: ["Attribute extraction", "استخراج ویژگی"] },
       {
         p: [
-          "A separate Flask and Torch service reads a Persian part name and predicts attributes defined in the admin panel. It was trained on the platform's own parts list and integrated as its own service.",
-          "یک سرویس جدا با Flask و Torch نام فارسی قطعه را می‌خواند و ویژگی‌هایی را پیش‌بینی می‌کند که در پنل مدیریت تعریف شده‌اند. مدل روی فهرست قطعات خود پلتفرم آموزش دیده و به‌صورت سرویس جدا وصل شده است.",
+          "A separate Flask and PyTorch service reads a Persian part name and predicts attributes that merchandisers define in the admin panel. The network was trained on the catalog itself, about 2,000 parts, after a token search seeded the first labels. It returns a list of predicted attributes. On that set it reached roughly 70% accuracy, and it runs beside the main application rather than inside it.",
+          "یک سرویس جدا با Flask و PyTorch نام فارسی قطعه را می‌خواند و ویژگی‌هایی را پیش‌بینی می‌کند که مسئول کالا در پنل مدیریت تعریف کرده است. شبکه روی خود کاتالوگ آموزش دید، حدود ۲۰۰۰ قطعه، بعد از اینکه یک جستجوی توکنی برچسب‌های اول را پر کرد. خروجی فهرستی از ویژگی‌های پیش‌بینی‌شده است. روی همان مجموعه دقت حدود ۷۰٪ بود و سرویس کنار برنامه اصلی اجرا می‌شود، نه داخل آن.",
         ],
       },
     ]),
   },
   {
     slug: "hms",
-    title: text("HMS", "HMS"),
+    title: text("HMS — Holding Management System", "HMS — سامانه مدیریت هلدینگ"),
     excerpt: text(
-      "Holding management dashboard with a data warehouse gathered from subsidiary companies, dynamic pivot reporting, and a code generator for base models.",
-      "داشبورد مدیریت هلدینگ با انبار داده جمع‌شده از شرکت‌های زیرمجموعه، گزارش محوری پویا و مولد کد برای مدل‌های پایه.",
+      "Holding dashboard over a nightly MSSQL warehouse, with pivot reports, charts, and a generator that scaffolds models, forms, and tRPC APIs.",
+      "داشبورد هلدینگ روی انبار داده شبانه MSSQL، با گزارش محوری، نمودار، و مولدی که مدل، فرم و APIهای tRPC را می‌سازد.",
     ),
-    technologies: tech(["Next.js", "tRPC", "Prisma", "MSSQL"]),
+    technologies: tech(["Next.js", "tRPC", "Prisma", "MSSQL", "Mustache"]),
     content: article([
-      { h: ["Data warehouse", "انبار داده"] },
+      { h: ["Warehouse", "انبار داده"] },
       {
         p: [
-          "Most subsidiary applications use MSSQL. Data is collected at night by a SQL job and synchronized on a schedule. One client’s data is around 1 TB.",
-          "بیشتر نرم‌افزارهای شرکت‌های زیرمجموعه MSSQL هستند. داده شب‌ها با یک SQL job جمع می‌شود و طبق برنامه همگام می‌شود. داده یکی از مشتری‌ها حدود ۱ ترابایت است.",
+          "HMS is the admin dashboard for a holding company. Subsidiary systems are almost all MSSQL. One SAP source is identified and not yet connected. A nightly SQL job copies the data. One client's warehouse is about 1 TB and is synchronized every night.",
+          "HMS داشبورد مدیریت یک شرکت هلدینگ است. سامانه‌های شرکت‌های زیرمجموعه تقریباً همه MSSQL هستند. یک منبع SAP مشخص شده و هنوز وصل نشده است. یک SQL job شبانه داده را کپی می‌کند. انبار داده یکی از مشتری‌ها حدود ۱ ترابایت است و هر شب همگام می‌شود.",
         ],
       },
       { h: ["Pivot reporting", "گزارش محوری"] },
       {
+        p: [
+          "Analysts pick dimensions and measures and build a report without an engineer. Dimensions cover filters, rows, values, and groups. Aggregations are sum, average, count, minimum, and maximum. A filter can stay as a default or move onto the fetch form. Calculated fields are not supported. Results export through the shared data table. Charts take the x-axis from rows and the y-axis from values, and can group by the remaining row fields.",
+          "تحلیلگر بُعد و سنجه را انتخاب می‌کند و بدون مهندس گزارش می‌سازد. بُعدها فیلتر، ردیف، مقدار و گروه را پوشش می‌دهند. تجمیع‌ها جمع، میانگین، تعداد، کمینه و بیشینه است. فیلتر می‌تواند پیش‌فرض بماند یا به فرم دریافت گزارش برود. فیلد محاسباتی پشتیبانی نمی‌شود. خروجی از همان جدول داده مشترک می‌گذرد. نمودار محور افقی را از ردیف‌ها و محور عمودی را از مقدارها می‌گیرد و می‌تواند بر اساس بقیه فیلدهای ردیف گروه شود.",
+        ],
+      },
+      { h: ["Query builder", "سازنده پرس‌وجو"] },
+      {
+        p: [
+          "A Next.js and tRPC form describes a dynamic query. The filter form feeds a generator that handles joins, selected columns, aggregation, and multistep queries. The generator opens the table with its initial grouping and ordering, and it offers the charts that can be drawn from that result.",
+          "یک فرم Next.js و tRPC پرس‌وجوی پویا را توصیف می‌کند. فرم فیلتر به مولدی می‌رسد که الحاق، ستون‌های انتخاب‌شده، تجمیع و پرس‌وجوی چندمرحله‌ای را انجام می‌دهد. مولد جدول را با گروه‌بندی و ترتیب اولیه باز می‌کند و نمودارهایی را پیشنهاد می‌دهد که از همان نتیجه رسم می‌شوند.",
+        ],
+      },
+      { h: ["Code generator", "مولد کد"] },
+      {
+        p: [
+          "A Mustache generator emits a base model, such as a user or a product, together with its list view, create and update forms, delete API, and the matching tRPC procedures. With many base models in the holding system, that scaffolding removed about three months of repetitive work.",
+          "یک مولد Mustache مدل پایه را، مثل کاربر یا محصول، همراه با نمای فهرست، فرم ایجاد و ویرایش، API حذف و روال‌های tRPC متناظر تولید می‌کند. با تعداد زیاد مدل پایه در سامانه هلدینگ، این اسکلت حدود سه ماه کار تکراری را برداشت.",
+        ],
+      },
+    ]),
+  },
+  {
+    slug: "real-estate-data",
+    title: text("Real Estate Data Platform", "پلتفرم داده املاک"),
+    excerpt: text(
+      "Next.js and React Native product that saves property listings from major portals on command, then extracts structured data with a trained scraper.",
+      "محصول Next.js و React Native که آگهی ملک را از درگاه‌های اصلی با فرمان کاربر ذخیره می‌کند و بعد داده ساخت‌یافته را با یک خراش‌گر آموزش‌دیده استخراج می‌کند.",
+    ),
+    technologies: tech([
+      "Next.js",
+      "tRPC",
+      "Prisma",
+      "PlanetScale",
+      "React Native",
+      "next-auth",
+      "Docker",
+      "Python",
+      "AutoScraper",
+    ]),
+    content: article([
+      { h: ["Product", "محصول"] },
+      {
+        p: [
+          "The platform collects property listings for users from Rightmove, Zoopla, PropertyFinder, Bayut, Dubizzle, and DxbInteract. Collection is command-based: nothing is crawled in bulk. The user saves a listing, and the system stores that page.",
+          "پلتفرم آگهی ملک را برای کاربر از Rightmove و Zoopla و PropertyFinder و Bayut و Dubizzle و DxbInteract جمع می‌کند. جمع‌آوری فرمانی است: خزش انبوه انجام نمی‌شود. کاربر یک آگهی را ذخیره می‌کند و سیستم همان صفحه را نگه می‌دارد.",
+        ],
+      },
+      { h: ["Architecture", "معماری"] },
+      {
+        p: [
+          "The stack is Next.js, tRPC, Node, and Prisma on PlanetScale (MySQL). The app is hosted on Vercel, containerized with Docker, and released through Vercel's CI/CD. Authentication is next-auth. Background fetching runs as a Vercel job. Queues are stored in the database rather than in a separate broker.",
+          "پشته Next.js، tRPC، Node و Prisma روی PlanetScale (MySQL) است. برنامه روی Vercel میزبانی می‌شود، با Docker کانتینر شده و از CI/CD خود Vercel منتشر می‌شود. احراز هویت next-auth است. دریافت پس‌زمینه یک job در Vercel است. صف‌ها در پایگاه داده ذخیره می‌شوند، نه در یک کارگزار جدا.",
+        ],
+      },
+      { h: ["How a save works", "نحوه ذخیره"] },
+      {
         items: [
           [
-            "Users pick dimensions and measures and build reports without an engineer in the loop.",
-            "کاربر بُعد و سنجه را انتخاب می‌کند و بدون دخالت مهندس گزارش می‌سازد.",
+            "In the mobile app, a webview injects a Vite-built script that adds a save button to each property and posts the HTML to the backend.",
+            "در اپ موبایل، یک webview اسکریپتی را تزریق می‌کند که با Vite ساخته شده، روی هر ملک دکمه ذخیره می‌گذارد و HTML را به بک‌اند می‌فرستد.",
           ],
           [
-            "Supported aggregations are sum, average, count, minimum, and maximum, with filters and grouping.",
-            "تجمیع‌های پشتیبانی‌شده جمع، میانگین، تعداد، کمینه و بیشینه هستند، همراه با فیلتر و گروه‌بندی.",
+            "On the web, a Plasmo extension detects the same sites and adds the same button.",
+            "در وب، یک افزونه Plasmo همان سایت‌ها را تشخیص می‌دهد و همان دکمه را اضافه می‌کند.",
           ],
           [
-            "Charts use pivot rows for the x-axis and values for the y-axis. A Mustache generator produces list views, forms, and tRPC APIs for base models.",
-            "نمودارها ردیف‌های محوری را برای محور افقی و مقدارها را برای محور عمودی می‌گیرند. یک مولد Mustache نمای فهرست، فرم و APIهای tRPC را برای مدل‌های پایه می‌سازد.",
+            "A Python worker reads the HTML and extracts fields with AutoScraper, trained on sample pages from those portals. The page structures stayed stable enough for that approach.",
+            "یک کارگر پایتون HTML را می‌خواند و فیلدها را با AutoScraper استخراج می‌کند که روی صفحه‌های نمونه همان درگاه‌ها آموزش دیده است. ساختار صفحه‌ها به‌اندازه کافی پایدار ماند.",
           ],
         ],
       },
     ]),
   },
   {
-    slug: "smart-catalog",
-    title: text("Smart Catalog", "کاتالوگ هوشمند"),
+    slug: "clinic-platform",
+    title: text("Clinic Reservation Platform", "پلتفرم نوبت‌دهی درمانگاه"),
     excerpt: text(
-      "Built an admin dashboard for companies to design interactive product catalogs with dynamic filters and exports. Enhanced usability with drag-and-drop components and real-time preview.",
-      "داشبورد مدیریتی ساختم تا شرکت‌ها کاتالوگ محصول تعاملی را با فیلتر پویا و خروجی طراحی کنند. کشیدن و رها کردن اجزا و پیش‌نمایش زنده کار با آن را ساده‌تر کرد.",
+      "Architecture and NestJS backend for appointment booking and medicine prescriptions, delivered with a designer and two frontend developers.",
+      "معماری و بک‌اند NestJS برای نوبت‌دهی و نسخه دارو، با یک طراح و دو توسعه‌دهنده فرانت‌اند.",
+    ),
+    technologies: tech(["NestJS", "TypeScript", "Node.js"]),
+    content: article([
+      { h: ["Scope", "محدوده"] },
+      {
+        p: [
+          "Matap needed a system for booking doctors and issuing medicine prescriptions, and a backend that could also serve other B2B web products. I set the architecture, led a designer and two frontend developers, and implemented the core services in NestJS.",
+          "متاپ به سامانه‌ای برای رزرو پزشک و صدور نسخه دارو نیاز داشت، و به بک‌اندی که بتواند محصول‌های وب B2B دیگر را هم سرویس بدهد. معماری را چیدم، یک طراح و دو توسعه‌دهنده فرانت‌اند را رهبری کردم و سرویس‌های اصلی را با NestJS پیاده کردم.",
+        ],
+      },
+    ]),
+  },
+  {
+    slug: "smart-catalog",
+    title: text("Smart Catalog Builder", "سازنده کاتالوگ هوشمند"),
+    excerpt: text(
+      "Drag-and-drop studio for interactive product catalogs, with live preview, animations, and PDF export, embedded on a customer's site through an iframe.",
+      "استودیوی کشیدن و رها کردن برای کاتالوگ محصول تعاملی، با پیش‌نمایش زنده، انیمیشن و خروجی PDF، که با iframe در سایت مشتری قرار می‌گیرد.",
     ),
     technologies: tech(["Next.js", "tRPC", "DND-kit", "Tailwind CSS", "PostgreSQL", "Docker"]),
     content: article([
-      { h: ["Designer", "طراح"] },
+      { h: ["Product", "محصول"] },
       {
         p: [
-          "A company builds an online catalog and shares a link that renders inside an iframe on its own site. Images are dragged onto each page. Components support enter and exit animations and actions that open another component, another catalog page, or an external site.",
-          "شرکت یک کاتالوگ آنلاین می‌سازد و پیوندی به اشتراک می‌گذارد که در iframe سایت خودش نمایش داده می‌شود. تصویرها روی هر صفحه کشیده می‌شوند. اجزا انیمیشن ورود و خروج دارند و می‌توانند جزء دیگر، صفحه دیگر کاتالوگ یا یک سایت بیرونی را باز کنند.",
+          "A company designs an online catalog and shares a link. That link renders inside an iframe on the company's own site. Every component can be dragged onto a page. Components have enter and exit animations, and actions that open another component, another catalog page, or an external URL. Each catalog has an image and video gallery and can be exported as a PDF.",
+          "شرکت یک کاتالوگ آنلاین طراحی می‌کند و یک پیوند به اشتراک می‌گذارد. آن پیوند داخل iframe در سایت خود شرکت نمایش داده می‌شود. هر جزء را می‌توان روی صفحه کشید. اجزا انیمیشن ورود و خروج دارند و عملی که جزء دیگر، صفحه دیگر کاتالوگ، یا یک نشانی بیرونی را باز می‌کند. هر کاتالوگ گالری تصویر و ویدیو دارد و به PDF خروجی گرفته می‌شود.",
         ],
       },
+      { h: ["How the designer stores a page", "نحوه ذخیره صفحه"] },
       {
         p: [
-          "In the database, one catalog has many pages and each page has many components. Positions are stored as percentages. There is no separate render step: images load with the page, related pages are preloaded, and the preview updates as attributes change. The catalog can also be exported as a PDF.",
-          "در پایگاه داده هر کاتالوگ چند صفحه دارد و هر صفحه چند جزء. موقعیت‌ها به‌صورت درصد ذخیره می‌شوند. مرحله رندر جدا وجود ندارد: تصویرها با صفحه بارگذاری می‌شوند، صفحه‌های مرتبط از قبل بارگذاری می‌شوند و پیش‌نمایش با تغییر ویژگی‌ها به‌روز می‌شود. کاتالوگ را می‌توان به PDF هم خروجی گرفت.",
+          "The user uploads images and drops them onto each page. Editing a component changes its attributes, including shadow and animation. A drop updates the image id and the x and y position as percentages. In Postgres, a catalog has many pages and each page has many components. The layout is rows, not a JSON document. There is no separate render step: images load with the page, related pages are preloaded, and the preview updates as attributes change. tRPC was used for end-to-end types. The service was packaged with Docker. It was ready to deploy and did not reach a public launch.",
+          "کاربر تصویر بارگذاری می‌کند و آن‌ها را روی هر صفحه می‌اندازد. ویرایش جزء، ویژگی‌هایش را عوض می‌کند، از جمله سایه و انیمیشن. رها کردن، شناسه تصویر و موقعیت افقی و عمودی را به‌صورت درصد به‌روز می‌کند. در Postgres هر کاتالوگ چند صفحه دارد و هر صفحه چند جزء. چیدمان ردیف است، نه یک سند JSON. مرحله رندر جدا وجود ندارد: تصویرها با صفحه می‌آیند، صفحه‌های مرتبط از قبل بارگذاری می‌شوند و پیش‌نمایش با تغییر ویژگی‌ها به‌روز می‌شود. tRPC برای نوع سرتاسری انتخاب شد. سرویس با Docker بسته‌بندی شد. برای استقرار آماده بود و به عرضه عمومی نرسید.",
         ],
       },
     ]),
@@ -294,22 +446,23 @@ const projects: Array<{
     slug: "ping-enhancement",
     title: text("Ping Enhancement", "بهبود پینگ"),
     excerpt: text(
-      "Game ping enhancement with a Golang router service and MongoDB. Policies for game, voice, and chat are checked before a connection is established.",
-      "بهبود پینگ بازی با یک سرویس مسیریاب به زبان Go و MongoDB. سیاست‌های بازی، صدا و گفتگو پیش از برقراری اتصال بررسی می‌شوند.",
+      "Golang router that rewrites game routes, with policies for play, voice, and chat, and a FastAPI service that stores logs in MongoDB.",
+      "مسیریاب Go که مسیر بازی را بازنویسی می‌کند، با سیاست بازی و صدا و گفتگو، و سرویس FastAPI که لاگ را در MongoDB نگه می‌دارد.",
     ),
-    technologies: tech(["Go", "MongoDB", "FastAPI", "WireGuard"]),
+    technologies: tech(["Go", "FastAPI", "MongoDB", "WireGuard", "sing-box"]),
     content: article([
-      { h: ["Router", "مسیریاب"] },
+      { h: ["System", "سامانه"] },
       {
         p: [
-          "The router re-routes the player’s game packets. Golang runs on the routers. MongoDB, behind a FastAPI service, stores logs. Choosing the route is an administrator decision. Policies cover whether the game is active, whether the user is active, and whether that user may play, talk, or use voice.",
-          "مسیریاب بسته‌های بازی بازیکن را دوباره مسیردهی می‌کند. Go روی مسیریاب‌ها اجرا می‌شود. MongoDB پشت یک سرویس FastAPI لاگ‌ها را نگه می‌دارد. انتخاب مسیر با مدیر است. سیاست‌ها مشخص می‌کنند بازی فعال است یا نه، کاربر فعال است یا نه، و آیا آن کاربر اجازه بازی، گفتگو یا صدا دارد.",
+          "The product improves game latency by sending the player's traffic through a router. Go runs on the routers and rewrites routes. Operators choose the route. A FastAPI service stores logs in MongoDB. Games are added over time. Transport is WireGuard, with sing-box on the client. Voice and chat move as ordinary packets.",
+          "محصول تأخیر بازی را با عبور ترافیک بازیکن از یک مسیریاب کم می‌کند. Go روی مسیریاب‌ها اجرا می‌شود و مسیر را بازنویسی می‌کند. انتخاب مسیر با اپراتور است. یک سرویس FastAPI لاگ‌ها را در MongoDB ذخیره می‌کند. بازی‌ها به‌مرور اضافه می‌شوند. انتقال با WireGuard است و sing-box روی کلاینت. صدا و گفتگو مثل بقیه بسته‌ها جابه‌جا می‌شوند.",
         ],
       },
+      { h: ["Policies", "سیاست‌ها"] },
       {
         p: [
-          "Data is intended to move with the WireGuard protocol, using sing-box on the client. I led one backend developer and one frontend developer: requirements, tasks, meetings, and technical support.",
-          "قرار است داده با پروتکل WireGuard و sing-box در کلاینت منتقل شود. یک توسعه‌دهنده بک‌اند و یک توسعه‌دهنده فرانت‌اند را رهبری کردم: نیازها، وظیفه‌ها، جلسه‌ها و پشتیبانی فنی.",
+          "Before a connection is established, policy covers whether the game is active, whether the user is active, and whether that user may play, speak, or use chat. Intercepting traffic so those checks run on the path was specified and was still in progress. I led one backend developer and one frontend developer: requirements, tasks, meetings, and technical support.",
+          "پیش از برقراری اتصال، سیاست مشخص می‌کند بازی فعال است یا نه، کاربر فعال است یا نه، و آیا آن کاربر اجازه بازی، صدا یا گفتگو دارد. رهگیری ترافیک تا این بررسی‌ها روی مسیر اجرا شوند مشخص شده بود و هنوز در جریان بود. یک توسعه‌دهنده بک‌اند و یک توسعه‌دهنده فرانت‌اند را رهبری کردم: نیازها، وظیفه‌ها، جلسه‌ها و پشتیبانی فنی.",
         ],
       },
     ]),
@@ -318,34 +471,34 @@ const projects: Array<{
     slug: "baas-platform",
     title: text("BAAS Platform", "پلتفرم BAAS"),
     excerpt: text(
-      "Designed backend services for database management and API handling, including authentication, role-based access, and a scalable microservice architecture.",
-      "سرویس‌های بک‌اند را برای مدیریت پایگاه داده و API طراحی کردم، از جمله احراز هویت، دسترسی مبتنی بر نقش و معماری میکروسرویس مقیاس‌پذیر.",
+      "Backend services for database management and APIs, with authentication, role-based access, and a microservice layout.",
+      "سرویس‌های بک‌اند برای مدیریت پایگاه داده و API، با احراز هویت، دسترسی مبتنی بر نقش و چیدمان میکروسرویس.",
     ),
     technologies: tech(["React", "Laravel", "MySQL", "Docker"]),
     content: article([
       { h: ["Services", "سرویس‌ها"] },
       {
         p: [
-          "The platform exposes database management and API handling as backend services. Authentication, role-based access, and a microservice layout are part of the design so each service can scale on its own.",
-          "این پلتفرم مدیریت پایگاه داده و کار با API را به‌صورت سرویس بک‌اند ارائه می‌کند. احراز هویت، دسترسی مبتنی بر نقش و چیدمان میکروسرویس بخشی از طراحی است تا هر سرویس جداگانه مقیاس بگیرد.",
+          "The platform exposes database management and API handling as backend services. Authentication, role-based access, and a microservice layout let each part scale on its own. The client is React, the services are Laravel, and the data store is MySQL, packaged with Docker.",
+          "پلتفرم مدیریت پایگاه داده و کار با API را به‌صورت سرویس بک‌اند ارائه می‌کند. احراز هویت، دسترسی مبتنی بر نقش و چیدمان میکروسرویس اجازه می‌دهد هر بخش جدا مقیاس بگیرد. کلاینت React است، سرویس‌ها Laravel هستند و داده در MySQL است و با Docker بسته‌بندی شده است.",
         ],
       },
     ]),
   },
   {
     slug: "dynamic-frontend",
-    title: text("Dynamic frontend", "فرانت‌اند پویا"),
+    title: text("Dynamic Frontend", "فرانت‌اند پویا"),
     excerpt: text(
-      "React projects that render dynamic forms, tables, and menus from the backend, so page structure does not require a frontend developer for every change.",
-      "پروژه‌های React که فرم، جدول و منوی پویا را از بک‌اند می‌سازند تا برای هر تغییر ساختار صفحه به توسعه‌دهنده فرانت‌اند نیاز نباشد.",
+      "React applications that render forms, tables, and menus from backend configuration, so a new screen does not require a frontend change.",
+      "اپلیکیشن‌های React که فرم، جدول و منو را از پیکربندی بک‌اند می‌سازند تا صفحه تازه به تغییر فرانت‌اند نیاز نداشته باشد.",
     ),
     technologies: tech(["React", "TypeScript"]),
     content: article([
       { h: ["Backend-driven UI", "رابط رانده‌شده از بک‌اند"] },
       {
         p: [
-          "Page structure and menus come from the backend. Forms, tables, and navigation are described as data, and the React app renders them. New screens can be introduced without a dedicated frontend change for every page.",
-          "ساختار صفحه و منوها از بک‌اند می‌آید. فرم‌ها، جدول‌ها و ناوبری به‌صورت داده توصیف می‌شوند و اپلیکیشن React آن‌ها را رندر می‌کند. صفحه‌های تازه را می‌توان بدون تغییر اختصاصی فرانت‌اند برای هر صفحه اضافه کرد.",
+          "Page structure and navigation come from the backend. Forms, tables, and menus are data, and the React app renders them. A new screen can be introduced without a dedicated frontend change for that page. The same idea shows up in the data table, form generator, report generator, chart generator, widget system, and permission system used across the later products.",
+          "ساختار صفحه و ناوبری از بک‌اند می‌آید. فرم، جدول و منو داده‌اند و اپلیکیشن React آن‌ها را رندر می‌کند. یک صفحه تازه را می‌توان بدون تغییر اختصاصی فرانت‌اند برای همان صفحه اضافه کرد. همین ایده در جدول داده، مولد فرم، مولد گزارش، مولد نمودار، سامانه ویجت و سامانه دسترسی محصول‌های بعدی هم دیده می‌شود.",
         ],
       },
     ]),
@@ -359,15 +512,24 @@ const skillGroups: Array<{ name: LocalizedText; skills: string[] }> = [
   },
   {
     name: text("Frameworks", "فریم‌ورک‌ها"),
-    skills: ["Next.js", "React", "FastAPI", "Laravel", "NestJS"],
+    skills: ["Next.js", "React", "NestJS", "Laravel", "FastAPI"],
   },
   {
     name: text("Libraries", "کتابخانه‌ها"),
-    skills: ["Turborepo", "React Table", "React Query", "DND-kit", "tRPC", "LangChain", "LangGraph"],
+    skills: [
+      "tRPC",
+      "Pydantic",
+      "LangChain",
+      "LangGraph",
+      "Turborepo",
+      "React Table",
+      "React Query",
+      "DND-kit",
+    ],
   },
   {
     name: text("Databases", "پایگاه‌های داده"),
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "Prisma", "Redis"],
+    skills: ["PostgreSQL", "MySQL", "MSSQL", "MongoDB", "Redis", "Prisma"],
   },
   {
     name: text("Tools", "ابزارها"),

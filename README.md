@@ -1,9 +1,5 @@
 # Resume
 
-Collected from `resume.html`, `explaination.txt`, and `work-experiences.txt`. Overlapping items are merged. Where the sources use different wording or titles, both versions are kept.
-
----
-
 ## Contact
 
 - **Name:** Ramtin Shakeri

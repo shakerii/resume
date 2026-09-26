@@ -1,6 +1,0 @@
-1. AI Language Learner (Duolingo) 
-2. AI Planner (Money, Workout, Side: Piano, English, Portfolio)
-3. Server Side Data Table
-4. UI Builder (Data Table, Form, Page, Menu)
-5. Workflow Automation (Dashboard, Tab-base Website)
-6. Smart Catalog Builder
