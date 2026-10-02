@@ -24,8 +24,7 @@ const config = {
     ],
   },
 
-  /** We already do linting and typechecking as separate tasks in CI */
-  eslint: { ignoreDuringBuilds: true },
+  /** Linting and typechecking run as separate tasks */
   typescript: { ignoreBuildErrors: true },
 };
 
