@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { ViewModeToggle } from "~/components/resume/resume-shell";
+import { SwitchLocales } from "~/components/resume/switch-locales";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import type { Locale } from "~/utils/navigation";
@@ -20,9 +22,15 @@ export async function ProjectArticle({
   const admin = await getTranslations("admin");
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <Button variant="ghost" size="sm" asChild>
-        <Link href={`/${locale}`}>{admin("back")}</Link>
-      </Button>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <Button variant="ghost" size="sm" asChild>
+          <Link href={`/${locale}`}>{admin("back")}</Link>
+        </Button>
+        <div className="flex flex-wrap items-center gap-2">
+          <SwitchLocales />
+          <ViewModeToggle />
+        </div>
+      </div>
       <h1 className="mt-6 text-4xl font-bold">{title}</h1>
       {excerpt ? <p className="mt-3 text-muted-foreground">{excerpt}</p> : null}
       {technologies.length ? (

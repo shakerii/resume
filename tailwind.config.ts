@@ -51,6 +51,15 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        equalize: {
+          "0%, 100%": { transform: "scaleY(0.3)" },
+          "50%": { transform: "scaleY(1)" },
+        },
+      },
+      animation: {
+        equalize: "equalize 0.8s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

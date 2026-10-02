@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { ResumeShell } from "~/components/resume/resume-shell";
 import { ResumeView } from "~/components/resume/resume-view";
 import { loadResume } from "~/server/resume";
 import { locales, type Locale } from "~/utils/navigation";
@@ -30,5 +31,7 @@ export default async function LocaleHomePage({
   const { locale } = await params;
   const current = asLocale(locale);
   const data = await loadResume(current);
-  return <ResumeView locale={current} data={data} />;
+  return (
+    <ResumeShell locale={current} data={data} classic={<ResumeView locale={current} data={data} />} />
+  );
 }

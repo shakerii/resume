@@ -15,7 +15,10 @@
     "projects": "پروژه‌ها",
     "admin": "مدیریت",
     "download": "دانلود PDF",
-    "language": "زبان"
+    "language": "زبان",
+    "futureMode": "حالت آینده",
+    "classicMode": "حالت کلاسیک",
+    "futureTagline": "رابط پروفایل عصبی نسخه ۲.۰"
   },
   "resume": {
     "email": "ایمیل",

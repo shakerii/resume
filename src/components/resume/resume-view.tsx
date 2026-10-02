@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { SkillChart } from "~/components/charts/skill-chart";
 import { ExportPdfButton } from "~/components/resume/resume-pdf";
+import { ViewModeToggle } from "~/components/resume/resume-shell";
 import type { ResumeData } from "~/components/resume/types";
 import { SwitchLocales } from "~/components/resume/switch-locales";
 import { Badge } from "~/components/ui/badge";
@@ -21,6 +22,7 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
       <div className="mb-6 flex flex-wrap items-center justify-end gap-2">
         <SwitchLocales />
         <ExportPdfButton data={data} />
+        <ViewModeToggle />
         <Button variant="outline" size="sm" asChild>
           <Link href={`/${locale}/admin`}>{nav("admin")}</Link>
         </Button>

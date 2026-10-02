@@ -15,7 +15,10 @@
     "projects": "Projects",
     "admin": "Admin",
     "download": "Download PDF",
-    "language": "Language"
+    "language": "Language",
+    "futureMode": "Future Mode",
+    "classicMode": "Classic Mode",
+    "futureTagline": "Neural Profile Interface v2.0"
   },
   "resume": {
     "email": "Email",

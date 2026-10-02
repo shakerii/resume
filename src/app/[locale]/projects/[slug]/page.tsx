@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { ProjectStudio } from "~/components/editor/project-studio";
 import { ProjectArticle } from "~/components/resume/project-article";
+import { ProjectShell } from "~/components/resume/resume-shell";
 import { loadProject } from "~/server/resume";
 import { asLocalized, localize } from "~/utils/localized";
 import { locales, type Locale } from "~/utils/navigation";
@@ -50,13 +51,17 @@ export default async function ProjectPage({
       />
     );
   }
+  const article = {
+    title: localize(project.title, current),
+    excerpt: localize(project.excerpt, current),
+    content: localize(project.content, current),
+    technologies: project.technologies.map((item) => localize(item.name, current)),
+  };
   return (
-    <ProjectArticle
+    <ProjectShell
       locale={current}
-      title={localize(project.title, current)}
-      excerpt={localize(project.excerpt, current)}
-      content={localize(project.content, current)}
-      technologies={project.technologies.map((item) => localize(item.name, current))}
+      project={article}
+      classic={<ProjectArticle locale={current} {...article} />}
     />
   );
 }
