@@ -4,13 +4,25 @@ my stack is react, next, ts, tRPC, prisma
 here are my requirements:
 1. i want to be able to generate content with AI
 2. i want user to be able to choose original language and target languages
-3. i want user to choose which content to be focused for him (IELTS/TOEFLE/PTE(?)/etc with many select)
+3. i want user to choose which content to be focused on (Goals: IELTS/TOEFLE/PTE(?)/etc with many select)
 4. contents should have these categories
-	4.a. speaking, writing, reading, listening
-	4.b. socializing, conversations, professional (get input by user, eg. Software Engineering), meetings, etc.
-	4.c. level (1-10)
+	4.a. Skills: speaking, writing, reading, listening
+	4.b. Topics: socializing, conversations, professional (get input by user, eg. Software Engineering), meetings, etc.
+	4.c. Level: 0-10
 5. i don't want user to climb a level ladder (A1, A2, etc.), cause every user in each level might have different gaps in their skills, we want to focus on them
 6. contents should be card base and have a reminder system (i correct answer, or choose "be remind" by user OR otherwise should have different times of reminding)
 7. i don't want to generate a lot of content at first then users check them one-by-one, i want to have a summary of each user, and focus on their skills (although we might use same cards for different users and at the end they should be able to check all the skills) and i have to have a system of generating content and ignoring duplicate ones and give a hint to ai model to generate relative and new ones
 8. we should have different types of cards like qa, multi-options, fill the gap, pronunciation, etc.
 9. we should have a system to score cards (not just pass/fail) to be able to improve the user skill more precisely
+
+i'm thinking to ask users some questions in all skills, in multiple topics, more like scenario explanation and determine their first set of gaps, then going forward, for each card, add another gap, or remove a gap
+for example:
+1. question (speaking): explain a bug that shut downs the entire production for 2 days to ceo
+2. you understand user has lack of grammar, uses a small set of vocabulary in non-technical terms, etc.
+3. you create a bunch of cards based on those gaps (tag them for later usage)
+4. after a round of first set of cards, you decide user doesn't know about pass-tense in grammar, but can use a variety of vocabularies
+5. you add/remove gaps, then repeat
+
+so there should be a template prompt generator for card generation, a bunch of models and prompt for answer validation, and a prompt for gap modification
+
+what do you think about this approach?
