@@ -1,0 +1,51 @@
+[
+  {
+    "key": "name",
+    "value": {
+      "en": "Ramtin Shakeri",
+      "fa": "رامتین شاکری"
+    }
+  },
+  {
+    "key": "title",
+    "value": {
+      "en": "Software Engineer",
+      "fa": "مهندس نرم‌افزار"
+    }
+  },
+  {
+    "key": "email",
+    "value": {
+      "en": "r.shakeri1375@gmail.com",
+      "fa": "r.shakeri1375@gmail.com"
+    }
+  },
+  {
+    "key": "phone",
+    "value": {
+      "en": "+98 919 084 8501",
+      "fa": "+98 919 084 8501"
+    }
+  },
+  {
+    "key": "github",
+    "value": {
+      "en": "https://github.com/shakerii",
+      "fa": "https://github.com/shakerii"
+    }
+  },
+  {
+    "key": "location",
+    "value": {
+      "en": "Tehran, Iran",
+      "fa": "تهران، ایران"
+    }
+  },
+  {
+    "key": "summary",
+    "value": {
+      "en": "Full-stack Software Engineer with 7+ years of experience building AI-driven applications, scalable platforms, and user-focused web solutions. Experienced in leading teams, designing architecture, and delivering production-grade systems with modern stacks.",
+      "fa": "مهندس نرم‌افزار فول‌استک با بیش از ۷ سال تجربه در ساخت اپلیکیشن‌های مبتنی بر هوش مصنوعی، پلتفرم‌های مقیاس‌پذیر و راهکارهای وب کاربرمحور. تجربه در رهبری تیم، طراحی معماری و تحویل سیستم‌های آماده تولید با فناوری‌های مدرن."
+    }
+  }
+]

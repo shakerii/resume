@@ -1,0 +1,22 @@
+[
+  {
+    "degree": {
+      "en": "B.Sc. Computer Engineering (Software)",
+      "fa": "کارشناسی مهندسی کامپیوتر (نرم‌افزار)"
+    },
+    "institution": {
+      "en": "Amirkabir University of Technology",
+      "fa": "دانشگاه صنعتی امیرکبیر"
+    }
+  },
+  {
+    "degree": {
+      "en": "Math-Physics Diploma",
+      "fa": "دیپلم ریاضی‌فیزیک"
+    },
+    "institution": {
+      "en": "Allame Helli 1 (Sampad)",
+      "fa": "علامه حلی ۱ (سمپاد)"
+    }
+  }
+]

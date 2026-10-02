@@ -20,7 +20,11 @@ export type ResumeData = {
     excerpt: string;
     technologies: string[];
   }>;
-  skillGroups: Array<{ id: string; name: string; skills: string[] }>;
+  skillGroups: Array<{
+    id: string;
+    name: string;
+    skills: Array<{ id: string; name: string; rating: number }>;
+  }>;
   education: Array<{
     id: string;
     degree: string;

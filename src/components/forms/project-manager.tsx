@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { LocalizedFields } from "~/components/forms/localized-fields";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { api, browserQuery } from "~/trpc/react";
@@ -26,6 +27,7 @@ export function ProjectManager() {
   const [title, setTitle] = useState<LocalizedText>(emptyText());
   const [excerpt, setExcerpt] = useState<LocalizedText>(emptyText());
   const [error, setError] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
   const items = (list.data ?? []) as unknown as Array<{
     id: string;
     slug: string;
@@ -45,46 +47,21 @@ export function ProjectManager() {
 
   return (
     <section className="space-y-4">
-      <h1 className="text-2xl font-semibold">{t("projects")}</h1>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">{t("newProject")}</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-1">
-            <Label htmlFor="slug">{t("slug")}</Label>
-            <Input id="slug" value={slug} onChange={(event) => setSlug(event.target.value)} />
-          </div>
-          <LocalizedFields label={t("titleField")} value={title} onChange={setTitle} />
-          <LocalizedFields label={t("excerpt")} value={excerpt} onChange={setExcerpt} multiline />
-          {error ? <p className="text-sm text-destructive">{error}</p> : null}
-          <Button
-            type="button"
-            onClick={() => {
-              setError(null);
-              create.mutate(
-                {
-                  slug,
-                  title,
-                  excerpt,
-                  content: emptyText(),
-                  sortOrder: items.length,
-                },
-                {
-                  onSuccess: () => {
-                    setSlug("");
-                    setTitle(emptyText());
-                    setExcerpt(emptyText());
-                  },
-                  onError: (caught) => setError(caught.message),
-                },
-              );
-            }}
-          >
-            {t("create")}
-          </Button>
-        </CardContent>
-      </Card>
+      <div className="flex items-center justify-between gap-4">
+        <h1 className="text-2xl font-semibold">{t("projects")}</h1>
+        <Button
+          type="button"
+          onClick={() => {
+            setSlug("");
+            setTitle(emptyText());
+            setExcerpt(emptyText());
+            setError(null);
+            setOpen(true);
+          }}
+        >
+          {t("newProject")}
+        </Button>
+      </div>
       <div className="space-y-3">
         {items.map((project, index) => (
           <Card key={project.id}>
@@ -118,6 +95,45 @@ export function ProjectManager() {
           </Card>
         ))}
       </div>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("newProject")}</DialogTitle>
+            <DialogDescription>{t("projects")}</DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="space-y-1">
+              <Label htmlFor="slug">{t("slug")}</Label>
+              <Input id="slug" value={slug} onChange={(event) => setSlug(event.target.value)} />
+            </div>
+            <LocalizedFields label={t("titleField")} value={title} onChange={setTitle} />
+            <LocalizedFields label={t("excerpt")} value={excerpt} onChange={setExcerpt} multiline />
+            {error ? <p className="text-sm text-destructive">{error}</p> : null}
+            <Button
+              type="button"
+              disabled={create.isPending}
+              onClick={() => {
+                setError(null);
+                create.mutate(
+                  {
+                    slug,
+                    title,
+                    excerpt,
+                    content: emptyText(),
+                    sortOrder: items.length,
+                  },
+                  {
+                    onSuccess: () => setOpen(false),
+                    onError: (caught) => setError(caught.message),
+                  },
+                );
+              }}
+            >
+              {create.isPending ? t("saving") : t("create")}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

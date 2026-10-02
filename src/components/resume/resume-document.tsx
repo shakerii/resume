@@ -10,7 +10,12 @@ Font.register({
 Font.registerHyphenationCallback((word) => [word]);
 
 const styles = StyleSheet.create({
-  page: { padding: 36, fontSize: 10, fontFamily: "Vazirmatn", color: "#202124" },
+  page: {
+    padding: 36,
+    fontSize: 10,
+    fontFamily: "Vazirmatn",
+    color: "#202124",
+  },
   title: { fontSize: 22, marginBottom: 4 },
   subtitle: { fontSize: 12, marginBottom: 8 },
   section: { marginTop: 12 },
@@ -19,7 +24,10 @@ const styles = StyleSheet.create({
 });
 
 function plain(html: string) {
-  return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 export function ResumeDocument({
@@ -76,7 +84,7 @@ export function ResumeDocument({
           <Text style={styles.heading}>{labels.skills}</Text>
           {data.skillGroups.map((group) => (
             <Text key={group.id}>
-              {group.name}: {group.skills.join(", ")}
+              {group.name}: {group.skills.map((skill) => `${skill.name} (${skill.rating}/10)`).join(", ")}
             </Text>
           ))}
         </View>

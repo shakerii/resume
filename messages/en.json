@@ -74,6 +74,7 @@
     "group": "Group",
     "newGroup": "New skill group",
     "newSkill": "New skill",
+    "rating": "Rating (out of 10)",
     "chooseGroup": "Choose a group",
     "deleteGroup": "Delete group",
     "rename": "Rename",

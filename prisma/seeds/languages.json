@@ -1,0 +1,22 @@
+[
+  {
+    "name": {
+      "en": "Persian",
+      "fa": "فارسی"
+    },
+    "level": {
+      "en": "Native",
+      "fa": "زبان مادری"
+    }
+  },
+  {
+    "name": {
+      "en": "English",
+      "fa": "انگلیسی"
+    },
+    "level": {
+      "en": "Fluent",
+      "fa": "مسلط"
+    }
+  }
+]

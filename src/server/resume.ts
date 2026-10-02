@@ -45,7 +45,11 @@ export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
     skillGroups: groups.map((group) => ({
       id: group.id,
       name: text(group.name, locale),
-      skills: group.skills.map((skill) => text(skill.name, locale)),
+      skills: group.skills.map((skill) => ({
+        id: skill.id,
+        name: text(skill.name, locale),
+        rating: skill.rating,
+      })),
     })),
     education: education.map((item) => ({
       id: item.id,
@@ -64,10 +68,7 @@ export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
 export async function loadProject(slug: string) {
   const caller = await createCaller();
   try {
-    const [project, session] = await Promise.all([
-      caller.project.bySlug({ slug }),
-      caller.admin.me(),
-    ]);
+    const [project, session] = await Promise.all([caller.project.bySlug({ slug }), caller.admin.me()]);
     return { project, isAdmin: session.isAdmin };
   } catch (error) {
     if (error instanceof TRPCError && error.code === "NOT_FOUND") return null;

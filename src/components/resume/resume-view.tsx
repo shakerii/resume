@@ -31,12 +31,18 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
         <div className="mt-3 space-y-1 text-sm text-muted-foreground">
           {data.email ? (
             <p>
-              {t("email")}: <a className="text-primary underline" href={`mailto:${data.email}`}>{data.email}</a>
+              {t("email")}:{" "}
+              <a className="text-primary underline" href={`mailto:${data.email}`}>
+                {data.email}
+              </a>
             </p>
           ) : null}
           {data.phone ? (
             <p>
-              {t("phone")}: <a className="text-primary underline" href={`tel:${data.phone.replace(/\s/g, "")}`}>{data.phone}</a>
+              {t("phone")}:{" "}
+              <a className="text-primary underline" href={`tel:${data.phone.replace(/\s/g, "")}`}>
+                {data.phone}
+              </a>
             </p>
           ) : null}
           {data.github ? (
@@ -105,14 +111,11 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
           {data.skillGroups.map((group) => (
             <li key={group.id} className="mb-2 break-inside-avoid text-sm">
               <span className="font-semibold">{group.name}: </span>
-              {group.skills.join(", ")}
+              {group.skills.map((skill) => skill.name).join(", ")}
             </li>
           ))}
         </ul>
-        <SkillChart
-          title={t("skillChart")}
-          groups={data.skillGroups.map((group) => ({ name: group.name, count: group.skills.length }))}
-        />
+        <SkillChart title={t("skillChart")} groups={data.skillGroups} />
       </section>
 
       <Separator className="my-8" />

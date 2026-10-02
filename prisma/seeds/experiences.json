@@ -1,0 +1,128 @@
+[
+  {
+    "company": {
+      "en": "Farbonyan",
+      "fa": "فربنیان"
+    },
+    "role": {
+      "en": "Full-Stack & AI Developer",
+      "fa": "توسعه‌دهنده فول‌استک و هوش مصنوعی"
+    },
+    "period": {
+      "en": "Feb 2024 – Present",
+      "fa": "فوریه ۲۰۲۴ – اکنون"
+    },
+    "description": {
+      "en": "<ul><li>Build AI-assisted analysis and reporting products with LangChain and Next.js, and dashboards that let non-technical staff read company data directly.</li><li>The work splits about 40% frontend, 30% backend, and 30% AI and data.</li><li>Delivered a B2B commerce platform for automotive parts, a holding-wide reporting system on a nightly data warehouse, and a conversational business-intelligence assistant.</li></ul>",
+      "fa": "<ul><li>محصول‌های تحلیل و گزارش‌گیری مبتنی بر هوش مصنوعی را با LangChain و Next.js می‌سازم، همراه با داشبوردهایی که کارکنان غیرفنی داده شرکت را مستقیم می‌خوانند.</li><li>تقسیم کار حدود ۴۰٪ فرانت‌اند، ۳۰٪ بک‌اند و ۳۰٪ هوش مصنوعی و داده است.</li><li>پلتفرم فروش B2B قطعات خودرو، سامانه گزارش‌گیری هلدینگ روی انبار داده شبانه، و دستیار گفتگومحور هوش تجاری را تحویل دادم.</li></ul>"
+    }
+  },
+  {
+    "company": {
+      "en": "Interactive 10 (Remote)",
+      "fa": "اینتراکتیو ۱۰ (دورکاری)"
+    },
+    "role": {
+      "en": "CTO & Software Engineer",
+      "fa": "مدیر فناوری و مهندس نرم‌افزار"
+    },
+    "period": {
+      "en": "Jun 2022 – Feb 2024",
+      "fa": "ژوئن ۲۰۲۲ – فوریه ۲۰۲۴"
+    },
+    "description": {
+      "en": "<ul><li>Led a distributed team delivering SaaS products for interactive-media and real-estate clients.</li><li>Shipped a Next.js, tRPC, and Prisma web app, a React Native client, and a command-based collector for listings on Rightmove, Zoopla, PropertyFinder, Bayut, Dubizzle, and DxbInteract.</li><li>Introduced CI/CD and containerized backend services and shortened the release cycle by about 70%.</li><li>Led two frontend developers, a designer, and a marketing partner, and owned requirements, planning, and full-stack delivery.</li></ul>",
+      "fa": "<ul><li>تیم توزیع‌شده‌ای را رهبری کردم و محصول‌های SaaS را برای مشتریان رسانه تعاملی و املاک تحویل دادم.</li><li>وب‌اپ Next.js و tRPC و Prisma، کلاینت React Native، و گردآورنده آگهی از Rightmove و Zoopla و PropertyFinder و Bayut و Dubizzle و DxbInteract را تحویل دادم.</li><li>CI/CD و سرویس‌های بک‌اند کانتینری را راه انداختم و چرخه انتشار را حدود ۷۰٪ کوتاه کردم.</li><li>دو توسعه‌دهنده فرانت‌اند، یک طراح و یک همکار بازاریابی را هدایت کردم و نیازها، برنامه‌ریزی و تحویل فول‌استک را خودم بر عهده داشتم.</li></ul>"
+    }
+  },
+  {
+    "company": {
+      "en": "Matap",
+      "fa": "متاپ"
+    },
+    "role": {
+      "en": "CTO & Full-Stack Developer",
+      "fa": "مدیر فناوری و توسعه‌دهنده فول‌استک"
+    },
+    "period": {
+      "en": "Mar 2022 – Jun 2022",
+      "fa": "مارس ۲۰۲۲ – ژوئن ۲۰۲۲"
+    },
+    "description": {
+      "en": "<ul><li>Designed the architecture for a clinic platform covering appointment booking and medicine prescriptions.</li><li>Led a designer and two frontend developers and implemented the core backend in NestJS.</li></ul>",
+      "fa": "<ul><li>معماری پلتفرمی برای نوبت‌دهی درمانگاه و نسخه دارو را طراحی کردم.</li><li>یک طراح و دو توسعه‌دهنده فرانت‌اند را رهبری کردم و بک‌اند اصلی را با NestJS پیاده کردم.</li></ul>"
+    }
+  },
+  {
+    "company": {
+      "en": "Freelance",
+      "fa": "فریلنس"
+    },
+    "role": {
+      "en": "Full-Stack Developer",
+      "fa": "توسعه‌دهنده فول‌استک"
+    },
+    "period": {
+      "en": "2020 – 2022",
+      "fa": "۲۰۲۰ – ۲۰۲۲"
+    },
+    "description": {
+      "en": "<ul><li>Delivered custom web applications for clients with React, Node.js, and PHP/Laravel.</li><li>Took early products through implementation, including a stock-prediction neural network, a coffee-bean distribution platform, and a learning website.</li></ul>",
+      "fa": "<ul><li>اپلیکیشن‌های وب سفارشی را برای مشتریان با React و Node.js و PHP/Laravel تحویل دادم.</li><li>محصول‌های اولیه را تا پیاده‌سازی پیش بردم، از جمله یک شبکه عصبی پیش‌بینی سهام، یک پلتفرم توزیع دانه قهوه، و یک وب‌سایت آموزشی.</li></ul>"
+    }
+  },
+  {
+    "company": {
+      "en": "Raymon Co.",
+      "fa": "شرکت رایمون"
+    },
+    "role": {
+      "en": "WordPress & React Developer",
+      "fa": "توسعه‌دهنده وردپرس و React"
+    },
+    "period": {
+      "en": "2019 – 2020",
+      "fa": "۲۰۱۹ – ۲۰۲۰"
+    },
+    "description": {
+      "en": "<ul><li>Started a B2B admin for FMCG products as a WooCommerce MVP and a custom plugin.</li><li>Moved the product to React within a month and built the admin panel and the customer panel alongside a dedicated backend developer.</li></ul>",
+      "fa": "<ul><li>پنل B2B کالاهای تندمصرف را با MVP ووکامرس و یک افزونه سفارشی شروع کردم.</li><li>ظرف یک ماه محصول را به React بردم و پنل مدیریت و پنل مشتریان را در کنار یک توسعه‌دهنده بک‌اند ساختم.</li></ul>"
+    }
+  },
+  {
+    "company": {
+      "en": "Tinext Co.",
+      "fa": "شرکت تی‌نکست"
+    },
+    "role": {
+      "en": "Laravel Developer",
+      "fa": "توسعه‌دهنده Laravel"
+    },
+    "period": {
+      "en": "2018",
+      "fa": "۲۰۱۸"
+    },
+    "description": {
+      "en": "<ul><li>Built an online order-tracking application with HTML, CSS, JavaScript, and PHP, then continued the product in Laravel.</li></ul>",
+      "fa": "<ul><li>سامانه پیگیری سفارش آنلاین را با HTML و CSS و JavaScript و PHP ساختم و سپس محصول را با Laravel ادامه دادم.</li></ul>"
+    }
+  },
+  {
+    "company": {
+      "en": "Amirkabir IoT Lab",
+      "fa": "آزمایشگاه اینترنت اشیاء امیرکبیر"
+    },
+    "role": {
+      "en": "Research & Development",
+      "fa": "تحقیق و توسعه"
+    },
+    "period": {
+      "en": "2016 – 2017",
+      "fa": "۲۰۱۶ – ۲۰۱۷"
+    },
+    "description": {
+      "en": "<ul><li>On the university IoT team, built a Flask service that logged smart-home events.</li><li>Designed a system meant to coordinate a large number of in-home devices.</li></ul>",
+      "fa": "<ul><li>در تیم اینترنت اشیاء دانشگاه، سرویسی با Flask برای ثبت رویدادهای خانه هوشمند ساختم.</li><li>سیستمی طراحی کردم که قرار بود تعداد زیادی دستگاه داخل خانه را هماهنگ کند.</li></ul>"
+    }
+  }
+]

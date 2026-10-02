@@ -63,6 +63,7 @@ model SkillGroup {
 model Skill {
   id        String     @id @default(cuid())
   name      Json
+  rating    Int        @default(5)
   sortOrder Int        @default(0)
   active    Boolean    @default(true)
   groupId   String

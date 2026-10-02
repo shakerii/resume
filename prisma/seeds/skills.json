@@ -1,0 +1,253 @@
+[
+  {
+    "name": {
+      "en": "Languages",
+      "fa": "زبان‌ها"
+    },
+    "skills": [
+      {
+        "name": {
+          "en": "TypeScript",
+          "fa": "TypeScript"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "JavaScript",
+          "fa": "JavaScript"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "Python",
+          "fa": "Python"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "PHP",
+          "fa": "PHP"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "Go",
+          "fa": "Go"
+        },
+        "rating": 8
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Frameworks",
+      "fa": "فریم‌ورک‌ها"
+    },
+    "skills": [
+      {
+        "name": {
+          "en": "Next.js",
+          "fa": "Next.js"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "React",
+          "fa": "React"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "NestJS",
+          "fa": "NestJS"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "Laravel",
+          "fa": "Laravel"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "FastAPI",
+          "fa": "FastAPI"
+        },
+        "rating": 8
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Libraries",
+      "fa": "کتابخانه‌ها"
+    },
+    "skills": [
+      {
+        "name": {
+          "en": "tRPC",
+          "fa": "tRPC"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "Pydantic",
+          "fa": "Pydantic"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "LangChain",
+          "fa": "LangChain"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "LangGraph",
+          "fa": "LangGraph"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "Turborepo",
+          "fa": "Turborepo"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "React Table",
+          "fa": "React Table"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "React Query",
+          "fa": "React Query"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "DND-kit",
+          "fa": "DND-kit"
+        },
+        "rating": 8
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Databases",
+      "fa": "پایگاه‌های داده"
+    },
+    "skills": [
+      {
+        "name": {
+          "en": "PostgreSQL",
+          "fa": "PostgreSQL"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "MySQL",
+          "fa": "MySQL"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "MSSQL",
+          "fa": "MSSQL"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "MongoDB",
+          "fa": "MongoDB"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "Redis",
+          "fa": "Redis"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "Prisma",
+          "fa": "Prisma"
+        },
+        "rating": 8
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Tools",
+      "fa": "ابزارها"
+    },
+    "skills": [
+      {
+        "name": {
+          "en": "Docker",
+          "fa": "Docker"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "RabbitMQ",
+          "fa": "RabbitMQ"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "MQTT",
+          "fa": "MQTT"
+        },
+        "rating": 8
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "OS",
+      "fa": "سیستم‌عامل"
+    },
+    "skills": [
+      {
+        "name": {
+          "en": "Linux (Ubuntu)",
+          "fa": "Linux (Ubuntu)"
+        },
+        "rating": 8
+      },
+      {
+        "name": {
+          "en": "Windows",
+          "fa": "Windows"
+        },
+        "rating": 8
+      }
+    ]
+  }
+]
