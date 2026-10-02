@@ -10,14 +10,7 @@
           "en": "TypeScript",
           "fa": "TypeScript"
         },
-        "rating": 8
-      },
-      {
-        "name": {
-          "en": "JavaScript",
-          "fa": "JavaScript"
-        },
-        "rating": 8
+        "rating": 10
       },
       {
         "name": {
@@ -31,14 +24,14 @@
           "en": "PHP",
           "fa": "PHP"
         },
-        "rating": 8
+        "rating": 6
       },
       {
         "name": {
           "en": "Go",
           "fa": "Go"
         },
-        "rating": 8
+        "rating": 5
       }
     ]
   },
@@ -53,12 +46,19 @@
           "en": "Next.js",
           "fa": "Next.js"
         },
-        "rating": 8
+        "rating": 10
       },
       {
         "name": {
           "en": "React",
           "fa": "React"
+        },
+        "rating": 10
+      },
+      {
+        "name": {
+          "en": "FastAPI",
+          "fa": "FastAPI"
         },
         "rating": 8
       },
@@ -67,21 +67,14 @@
           "en": "NestJS",
           "fa": "NestJS"
         },
-        "rating": 8
+        "rating": 6
       },
       {
         "name": {
           "en": "Laravel",
           "fa": "Laravel"
         },
-        "rating": 8
-      },
-      {
-        "name": {
-          "en": "FastAPI",
-          "fa": "FastAPI"
-        },
-        "rating": 8
+        "rating": 5
       }
     ]
   },
@@ -96,14 +89,28 @@
           "en": "tRPC",
           "fa": "tRPC"
         },
-        "rating": 8
+        "rating": 10
+      },
+      {
+        "name": {
+          "en": "React Table",
+          "fa": "React Table"
+        },
+        "rating": 10
+      },
+      {
+        "name": {
+          "en": "React Query",
+          "fa": "React Query"
+        },
+        "rating": 10
       },
       {
         "name": {
           "en": "Pydantic",
           "fa": "Pydantic"
         },
-        "rating": 8
+        "rating": 10
       },
       {
         "name": {
@@ -121,31 +128,17 @@
       },
       {
         "name": {
-          "en": "Turborepo",
-          "fa": "Turborepo"
-        },
-        "rating": 8
-      },
-      {
-        "name": {
-          "en": "React Table",
-          "fa": "React Table"
-        },
-        "rating": 8
-      },
-      {
-        "name": {
-          "en": "React Query",
-          "fa": "React Query"
-        },
-        "rating": 8
-      },
-      {
-        "name": {
           "en": "DND-kit",
           "fa": "DND-kit"
         },
-        "rating": 8
+        "rating": 7
+      },
+      {
+        "name": {
+          "en": "Turborepo",
+          "fa": "Turborepo"
+        },
+        "rating": 7
       }
     ]
   },
@@ -155,6 +148,13 @@
       "fa": "پایگاه‌های داده"
     },
     "skills": [
+      {
+        "name": {
+          "en": "Prisma",
+          "fa": "Prisma"
+        },
+        "rating": 10
+      },
       {
         "name": {
           "en": "PostgreSQL",
@@ -181,21 +181,14 @@
           "en": "MongoDB",
           "fa": "MongoDB"
         },
-        "rating": 8
+        "rating": 7
       },
       {
         "name": {
           "en": "Redis",
           "fa": "Redis"
         },
-        "rating": 8
-      },
-      {
-        "name": {
-          "en": "Prisma",
-          "fa": "Prisma"
-        },
-        "rating": 8
+        "rating": 7
       }
     ]
   },
@@ -217,14 +210,7 @@
           "en": "RabbitMQ",
           "fa": "RabbitMQ"
         },
-        "rating": 8
-      },
-      {
-        "name": {
-          "en": "MQTT",
-          "fa": "MQTT"
-        },
-        "rating": 8
+        "rating": 6
       }
     ]
   },
@@ -246,7 +232,7 @@
           "en": "Windows",
           "fa": "Windows"
         },
-        "rating": 8
+        "rating": 7
       }
     ]
   }
