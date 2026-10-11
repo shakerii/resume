@@ -1,3 +1,4 @@
+import path from "node:path";
 import { fileURLToPath } from "url";
 import _jiti from "jiti";
 import createNextIntlPlugin from "next-intl/plugin";
@@ -11,6 +12,17 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import("next").NextConfig} */
 const config = {
+  output: "standalone",
+  outputFileTracingRoot: path.dirname(fileURLToPath(import.meta.url)),
+  serverExternalPackages: ["@prisma/client"],
+  outputFileTracingIncludes: {
+    "/**/*": [
+      "./node_modules/.prisma/client/**/*",
+      "./node_modules/@prisma/client/**/*",
+      "./node_modules/.pnpm/**/.prisma/client/**/*",
+    ],
+  },
+
   reactStrictMode: true,
 
   images: {
