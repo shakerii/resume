@@ -29,6 +29,8 @@ FROM base AS installer
 
     RUN pnpm build
 
+    RUN pnpm db:push
+
 FROM base AS runner
     WORKDIR /app
 
