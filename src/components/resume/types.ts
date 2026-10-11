@@ -1,6 +1,7 @@
 export type ResumeData = {
   name: string;
   title: string;
+  website: string;
   email: string;
   phone: string;
   github: string;

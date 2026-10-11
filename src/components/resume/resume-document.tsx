@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
   item: { marginBottom: 4 },
 });
 
+function linkLabel(url: string) {
+  return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
+
 function plain(html: string) {
   return html
     .replace(/<[^>]+>/g, " ")
@@ -49,7 +53,9 @@ export function ResumeDocument({
       <Page size="A4" style={styles.page}>
         <Text style={styles.title}>{data.name}</Text>
         <Text style={styles.subtitle}>{data.title}</Text>
-        <Text>{[data.email, data.phone, data.location].filter(Boolean).join(" · ")}</Text>
+        <Text>
+          {[linkLabel(data.website), data.email, data.phone, data.location].filter(Boolean).join(" · ")}
+        </Text>
         <Text style={styles.section}>{data.summary}</Text>
         <View style={styles.section}>
           <Text style={styles.heading}>{labels.experience}</Text>

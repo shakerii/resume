@@ -20,7 +20,7 @@ import { SwitchLocales } from "~/components/resume/switch-locales";
 import type { ResumeData } from "~/components/resume/types";
 import type { Locale } from "~/utils/navigation";
 
-function githubLabel(url: string) {
+function linkLabel(url: string) {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 }
 
@@ -130,7 +130,12 @@ export function FutureResume({ locale, data }: { locale: Locale; data: ResumeDat
             {data.summary ? (
               <p className="mt-5 max-w-xl leading-relaxed text-slate-300/90">{data.summary}</p>
             ) : null}
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              {data.website ? (
+                <a href={data.website} className="block" dir="ltr">
+                  <StatChip label={t("website")} value={linkLabel(data.website)} />
+                </a>
+              ) : null}
               {data.email ? (
                 <a href={`mailto:${data.email}`} className="block">
                   <StatChip label={t("email")} value={data.email} />
@@ -143,7 +148,7 @@ export function FutureResume({ locale, data }: { locale: Locale; data: ResumeDat
               ) : null}
               {data.github ? (
                 <a href={data.github} className="block" dir="ltr">
-                  <StatChip label={t("github")} value={githubLabel(data.github)} />
+                  <StatChip label={t("github")} value={linkLabel(data.github)} />
                 </a>
               ) : null}
               {data.location ? <StatChip label={t("location")} value={data.location} /> : null}

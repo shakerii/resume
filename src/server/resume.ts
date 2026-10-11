@@ -23,6 +23,7 @@ export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
   return {
     name: basics.name ?? "",
     title: basics.title ?? "",
+    website: basics.website ?? "",
     email: basics.email ?? "",
     phone: basics.phone ?? "",
     github: basics.github ?? "",

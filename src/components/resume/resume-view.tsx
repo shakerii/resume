@@ -10,7 +10,7 @@ import { Button } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import type { Locale } from "~/utils/navigation";
 
-function githubLabel(url: string) {
+function linkLabel(url: string) {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 }
 
@@ -31,6 +31,14 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
         <h1 className="text-4xl font-bold">{data.name}</h1>
         {data.title ? <p className="mt-1 text-lg font-semibold">{data.title}</p> : null}
         <div className="mt-3 space-y-1 text-sm text-muted-foreground">
+          {data.website ? (
+            <p>
+              {t("website")}:{" "}
+              <a className="text-primary underline" href={data.website}>
+                {linkLabel(data.website)}
+              </a>
+            </p>
+          ) : null}
           {data.email ? (
             <p>
               {t("email")}:{" "}
@@ -51,7 +59,7 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
             <p>
               {t("github")}:{" "}
               <a className="text-primary underline" href={data.github}>
-                {githubLabel(data.github)}
+                {linkLabel(data.github)}
               </a>
             </p>
           ) : null}
