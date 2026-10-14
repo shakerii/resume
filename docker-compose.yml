@@ -3,9 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
     env_file:
       - .env
     environment:
@@ -17,6 +14,7 @@ services:
       - app_network
 
   certbot:
+    profiles: ["cert"]
     image: certbot/certbot:v2.4.0
     volumes:
       - ./data/certbot/data:/var/www/certbot
@@ -33,6 +31,7 @@ services:
       -d ramtin.dev
 
   certbot-renew:
+    profiles: ["renew"]
     image: certbot/certbot:v2.4.0
     volumes:
       - ./data/certbot/data:/var/www/certbot

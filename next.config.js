@@ -17,9 +17,10 @@ const config = {
   serverExternalPackages: ["@prisma/client"],
   outputFileTracingIncludes: {
     "/**/*": [
-      "./node_modules/.prisma/client/**/*",
+      "./node_modules/.prisma/**/*",
       "./node_modules/@prisma/client/**/*",
-      "./node_modules/.pnpm/**/.prisma/client/**/*",
+      "./node_modules/.pnpm/**/@prisma+client*/**/*",
+      "./node_modules/.pnpm/**/.prisma/**/*",
     ],
   },
 

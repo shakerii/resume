@@ -6,5 +6,4 @@ node_modules/
 prisma/*.db
 prisma/*.db-journal
 npm-debug.log*
-prisma-engines/
 *.pem

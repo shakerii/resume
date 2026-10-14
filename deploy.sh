@@ -16,7 +16,6 @@ eval "$(ssh-agent -s)"
 ssh-add "$KEY"
 
 cd "$ROOT"
-"$ROOT/scripts/fetch-prisma-engines.sh"
 LOCAL_ARCHIVE="$(mktemp /tmp/resume.XXXXXX.tar.gz)"
 trap 'rm -f "$LOCAL_ARCHIVE"' EXIT
 

@@ -8,3 +8,6 @@ data
 npm-debug.log*
 *.db
 *.db-journal
+*.md
+docs
+deploy.sh
