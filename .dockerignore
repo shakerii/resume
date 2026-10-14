@@ -11,3 +11,6 @@ npm-debug.log*
 *.md
 docs
 deploy.sh
+*.pem
+*.tsbuildinfo
+backups

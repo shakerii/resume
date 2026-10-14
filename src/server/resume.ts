@@ -11,15 +11,18 @@ function text(value: unknown, locale: Locale) {
 
 export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
   const caller = await createCaller();
-  const [info, experiences, projects, groups, education, languages] = await Promise.all([
-    caller.basicInfo.all(),
-    caller.experience.all(),
-    caller.project.all(),
-    caller.skillGroup.all(),
-    caller.education.all(),
-    caller.language.all(),
-  ]);
-  const basics = Object.fromEntries(info.map((row) => [row.key, text(row.value, locale)]));
+  const [info, experiences, projects, groups, education, languages] =
+    await Promise.all([
+      caller.basicInfo.all(),
+      caller.experience.all(),
+      caller.project.all(),
+      caller.skillGroup.all(),
+      caller.education.all(),
+      caller.language.all(),
+    ]);
+  const basics = Object.fromEntries(
+    info.map((row) => [row.key, text(row.value, locale)]),
+  );
   return {
     name: basics.name ?? "",
     title: basics.title ?? "",
@@ -41,7 +44,9 @@ export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
       slug: item.slug,
       title: text(item.title, locale),
       excerpt: text(item.excerpt, locale),
-      technologies: item.technologies.map((technology) => text(technology.name, locale)),
+      technologies: item.technologies.map((technology) =>
+        text(technology.name, locale),
+      ),
     })),
     skillGroups: groups.map((group) => ({
       id: group.id,
@@ -66,13 +71,16 @@ export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
   };
 });
 
-export async function loadProject(slug: string) {
+export const loadProject = cache(async (slug: string) => {
   const caller = await createCaller();
   try {
-    const [project, session] = await Promise.all([caller.project.bySlug({ slug }), caller.admin.me()]);
+    const [project, session] = await Promise.all([
+      caller.project.bySlug({ slug }),
+      caller.admin.me(),
+    ]);
     return { project, isAdmin: session.isAdmin };
   } catch (error) {
     if (error instanceof TRPCError && error.code === "NOT_FOUND") return null;
     throw error;
   }
-}
+});

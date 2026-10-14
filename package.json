@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.7.0",
   "scripts": {
-    "build": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next build --webpack",
+    "build": "next build --webpack",
     "clean": "git clean -xdf .next node_modules",
     "dev": "next dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
@@ -41,7 +42,6 @@
     "@trpc/client": "^11.18.0",
     "@trpc/react-query": "^11.18.0",
     "@trpc/server": "^11.18.0",
-    "@vercel/og": "^0.6.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "jiti": "^2.7.0",
@@ -50,7 +50,6 @@
     "next-intl": "^4.14.8",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "react-pdf": "^9.1.1",
     "tailwind-merge": "^2.6.1"
   },
   "devDependencies": {

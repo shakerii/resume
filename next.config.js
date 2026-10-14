@@ -1,9 +1,20 @@
 import path from "node:path";
+import { createRequire } from "node:module";
 import { fileURLToPath } from "url";
-import _jiti from "jiti";
+import { createJiti } from "jiti";
 import createNextIntlPlugin from "next-intl/plugin";
 
-const jiti = _jiti(fileURLToPath(import.meta.url));
+const jiti = createJiti(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
+const root = path.dirname(fileURLToPath(import.meta.url));
+const prismaClient = path.dirname(
+  require.resolve("@prisma/client/package.json"),
+);
+const generatedClient = path.dirname(
+  require.resolve(".prisma/client/package.json", { paths: [prismaClient] }),
+);
+const traceDirectory = (directory) =>
+  `./${path.relative(root, directory).split(path.sep).join("/")}/**/*`;
 
 // Import env files to validate at build time. Use jiti so we can load .ts files in here.
 jiti("./src/env");
@@ -13,17 +24,14 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import("next").NextConfig} */
 const config = {
   output: "standalone",
-  outputFileTracingRoot: path.dirname(fileURLToPath(import.meta.url)),
+  outputFileTracingRoot: root,
   serverExternalPackages: ["@prisma/client"],
-  // Avoid @prisma+client/** — it matches the nested `prisma` dir symlink (Turbopack NFT panic).
   outputFileTracingIncludes: {
-    "/**/*": [
-      "./node_modules/.prisma/**/*",
-      "./node_modules/@prisma/client/**/*",
-      "./node_modules/.pnpm/**/@prisma+client*/node_modules/@prisma/client/**/*",
-      "./node_modules/.pnpm/**/@prisma+client*/node_modules/.prisma/**/*",
-      "./node_modules/.pnpm/**/.prisma/**/*",
-    ],
+    "/*": [traceDirectory(prismaClient), traceDirectory(generatedClient)],
+  },
+  experimental: {
+    cpus: 2,
+    webpackMemoryOptimizations: true,
   },
 
   reactStrictMode: true,
@@ -38,9 +46,6 @@ const config = {
       },
     ],
   },
-
-  /** Linting and typechecking run as separate tasks */
-  typescript: { ignoreBuildErrors: true },
 };
 
 export default withNextIntl(config);

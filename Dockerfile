@@ -1,17 +1,22 @@
+# syntax=docker/dockerfile:1
+
 FROM node:22.14.0-alpine AS base
 WORKDIR /app
 RUN apk add --no-cache libc6-compat openssl
+
+FROM base AS tooling
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN npm install -g pnpm@11.7.0
 
-FROM base AS deps
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
-COPY prisma ./prisma/
-COPY prisma.config.ts ./
-RUN pnpm install --frozen-lockfile
+FROM tooling AS deps
+ENV PRISMA_SKIP_POSTINSTALL_GENERATE=true
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN --mount=type=cache,id=resume-pnpm,target=/pnpm/store \
+    --mount=type=cache,id=resume-pnpm-metadata,target=/root/.cache/pnpm \
+    pnpm install --frozen-lockfile --store-dir=/pnpm/store
 
-FROM base AS builder
+FROM tooling AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/package.json ./package.json
 COPY . .
@@ -19,11 +24,12 @@ COPY . .
 ENV DATABASE_URL="file:/tmp/resume.db"
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
-ENV NODE_OPTIONS="--max-old-space-size=4096"
+ARG NODE_OPTIONS="--max-old-space-size=2048"
+ENV NODE_OPTIONS=$NODE_OPTIONS
 
 RUN pnpm db:generate
 RUN pnpm db:migrate:deploy && pnpm db:seed
-RUN pnpm build
+RUN --mount=type=cache,id=resume-next,target=/app/.next/cache pnpm build
 
 FROM base AS runner
 WORKDIR /app

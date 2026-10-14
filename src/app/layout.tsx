@@ -1,10 +1,20 @@
 import type * as React from "react";
-import { Inter, Vazirmatn } from "next/font/google";
+import localFont from "next/font/local";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const vazir = Vazirmatn({ subsets: ["arabic", "latin"], variable: "--font-vazir" });
+const inter = localFont({
+  src: "../../public/fonts/Inter-Latin.woff2",
+  variable: "--font-inter",
+  weight: "100 900",
+  display: "swap",
+});
+const vazir = localFont({
+  src: "../../public/fonts/Vazirmatn-Regular.ttf",
+  variable: "--font-vazir",
+  weight: "400",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
