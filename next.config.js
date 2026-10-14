@@ -40,7 +40,7 @@ const config = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "ramtin.dev",
+        hostname: "ramtinshakeri.com",
         port: "",
         pathname: "**",
       },
