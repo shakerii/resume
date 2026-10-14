@@ -15,11 +15,13 @@ const config = {
   output: "standalone",
   outputFileTracingRoot: path.dirname(fileURLToPath(import.meta.url)),
   serverExternalPackages: ["@prisma/client"],
+  // Avoid @prisma+client/** — it matches the nested `prisma` dir symlink (Turbopack NFT panic).
   outputFileTracingIncludes: {
     "/**/*": [
       "./node_modules/.prisma/**/*",
       "./node_modules/@prisma/client/**/*",
-      "./node_modules/.pnpm/**/@prisma+client*/**/*",
+      "./node_modules/.pnpm/**/@prisma+client*/node_modules/@prisma/client/**/*",
+      "./node_modules/.pnpm/**/@prisma+client*/node_modules/.prisma/**/*",
       "./node_modules/.pnpm/**/.prisma/**/*",
     ],
   },
