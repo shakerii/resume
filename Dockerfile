@@ -1,14 +1,14 @@
 FROM node:22.14.0-alpine AS base
 
-    RUN VERSION=$(cut -d. -f1,2 /etc/alpine-release) && \
-        echo "http://mirror-linux.runflare.com/alpine/v$VERSION/main" > /etc/apk/repositories && \
-        echo "http://mirror-linux.runflare.com/alpine/v$VERSION/community" >> /etc/apk/repositories
+    # RUN VERSION=$(cut -d. -f1,2 /etc/alpine-release) && \
+    #     echo "http://mirror-linux.runflare.com/alpine/v$VERSION/main" > /etc/apk/repositories && \
+    #     echo "http://mirror-linux.runflare.com/alpine/v$VERSION/community" >> /etc/apk/repositories
 
-    RUN npm config set registry "https://mirror-npm.runflare.com"
+    # RUN npm config set registry "https://mirror-npm.runflare.com"
 
     # Install libc6-compat if needed by Alpine/Turbo/Prisma
     # RUN apk add --no-cache libc6-compat
-    RUN apk add --no-cache su-exec
+    # RUN apk add --no-cache su-exec
     WORKDIR /app
 
     # Enable pnpm
@@ -29,7 +29,7 @@ FROM base AS deps
     COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
     COPY prisma ./prisma/
 
-    RUN npm config set registry "https://mirror-npm.runflare.com"
+    # RUN npm config set registry "https://mirror-npm.runflare.com"
 
     RUN pnpm install --frozen-lockfile
 
