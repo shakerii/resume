@@ -19,6 +19,7 @@ COPY . .
 ENV DATABASE_URL="file:/tmp/resume.db"
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 
 RUN pnpm db:generate
 RUN pnpm db:migrate:deploy && pnpm db:seed

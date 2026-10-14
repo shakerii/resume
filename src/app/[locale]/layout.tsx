@@ -2,7 +2,8 @@ import type {Metadata, Viewport} from "next";
 import {NextIntlClientProvider} from "next-intl";
 import {getMessages, getTranslations} from "next-intl/server";
 import {TrpcProvider} from "~/trpc/react";
-import {routing} from "~/utils/navigation";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("global");
@@ -12,10 +13,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export const viewport: Viewport = {
   themeColor: [{media: "(prefers-color-scheme: light)", color: "white"}],
 };
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
-}
 
 export default async function LocaleLayout({
   children,
