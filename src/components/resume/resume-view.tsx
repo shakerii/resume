@@ -8,6 +8,7 @@ import { SwitchLocales } from "~/components/resume/switch-locales";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
+import { plainText } from "~/utils/html";
 import type { Locale } from "~/utils/navigation";
 
 function linkLabel(url: string) {
@@ -81,7 +82,7 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
                 {item.company} — {item.role}
               </h3>
               {item.period ? <p className="text-xs text-muted-foreground">{item.period}</p> : null}
-              {item.description ? (
+              {plainText(item.description) ? (
                 <div className="prose mt-1" dangerouslySetInnerHTML={{ __html: item.description }} />
               ) : null}
             </article>
@@ -99,7 +100,9 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
                   {project.title}
                 </Link>
               </h3>
-              {project.excerpt ? <p className="mt-1 text-sm">{project.excerpt}</p> : null}
+              {plainText(project.excerpt) ? (
+                <div className="prose mt-1 text-sm" dangerouslySetInnerHTML={{ __html: project.excerpt }} />
+              ) : null}
               {project.technologies.length ? (
                 <p className="mt-2 text-sm">
                   <span className="font-semibold">{t("tech")}: </span>
@@ -117,15 +120,7 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
 
       <section className="mt-8">
         <h2 className="border-b pb-1 text-xl font-semibold">{t("skills")}</h2>
-        <ul className="mt-4 columns-1 gap-8 sm:columns-2">
-          {data.skillGroups.map((group) => (
-            <li key={group.id} className="mb-2 break-inside-avoid text-sm">
-              <span className="font-semibold">{group.name}: </span>
-              {group.skills.map((skill) => skill.name).join(", ")}
-            </li>
-          ))}
-        </ul>
-        <SkillChart title={t("skillChart")} groups={data.skillGroups} />
+        <SkillChart groups={data.skillGroups} />
       </section>
 
       <Separator className="my-8" />
@@ -134,10 +129,15 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
         <h2 className="border-b pb-1 text-xl font-semibold">{t("education")}</h2>
         <div className="mt-4 space-y-2">
           {data.education.map((item) => (
-            <p key={item.id}>
-              <strong>{item.degree}</strong>
-              {item.institution ? `, ${item.institution}` : ""}
-            </p>
+            <article key={item.id}>
+              <p>
+                <strong>{item.degree}</strong>
+                {item.institution ? `, ${item.institution}` : ""}
+              </p>
+              {plainText(item.description) ? (
+                <div className="prose mt-1" dangerouslySetInnerHTML={{ __html: item.description }} />
+              ) : null}
+            </article>
           ))}
         </div>
       </section>

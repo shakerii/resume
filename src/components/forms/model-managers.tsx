@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { RecordManager, type ManagedRecord } from "~/components/forms/record-manager";
 import { api, browserQuery } from "~/trpc/react";
+import { BASIC_INFO_KEYS, type BasicInfoKey } from "~/utils/basic-info";
 import { localize } from "~/utils/localized";
 import type { Locale } from "~/utils/navigation";
 
@@ -27,10 +28,21 @@ export function BasicInfoManager() {
       description={t("basicInfoHelp")}
       items={(list.data ?? []) as unknown as ManagedRecord[]}
       fields={[
-        { name: "key", label: t("key"), kind: "text" },
+        {
+          name: "key",
+          label: t("key"),
+          kind: "select",
+          unique: true,
+          options: BASIC_INFO_KEYS.map((key) => ({ value: key, label: t(`keys.${key}`) })),
+        },
         { name: "value", label: t("value"), kind: "localized", multiline: true },
       ]}
-      labelOf={(item) => String(item.key ?? "")}
+      labelOf={(item) => {
+        const key = String(item.key ?? "");
+        return (BASIC_INFO_KEYS as readonly string[]).includes(key)
+          ? t(`keys.${key as BasicInfoKey}`)
+          : key;
+      }}
       detailOf={(item) => localize(item.value, locale)}
       onCreate={(values) => create.mutateAsync(values as never)}
       onUpdate={(id, values) => update.mutateAsync({ id, ...values } as never)}
@@ -60,7 +72,7 @@ export function ExperienceManager() {
         { name: "company", label: t("company"), kind: "localized" },
         { name: "role", label: t("role"), kind: "localized" },
         { name: "period", label: t("period"), kind: "localized" },
-        { name: "description", label: t("description"), kind: "localized", multiline: true },
+        { name: "description", label: t("description"), kind: "localized", rich: true },
       ]}
       labelOf={(item) => `${localize(item.company, locale)} — ${localize(item.role, locale)}`}
       detailOf={(item) => localize(item.period, locale)}
@@ -92,7 +104,7 @@ export function EducationManager() {
         { name: "degree", label: t("degree"), kind: "localized" },
         { name: "institution", label: t("institution"), kind: "localized" },
         { name: "period", label: t("period"), kind: "localized" },
-        { name: "description", label: t("description"), kind: "localized", multiline: true },
+        { name: "description", label: t("description"), kind: "localized", rich: true },
       ]}
       labelOf={(item) => localize(item.degree, locale)}
       detailOf={(item) => localize(item.institution, locale)}

@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 import { api, browserQuery } from "~/trpc/react";
 import { asLocalized, emptyText, localize, type LocalizedText } from "~/utils/localized";
 import type { Locale } from "~/utils/navigation";
@@ -341,24 +342,21 @@ export function SkillManager() {
           <div className="space-y-4">
             <div className="space-y-1">
               <Label htmlFor="skill-group">{t("group")}</Label>
-              <select
-                id="skill-group"
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
-                value={skillDraft.groupId}
-                onChange={(event) =>
-                  setSkillDraft((current) => ({
-                    ...current,
-                    groupId: event.target.value,
-                  }))
-                }
+              <Select
+                value={skillDraft.groupId || undefined}
+                onValueChange={(groupId) => setSkillDraft((current) => ({ ...current, groupId }))}
               >
-                <option value="">{t("chooseGroup")}</option>
-                {items.map((group) => (
-                  <option key={group.id} value={group.id}>
-                    {localize(group.name, locale)}
-                  </option>
-                ))}
-              </select>
+                <SelectTrigger id="skill-group">
+                  <SelectValue placeholder={t("chooseGroup")} />
+                </SelectTrigger>
+                <SelectContent>
+                  {items.map((group) => (
+                    <SelectItem key={group.id} value={group.id}>
+                      {localize(group.name, locale)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <LocalizedFields
               label={t("name")}

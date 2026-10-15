@@ -73,15 +73,31 @@
   }
 }
 
-.prose h2 {
+.prose h1,
+.prose h2,
+.prose h3 {
   margin-top: 1rem;
   margin-bottom: 0.4rem;
-  font-size: 1.2rem;
   font-weight: 600;
 }
 
+.prose h1 {
+  font-size: 1.6rem;
+}
+
+.prose h2 {
+  font-size: 1.2rem;
+}
+
+.prose h3 {
+  font-size: 1.05rem;
+}
+
 .prose p,
-.prose ul {
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose pre {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
 }
@@ -89,6 +105,30 @@
 .prose ul {
   list-style: disc;
   padding-inline-start: 1.25rem;
+}
+
+.prose ol {
+  list-style: decimal;
+  padding-inline-start: 1.25rem;
+}
+
+.prose ul[data-type="taskList"] {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.prose ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.prose ul[data-type="taskList"] li > label {
+  margin-top: 0.25rem;
+}
+
+.prose ul[data-type="taskList"] li > div {
+  flex: 1;
 }
 
 .prose a {
@@ -101,17 +141,131 @@
   height: auto;
 }
 
-.ProseMirror {
-  outline: none;
-  min-height: 16rem;
+.prose blockquote {
+  border-inline-start: 3px solid hsl(var(--border));
+  padding-inline-start: 0.8rem;
+  color: hsl(var(--muted-foreground));
 }
 
-.ProseMirror p.is-editor-empty:first-child::before {
+.prose code {
+  border-radius: 0.2rem;
+  background: hsl(var(--muted));
+  padding: 0.1em 0.3em;
+  font-size: 0.9em;
+}
+
+.prose pre {
+  overflow-x: auto;
+  border-radius: 0.3rem;
+  background: hsl(var(--muted));
+  padding: 0.75rem 1rem;
+}
+
+.prose pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.prose hr {
+  margin: 0.8rem 0;
+  border: 0;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.prose mark {
+  color: inherit;
+  padding: 0 0.1em;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.35rem 0.5rem;
+  vertical-align: top;
+}
+
+.prose th {
+  background: hsl(var(--muted));
+  font-weight: 600;
+}
+
+.word-editor .ProseMirror {
+  min-height: 22rem;
+  padding: 1.75rem 2rem;
+  outline: none;
+}
+
+.word-editor[data-compact] .ProseMirror {
+  min-height: 10rem;
+  padding: 1rem 1.25rem;
+}
+
+.word-editor .ProseMirror p.is-editor-empty:first-child::before {
   color: hsl(var(--muted-foreground));
   content: attr(data-placeholder);
   float: left;
   height: 0;
   pointer-events: none;
+}
+
+.word-editor .ProseMirror[dir="rtl"] p.is-editor-empty:first-child::before {
+  float: right;
+}
+
+.word-editor .ProseMirror table {
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.word-editor .ProseMirror td,
+.word-editor .ProseMirror th {
+  border: 1px solid hsl(var(--border));
+  box-sizing: border-box;
+  min-width: 1em;
+  padding: 0.35rem 0.5rem;
+  position: relative;
+  vertical-align: top;
+}
+
+.word-editor .ProseMirror th {
+  background: hsl(var(--muted));
+  font-weight: 600;
+}
+
+.word-editor .ProseMirror .selectedCell::after {
+  background: hsl(var(--primary) / 0.15);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.word-editor .ProseMirror .column-resize-handle {
+  background-color: hsl(var(--primary));
+  bottom: -2px;
+  pointer-events: none;
+  position: absolute;
+  right: -2px;
+  top: 0;
+  width: 4px;
+}
+
+.word-editor .ProseMirror.resize-cursor {
+  cursor: col-resize;
+}
+
+.word-editor .tableWrapper {
+  overflow-x: auto;
 }
 
 /* Futuristic resume view */

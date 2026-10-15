@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { RichTextEditor } from "~/components/editor/rich-text-editor";
 import { LocalizedFields } from "~/components/forms/localized-fields";
+import { LocalizedRichText } from "~/components/forms/localized-rich-text";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
@@ -45,7 +46,7 @@ export function ProjectStudio({
   });
 
   return (
-    <main className="mx-auto max-w-3xl space-y-6 px-6 py-10">
+    <main className="mx-auto max-w-5xl space-y-6 px-6 py-10">
       <div className="flex items-center justify-between gap-3">
         <Button variant="ghost" size="sm" asChild>
           <Link href={`/${locale}/admin/projects`}>{t("backToAdmin")}</Link>
@@ -57,7 +58,7 @@ export function ProjectStudio({
         <Input id="project-slug" value={slug} onChange={(event) => setSlug(event.target.value)} />
       </div>
       <LocalizedFields label={t("titleField")} value={title} onChange={setTitle} />
-      <LocalizedFields label={t("excerpt")} value={excerpt} onChange={setExcerpt} multiline />
+      <LocalizedRichText label={t("excerpt")} value={excerpt} onChange={setExcerpt} compact />
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-medium">{t("technologies")}</h2>
@@ -95,13 +96,17 @@ export function ProjectStudio({
           <TabsTrigger value="fa">{t("persian")}</TabsTrigger>
         </TabsList>
       </Tabs>
-      <RichTextEditor
-        value={content[draftLocale]}
-        onChange={(html) => setContent((current) => ({ ...current, [draftLocale]: html }))}
-      />
-      <article className="prose rounded-md border p-4">
+      <div className="space-y-2">
+        <h2 className="text-sm font-medium">{t("description")}</h2>
+        <RichTextEditor
+          dir={draftLocale === "fa" ? "rtl" : "ltr"}
+          value={content[draftLocale]}
+          onChange={(html) => setContent((current) => ({ ...current, [draftLocale]: html }))}
+        />
+      </div>
+      <article className="prose rounded-md border bg-background p-4">
         <h1>{localize(title, draftLocale)}</h1>
-        <p>{localize(excerpt, draftLocale)}</p>
+        <div dangerouslySetInnerHTML={{ __html: localize(excerpt, draftLocale) }} />
         <p>
           <strong>{resume("tech")}: </strong>
           {technologies.map((item, index) => (

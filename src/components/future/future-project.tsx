@@ -8,6 +8,7 @@ import { GlitchText, Reveal, TiltCard, Typewriter } from "~/components/future/wi
 import type { ProjectArticleData } from "~/components/resume/resume-shell";
 import { ViewModeToggle } from "~/components/resume/resume-shell";
 import { SwitchLocales } from "~/components/resume/switch-locales";
+import { hasMarkup, plainText } from "~/utils/html";
 import type { Locale } from "~/utils/navigation";
 
 export function FutureProjectArticle({
@@ -55,10 +56,17 @@ export function FutureProjectArticle({
           <h1 className="text-4xl font-black leading-tight md:text-5xl">
             <GlitchText text={project.title} className="neon-text" />
           </h1>
-          {project.excerpt ? (
-            <p className="mt-4 font-mono text-base text-cyan-300">
-              <Typewriter text={`// ${project.excerpt}`} speed={18} />
-            </p>
+          {plainText(project.excerpt) ? (
+            hasMarkup(project.excerpt) ? (
+              <div
+                className="prose prose-invert-future mt-4 max-w-none text-cyan-100"
+                dangerouslySetInnerHTML={{ __html: project.excerpt }}
+              />
+            ) : (
+              <p className="mt-4 font-mono text-base text-cyan-300">
+                <Typewriter text={`// ${project.excerpt}`} speed={18} />
+              </p>
+            )
           ) : null}
           {project.technologies.length ? (
             <p className="mt-6 flex flex-wrap gap-1.5">

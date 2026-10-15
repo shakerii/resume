@@ -4,12 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { LocalizedFields } from "~/components/forms/localized-fields";
+import { LocalizedRichText } from "~/components/forms/localized-rich-text";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { api, browserQuery } from "~/trpc/react";
+import { plainText } from "~/utils/html";
 import { emptyText, localize, type LocalizedText } from "~/utils/localized";
 import type { Locale } from "~/utils/navigation";
 
@@ -67,7 +69,7 @@ export function ProjectManager() {
           <Card key={project.id}>
             <CardHeader className="p-4">
               <CardTitle className="text-base">{localize(project.title, locale)}</CardTitle>
-              <p className="text-sm text-muted-foreground">{localize(project.excerpt, locale)}</p>
+              <p className="text-sm text-muted-foreground">{plainText(localize(project.excerpt, locale))}</p>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-2 p-4 pt-0">
               <Button type="button" size="sm" asChild>
@@ -96,7 +98,7 @@ export function ProjectManager() {
         ))}
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent>
+        <DialogContent className="max-w-5xl">
           <DialogHeader>
             <DialogTitle>{t("newProject")}</DialogTitle>
             <DialogDescription>{t("projects")}</DialogDescription>
@@ -107,7 +109,7 @@ export function ProjectManager() {
               <Input id="slug" value={slug} onChange={(event) => setSlug(event.target.value)} />
             </div>
             <LocalizedFields label={t("titleField")} value={title} onChange={setTitle} />
-            <LocalizedFields label={t("excerpt")} value={excerpt} onChange={setExcerpt} multiline />
+            <LocalizedRichText label={t("excerpt")} value={excerpt} onChange={setExcerpt} compact />
             {error ? <p className="text-sm text-destructive">{error}</p> : null}
             <Button
               type="button"

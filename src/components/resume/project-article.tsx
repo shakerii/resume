@@ -4,6 +4,7 @@ import { ViewModeToggle } from "~/components/resume/resume-shell";
 import { SwitchLocales } from "~/components/resume/switch-locales";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
+import { plainText } from "~/utils/html";
 import type { Locale } from "~/utils/navigation";
 
 export async function ProjectArticle({
@@ -32,7 +33,9 @@ export async function ProjectArticle({
         </div>
       </div>
       <h1 className="mt-6 text-4xl font-bold">{title}</h1>
-      {excerpt ? <p className="mt-3 text-muted-foreground">{excerpt}</p> : null}
+      {plainText(excerpt) ? (
+        <div className="prose mt-3 text-muted-foreground" dangerouslySetInnerHTML={{ __html: excerpt }} />
+      ) : null}
       {technologies.length ? (
         <p className="mt-4">
           {technologies.map((name) => (

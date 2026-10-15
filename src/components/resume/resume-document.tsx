@@ -2,6 +2,7 @@
 
 import { Document, Font, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
 import type { ResumeData } from "~/components/resume/types";
+import { plainText } from "~/utils/html";
 
 Font.register({
   family: "Vazirmatn",
@@ -25,13 +26,6 @@ const styles = StyleSheet.create({
 
 function linkLabel(url: string) {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
-}
-
-function plain(html: string) {
-  return html
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
 }
 
 export function ResumeDocument({
@@ -63,7 +57,7 @@ export function ResumeDocument({
             <Text key={item.id} style={styles.item}>
               {item.company} — {item.role}
               {item.period ? ` (${item.period})` : ""}
-              {item.description ? ` ${plain(item.description)}` : ""}
+              {plainText(item.description) ? ` ${plainText(item.description)}` : ""}
             </Text>
           ))}
         </View>
@@ -72,7 +66,7 @@ export function ResumeDocument({
           {data.projects.map((project) => (
             <Text key={project.id} style={styles.item}>
               {project.title}
-              {project.excerpt ? ` — ${project.excerpt}` : ""}
+              {plainText(project.excerpt) ? ` — ${plainText(project.excerpt)}` : ""}
               {project.technologies.length ? ` (${labels.tech}: ${project.technologies.join(", ")})` : ""}
             </Text>
           ))}
@@ -83,6 +77,7 @@ export function ResumeDocument({
             <Text key={item.id}>
               {item.degree}
               {item.institution ? `, ${item.institution}` : ""}
+              {plainText(item.description) ? ` ${plainText(item.description)}` : ""}
             </Text>
           ))}
         </View>

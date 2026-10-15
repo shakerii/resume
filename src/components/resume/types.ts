@@ -31,6 +31,7 @@ export type ResumeData = {
     degree: string;
     institution: string;
     period: string;
+    description: string;
   }>;
   languages: Array<{ id: string; name: string; level: string }>;
 };

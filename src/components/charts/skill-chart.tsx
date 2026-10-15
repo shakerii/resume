@@ -1,32 +1,35 @@
-export function SkillChart({
-  title,
-  groups,
-}: {
-  title: string;
-  groups: Array<{
-    name: string;
-    skills: Array<{ id: string; name: string; rating: number }>;
-  }>;
-}) {
+import { SkillBadge } from "~/components/charts/skill-badge";
+import type { ResumeData } from "~/components/resume/types";
+import { cn } from "~/utils/cn";
+
+function chipTone(rating: number) {
+  if (rating >= 9) return "border-primary/30 bg-primary/10 text-foreground";
+  if (rating >= 7) return "border-transparent bg-secondary text-foreground";
+  return "border-border bg-transparent text-muted-foreground";
+}
+
+export function SkillChart({ groups }: { groups: ResumeData["skillGroups"] }) {
   return (
-    <section className="mt-4 space-y-4">
-      <h3 className="text-sm font-semibold">{title}</h3>
+    <div className="mt-4 grid gap-x-8 gap-y-5 sm:grid-cols-2">
       {groups.map((group) => (
-        <div key={group.name} className="space-y-2">
-          <h4 className="text-xs font-semibold text-muted-foreground">{group.name}</h4>
-          {group.skills.map((skill) => (
-            <div key={skill.id}>
-              <div className="mb-1 flex justify-between text-xs text-muted-foreground">
-                <span>{skill.name}</span>
-                <span>{skill.rating}/10</span>
-              </div>
-              <div className="h-1.5 overflow-hidden rounded-full bg-muted">
-                <div className="h-full rounded-full bg-primary" style={{ width: `${skill.rating * 10}%` }} />
-              </div>
-            </div>
-          ))}
+        <div key={group.id}>
+          <h3 className="text-sm font-semibold">{group.name}</h3>
+          <ul className="mt-2 flex flex-wrap gap-1.5">
+            {group.skills.map((skill) => (
+              <li key={skill.id}>
+                <SkillBadge
+                  name={skill.name}
+                  rating={skill.rating}
+                  className={cn(
+                    "rounded-full border px-2.5 py-1 text-xs font-medium",
+                    chipTone(skill.rating),
+                  )}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
-    </section>
+    </div>
   );
 }

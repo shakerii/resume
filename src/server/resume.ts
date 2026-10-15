@@ -62,6 +62,7 @@ export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
       degree: text(item.degree, locale),
       institution: text(item.institution, locale),
       period: text(item.period, locale),
+      description: text(item.description, locale),
     })),
     languages: languages.map((item) => ({
       id: item.id,

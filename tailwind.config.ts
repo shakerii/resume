@@ -11,6 +11,7 @@ export default {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
+        "input-border": "hsl(var(--input-border))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -56,9 +57,19 @@ export default {
           "0%, 100%": { transform: "scaleY(0.3)" },
           "50%": { transform: "scaleY(1)" },
         },
+        "select-in": {
+          from: { opacity: "0", transform: "scale(0.98)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        "tooltip-in": {
+          from: { opacity: "0", transform: "translateY(4px) scale(0.96)" },
+          to: { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
       },
       animation: {
         equalize: "equalize 0.8s ease-in-out infinite",
+        "select-in": "select-in 120ms ease-out",
+        "tooltip-in": "tooltip-in 120ms ease-out",
       },
     },
   },

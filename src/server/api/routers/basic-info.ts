@@ -1,10 +1,11 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
+import { BASIC_INFO_KEYS } from "~/utils/basic-info";
 import { localizedTextSchema } from "~/utils/localized";
 import { adminProcedure, publicProcedure, router } from "~/server/api/trpc";
 
 const createSchema = z.object({
-  key: z.string().min(1),
+  key: z.enum(BASIC_INFO_KEYS),
   value: localizedTextSchema,
   sortOrder: z.number().int().optional(),
   active: z.boolean().optional(),

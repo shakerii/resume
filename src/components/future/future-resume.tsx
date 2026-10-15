@@ -18,6 +18,7 @@ import { ExportPdfButton } from "~/components/resume/resume-pdf";
 import { ViewModeToggle } from "~/components/resume/resume-shell";
 import { SwitchLocales } from "~/components/resume/switch-locales";
 import type { ResumeData } from "~/components/resume/types";
+import { hasMarkup, plainText } from "~/utils/html";
 import type { Locale } from "~/utils/navigation";
 
 function linkLabel(url: string) {
@@ -179,7 +180,7 @@ export function FutureResume({ locale, data }: { locale: Locale; data: ResumeDat
                       </span>
                     ) : null}
                   </div>
-                  {item.description ? (
+                  {plainText(item.description) ? (
                     <div
                       className="prose prose-invert-future mt-3 text-sm text-slate-300"
                       dangerouslySetInnerHTML={{ __html: item.description }}
@@ -201,10 +202,15 @@ export function FutureResume({ locale, data }: { locale: Locale; data: ResumeDat
                     <h3 className="text-lg font-bold text-fuchsia-100 transition group-hover:text-fuchsia-300">
                       ▣ {project.title}
                     </h3>
-                    {project.excerpt ? (
-                      <p className="mt-2 text-sm leading-relaxed text-slate-300/90">
-                        {project.excerpt}
-                      </p>
+                    {plainText(project.excerpt) ? (
+                      hasMarkup(project.excerpt) ? (
+                        <div
+                          className="prose prose-invert-future mt-2 text-sm text-slate-300/90"
+                          dangerouslySetInnerHTML={{ __html: project.excerpt }}
+                        />
+                      ) : (
+                        <p className="mt-2 text-sm leading-relaxed text-slate-300/90">{project.excerpt}</p>
+                      )
                     ) : null}
                     {project.technologies.length ? (
                       <p className="mt-4 flex flex-wrap gap-1.5">
@@ -228,9 +234,7 @@ export function FutureResume({ locale, data }: { locale: Locale; data: ResumeDat
         <section className="mt-20">
           <SectionHeading index="03" title={t("skills")} accent="text-lime-300" />
           <Reveal>
-            <TiltCard glow="lime" className="p-6">
-              <SkillMatrix groups={data.skillGroups} />
-            </TiltCard>
+            <SkillMatrix groups={data.skillGroups} />
           </Reveal>
         </section>
 
@@ -240,12 +244,20 @@ export function FutureResume({ locale, data }: { locale: Locale; data: ResumeDat
               <SectionHeading index="04" title={t("education")} accent="text-amber-300" />
               <div className="space-y-3">
                 {data.education.map((item) => (
-                  <p key={item.id} className="text-sm text-slate-200">
-                    <span className="font-bold text-amber-200">{item.degree}</span>
-                    {item.institution ? (
-                      <span className="text-slate-400"> — {item.institution}</span>
+                  <div key={item.id} className="text-sm text-slate-200">
+                    <p>
+                      <span className="font-bold text-amber-200">{item.degree}</span>
+                      {item.institution ? (
+                        <span className="text-slate-400"> — {item.institution}</span>
+                      ) : null}
+                    </p>
+                    {plainText(item.description) ? (
+                      <div
+                        className="prose prose-invert-future mt-1 text-slate-300"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      />
                     ) : null}
-                  </p>
+                  </div>
                 ))}
               </div>
             </TiltCard>

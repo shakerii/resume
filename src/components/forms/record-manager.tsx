@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { LocalizedFields } from "~/components/forms/localized-fields";
+import { LocalizedRichText } from "~/components/forms/localized-rich-text";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import {
@@ -14,14 +15,23 @@ import {
 } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 import { Switch } from "~/components/ui/switch";
 import { asLocalized, emptyText, type LocalizedText } from "~/utils/localized";
+
+export type FieldOption = {
+  value: string;
+  label: string;
+};
 
 export type FieldConfig = {
   name: string;
   label: string;
-  kind: "localized" | "text" | "number";
+  kind: "localized" | "text" | "number" | "select";
   multiline?: boolean;
+  rich?: boolean;
+  options?: FieldOption[];
+  unique?: boolean;
 };
 
 export type ManagedRecord = {
@@ -32,11 +42,22 @@ export type ManagedRecord = {
 
 type Values = Record<string, LocalizedText | string | number>;
 
-function blank(fields: FieldConfig[]): Values {
+function usedValues(field: FieldConfig, items: ManagedRecord[], exceptId?: string) {
+  if (!field.unique) return new Set<string>();
+  return new Set(
+    items.filter((item) => item.id !== exceptId).map((item) => String(item[field.name] ?? "")),
+  );
+}
+
+function blank(fields: FieldConfig[], items: ManagedRecord[]): Values {
   const values: Values = {};
   for (const field of fields) {
-    values[field.name] =
-      field.kind === "localized" ? emptyText() : field.kind === "number" ? 0 : "";
+    if (field.kind === "localized") values[field.name] = emptyText();
+    else if (field.kind === "number") values[field.name] = 0;
+    else if (field.kind === "select") {
+      const used = usedValues(field, items);
+      values[field.name] = field.options?.find((option) => !used.has(option.value))?.value ?? "";
+    } else values[field.name] = "";
   }
   return values;
 }
@@ -87,7 +108,7 @@ export function RecordManager({
 
   function startCreate() {
     setEditing(null);
-    setValues(blank(fields));
+    setValues(blank(fields, items));
     setActive(true);
     setError(null);
     setOpen(true);
@@ -175,7 +196,7 @@ export function RecordManager({
         ))}
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent>
+        <DialogContent className={fields.some((field) => field.rich) ? "max-w-5xl" : undefined}>
           <DialogHeader>
             <DialogTitle>{editing ? t("edit") : t("create")}</DialogTitle>
             <DialogDescription>{title}</DialogDescription>
@@ -183,6 +204,17 @@ export function RecordManager({
           <div className="space-y-4">
             {fields.map((field) => {
               const current = values[field.name];
+              if (field.kind === "localized" && field.rich) {
+                return (
+                  <LocalizedRichText
+                    key={field.name}
+                    label={field.label}
+                    compact
+                    value={(current as LocalizedText) ?? emptyText()}
+                    onChange={(next) => setValues((prev) => ({ ...prev, [field.name]: next }))}
+                  />
+                );
+              }
               if (field.kind === "localized") {
                 return (
                   <LocalizedFields
@@ -192,6 +224,34 @@ export function RecordManager({
                     value={(current as LocalizedText) ?? emptyText()}
                     onChange={(next) => setValues((prev) => ({ ...prev, [field.name]: next }))}
                   />
+                );
+              }
+              if (field.kind === "select") {
+                const currentValue = String(current ?? "");
+                const used = usedValues(field, items, editing?.id);
+                const options = field.options ?? [];
+                const known = options.some((option) => option.value === currentValue);
+                const choices =
+                  currentValue && !known ? [...options, { value: currentValue, label: currentValue }] : options;
+                return (
+                  <div key={field.name} className="space-y-1">
+                    <Label htmlFor={field.name}>{field.label}</Label>
+                    <Select
+                      value={currentValue || undefined}
+                      onValueChange={(next) => setValues((prev) => ({ ...prev, [field.name]: next }))}
+                    >
+                      <SelectTrigger id={field.name}>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {choices.map((option) => (
+                          <SelectItem key={option.value} value={option.value} disabled={used.has(option.value)}>
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                 );
               }
               return (
