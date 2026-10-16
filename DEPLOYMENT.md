@@ -69,6 +69,8 @@ copies this seed database to `DATABASE_URL`. If the database already exists, it
 runs `pnpm db:migrate:deploy` before starting the server, without reseeding it.
 A migration failure stops startup. `DATABASE_URL` must be an absolute SQLite file
 URL, such as the default `file:/app/data/dev.db` in the `resume-data` volume.
+The runtime disables pnpm's pre-run dependency checks so migration startup uses
+the dependencies baked into the image instead of attempting `pnpm install`.
 Back up the volume before deploying schema changes. Never run the seed script
 against production data: it deletes existing records.
 
