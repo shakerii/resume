@@ -33,10 +33,17 @@ export const analyticsBatchSchema = z
   })
   .strict();
 
+function hasUnsafePathCharacters(value: string) {
+  return (
+    /[\s@\\]/.test(value) ||
+    Array.from(value).some((character) => character.charCodeAt(0) <= 0x1f)
+  );
+}
+
 export function analyticsPath(value: string) {
   if (!value.startsWith("/") || value.startsWith("//")) return null;
   const path = value.split(/[?#]/, 1)[0];
-  if (!path || /[\s@\\\x00-\x1f]/.test(path)) return null;
+  if (!path || hasUnsafePathCharacters(path)) return null;
   let decodedPath: string;
   try {
     decodedPath = decodeURIComponent(path);
@@ -44,7 +51,7 @@ export function analyticsPath(value: string) {
     return null;
   }
   if (
-    /[\s@\\\x00-\x1f]/.test(decodedPath) ||
+    hasUnsafePathCharacters(decodedPath) ||
     /(?:^|\/)admin(?:\/|$)/i.test(decodedPath)
   )
     return null;
