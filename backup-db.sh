@@ -2,8 +2,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-KEY="$ROOT/../ar-Personal-privatekey.pem"
-REMOTE="root@94.101.186.88"
+KEY="$ROOT/ar-Personal-privatekey.pem"
+REMOTE="root@37.32.10.39"
 APP_DIR="resume"
 STAMP="$(date +%Y%m%d-%H%M%S)"
 OUT_DIR="$ROOT/backups"
