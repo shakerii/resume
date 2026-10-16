@@ -2,6 +2,7 @@ import type {Metadata, Viewport} from "next";
 import {NextIntlClientProvider} from "next-intl";
 import {getMessages, getTranslations} from "next-intl/server";
 import {TrpcProvider} from "~/trpc/react";
+import {AnalyticsTracker} from "~/components/analytics/analytics-tracker";
 
 export const dynamic = "force-dynamic";
 
@@ -26,6 +27,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <TrpcProvider>
+        <AnalyticsTracker />
         <div lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className={locale === "fa" ? "font-vazir" : "font-inter"}>
           {children}
         </div>

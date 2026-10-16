@@ -14,6 +14,7 @@ import type { Locale } from "~/utils/navigation";
 
 const links = [
   ["home", ""],
+  ["analytics", "/analytics"],
   ["basicInfo", "/basic-info"],
   ["experiences", "/experiences"],
   ["projects", "/projects"],
@@ -112,7 +113,7 @@ export function AdminFrame({ children }: { children: React.ReactNode }) {
           </Button>
         </div>
       </aside>
-      <div>{children}</div>
+      <div className="min-w-0">{children}</div>
     </div>
   );
 }

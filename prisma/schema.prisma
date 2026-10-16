@@ -94,3 +94,23 @@ model Language {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model AnalyticsLog {
+  id         String   @id
+  createdAt  DateTime @default(now())
+  visitorId  String
+  sessionId  String
+  type       String
+  path       String
+  source     String
+  referrer   String?
+  medium     String?
+  campaign   String?
+  target     String?
+  value      Float?
+  durationMs Int      @default(0)
+
+  @@index([createdAt])
+  @@index([sessionId, createdAt])
+  @@index([path, createdAt])
+}

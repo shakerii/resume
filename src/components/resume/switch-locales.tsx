@@ -16,6 +16,7 @@ export function SwitchLocales({ variant = "classic" }: { variant?: "classic" | "
     <Select value={current} onValueChange={(value) => change(value as Locale)}>
       <SelectTrigger
         aria-label={t("language")}
+        data-analytics="language-selector"
         className={cn(
           "h-8 w-auto min-w-24 px-2",
           future
@@ -36,6 +37,7 @@ export function SwitchLocales({ variant = "classic" }: { variant?: "classic" | "
           <SelectItem
             key={locale}
             value={locale}
+            data-analytics={`language-${locale}`}
             className={future ? "focus:bg-cyan-400/15 focus:text-cyan-100" : undefined}
           >
             {names(locale)}

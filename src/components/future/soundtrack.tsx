@@ -99,6 +99,7 @@ export function Soundtrack() {
       type="button"
       onClick={() => void toggle()}
       aria-pressed={playing}
+      data-analytics={playing ? "audio-off" : "audio-on"}
       className="group flex h-8 items-center gap-2 rounded-md border border-cyan-400/40 bg-cyan-950/40 px-3 font-mono text-xs uppercase tracking-widest text-cyan-300 transition hover:border-cyan-300 hover:shadow-[0_0_14px_rgba(34,211,238,0.4)]"
     >
       <span className="flex h-3 items-end gap-0.5" aria-hidden>

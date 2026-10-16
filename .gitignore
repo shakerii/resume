@@ -7,4 +7,5 @@ prisma/*.db
 prisma/*.db-journal
 backups/
 npm-debug.log*
+next-env.d.ts
 *.pem

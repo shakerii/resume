@@ -34,6 +34,7 @@ export function ViewModeToggle() {
       variant="outline"
       size="sm"
       onClick={() => setMode(next)}
+      data-analytics={`view-mode-${next}`}
       className={
         mode === "classic"
           ? "border-primary/60 text-primary hover:text-primary"

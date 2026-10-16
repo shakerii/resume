@@ -69,6 +69,54 @@ rebuilding does not run migrations against that existing database or reseed it.
 Back up the volume and plan migrations separately when changing the schema.
 Never run the seed script against production data: it deletes existing records.
 
+## Visitor analytics
+
+Run `pnpm db:migrate:deploy` with `DATABASE_URL` pointing at the intended database
+before starting this version. This adds the indexed `AnalyticsLog` table without
+changing existing resume content. Back up production first. Existing Docker
+volumes need this migration too; the standalone runner does not include the
+Prisma CLI, so use a tooling environment with access to the mounted database.
+
+Open `/en/admin/analytics` or `/fa/admin/analytics` after signing in. Reports show
+unique browsers, sessions, page views, active time, traffic sources, and a
+searchable/sortable/paginated event log using TanStack React Table. Aggregates
+cover the selected 7/30/90 days; event details show only the latest 500 records.
+
+The report's **Export all-time Excel** button downloads an admin-only `.xlsx`
+workbook containing Summary, Pages, Sources, and all stored event fields in
+Events. It ignores report date ranges, table filters, and pagination. Timestamps
+are UTC and durations are milliseconds. Event records are read in batches;
+exports beyond Excel's per-sheet row limit continue on numbered Events sheets.
+Exports include records created up to the export start time, rather than newer
+visits arriving during the download. Treat downloaded visitor/session IDs as
+private analytics data.
+
+Each data table has a full-page mode with keyboard focus containment and Escape
+to exit. Sorting, filters, grouping, and pagination remain intact when entering
+or leaving full-page mode.
+
+Tracking includes client-side navigation, link/button clicks, PDF downloads,
+form submissions (never field values), and 25/50/75/100% scroll milestones.
+Public controls have stable `data-analytics` labels. Add this attribute to label
+new controls, or `data-analytics-ignore` on a subtree to suppress interactions.
+Page and link query strings/fragments are discarded; referrers store hostnames
+only. `utm_source`, `utm_medium`, and `utm_campaign` accept short campaign labels.
+Use campaign labels, never personal information, in these parameters.
+
+Visitor IDs are random browser-local IDs, not verified people; sessions are
+tab-local and renew after 30 minutes without recorded activity. Storage-blocked
+browsers fall back to memory. Active time is estimated while focused and visible,
+stopping after 60 seconds without interaction; background time is excluded.
+Events flush every 10 seconds and on navigation/hide; blocked scripts, abrupt
+browser exits, and unavailable networks can cause missing data. Referrer policies
+can cause external visits to appear direct. No geolocation or raw IPs are stored.
+Admin routes and authenticated admin visits are excluded. Do Not Track and
+Global Privacy Control disable collection. Review the site's privacy notice and
+consent requirements before enabling tracking for your audience; this feature
+does not provide a consent banner. Logs are retained until explicitly deleted;
+the report window is not a retention policy. The ingestion rate limiter is
+per-process, not a distributed bot or fraud protection system.
+
 ## Local checks
 
 ```sh

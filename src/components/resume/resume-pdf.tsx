@@ -39,6 +39,9 @@ export function ExportPdfButton({
       anchor.href = url;
       anchor.download = `${data.name || "resume"}.pdf`;
       anchor.click();
+      window.dispatchEvent(
+        new CustomEvent("analytics:download", { detail: "resume-pdf" }),
+      );
       URL.revokeObjectURL(url);
     } finally {
       setBusy(false);
@@ -50,6 +53,7 @@ export function ExportPdfButton({
         type="button"
         onClick={handleExport}
         disabled={busy}
+        data-analytics="resume-pdf-export"
         className="flex h-8 items-center rounded-md border border-lime-400/40 bg-lime-950/40 px-3 font-mono text-xs uppercase tracking-widest text-lime-300 transition hover:border-lime-300 hover:shadow-[0_0_14px_rgba(163,230,53,0.4)] disabled:pointer-events-none disabled:opacity-50"
       >
         {busy ? t("pdfPreparing") : t("pdf")}
@@ -57,7 +61,14 @@ export function ExportPdfButton({
     );
   }
   return (
-    <Button type="button" variant="outline" size="sm" onClick={handleExport} disabled={busy}>
+    <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      onClick={handleExport}
+      disabled={busy}
+      data-analytics="resume-pdf-export"
+    >
       {busy ? t("pdfPreparing") : t("pdf")}
     </Button>
   );
