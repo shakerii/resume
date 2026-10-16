@@ -31,7 +31,7 @@ RUN pnpm db:generate
 RUN pnpm db:migrate:deploy && pnpm db:seed
 RUN --mount=type=cache,id=resume-next,target=/app/.next/cache pnpm build
 
-FROM base AS runner
+FROM tooling AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -46,10 +46,16 @@ RUN addgroup --system --gid 1001 nodejs && \
     chown nextjs:nodejs /app/data
 
 COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /tmp/resume.db /app/data/dev.db
+COPY --from=builder /app/package.json /app/prisma.config.ts ./
+COPY --from=builder /app/prisma/schema.prisma ./prisma/schema.prisma
+COPY --from=builder /app/prisma/migrations ./prisma/migrations
+COPY --from=builder /tmp/resume.db /app/seed.db
+COPY docker-entrypoint.sh /app/docker-entrypoint.sh
 
 USER nextjs
 EXPOSE 3000
+ENTRYPOINT ["sh", "/app/docker-entrypoint.sh"]
 CMD ["node", "server.js"]

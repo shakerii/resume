@@ -63,11 +63,14 @@ from errors. Do not upgrade major versions blindly just to remove these notices.
 
 ## Database behavior
 
-The image contains a migrated, seeded SQLite database for the initial creation
-of `resume-data`. Existing named volumes retain their current database on redeploy;
-rebuilding does not run migrations against that existing database or reseed it.
-Back up the volume and plan migrations separately when changing the schema.
-Never run the seed script against production data: it deletes existing records.
+The image contains a migrated, seeded SQLite database at `/app/seed.db`, outside
+the persistent volume. At startup, if the database does not exist, the entrypoint
+copies this seed database to `DATABASE_URL`. If the database already exists, it
+runs `pnpm db:migrate:deploy` before starting the server, without reseeding it.
+A migration failure stops startup. `DATABASE_URL` must be an absolute SQLite file
+URL, such as the default `file:/app/data/dev.db` in the `resume-data` volume.
+Back up the volume before deploying schema changes. Never run the seed script
+against production data: it deletes existing records.
 
 ## Search engine optimization
 
@@ -94,11 +97,10 @@ resume summary, project excerpts, and project write-ups descriptive and current.
 
 ## Visitor analytics
 
-Run `pnpm db:migrate:deploy` with `DATABASE_URL` pointing at the intended database
-before starting this version. This adds the indexed `AnalyticsLog` table without
-changing existing resume content. Back up production first. Existing Docker
-volumes need this migration too; the standalone runner does not include the
-Prisma CLI, so use a tooling environment with access to the mounted database.
+Docker startup automatically runs `pnpm db:migrate:deploy` for existing databases.
+For non-Docker deployments, run it with `DATABASE_URL` pointing at the intended
+database before starting this version. This adds the indexed `AnalyticsLog` table
+without changing existing resume content. Back up production first.
 
 Open `/en/admin/analytics` or `/fa/admin/analytics` after signing in. Reports show
 unique browsers, sessions, page views, active time, traffic sources, and a
