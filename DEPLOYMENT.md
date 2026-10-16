@@ -69,6 +69,29 @@ rebuilding does not run migrations against that existing database or reseed it.
 Back up the volume and plan migrations separately when changing the schema.
 Never run the seed script against production data: it deletes existing records.
 
+## Search engine optimization
+
+Public resume and project pages generate localized titles, plain-text descriptions,
+canonical URLs, English/Persian language alternates, and Open Graph/Twitter cards.
+The canonical origin is `https://ramtinshakeri.com`, configured in `src/utils/seo.ts`;
+update it if the production domain changes. The existing avatar is the social image.
+Profile pages include Person/ProfilePage JSON-LD; project pages include CreativeWork
+and breadcrumb JSON-LD, based on the visible resume and project content.
+
+`/sitemap.xml` queries published projects directly on each request and includes
+both languages and actual project modification dates. Drafts, admin pages, and API
+endpoints are excluded. `/robots.txt` advertises the sitemap and disallows API
+crawling. Admin pages and authenticated project editor views declare `noindex`;
+admin URLs are deliberately not blocked in robots.txt so crawlers can read that
+directive. This is not access control; admin authentication remains required.
+
+After deployment, verify `/robots.txt` and `/sitemap.xml` return the expected text
+and XML, inspect canonical and language tags on both languages, and submit
+`https://ramtinshakeri.com/sitemap.xml` in Google Search Console. Validate the
+structured data with Google's Rich Results Test and Schema.org's validator.
+Structured data does not guarantee rich results or improved rankings. Keep the
+resume summary, project excerpts, and project write-ups descriptive and current.
+
 ## Visitor analytics
 
 Run `pnpm db:migrate:deploy` with `DATABASE_URL` pointing at the intended database

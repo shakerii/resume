@@ -1,18 +1,20 @@
-import type {Metadata, Viewport} from "next";
-import {NextIntlClientProvider} from "next-intl";
-import {getMessages, getTranslations} from "next-intl/server";
-import {TrpcProvider} from "~/trpc/react";
-import {AnalyticsTracker} from "~/components/analytics/analytics-tracker";
+import type { Metadata, Viewport } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
+import { TrpcProvider } from "~/trpc/react";
+import { AnalyticsTracker } from "~/components/analytics/analytics-tracker";
+import { notFound } from "next/navigation";
+import { locales, type Locale } from "~/utils/navigation";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("global");
-  return {title: t("title"), description: t("description")};
+  return { title: t("title"), description: t("description") };
 }
 
 export const viewport: Viewport = {
-  themeColor: [{media: "(prefers-color-scheme: light)", color: "white"}],
+  themeColor: [{ media: "(prefers-color-scheme: light)", color: "white" }],
 };
 
 export default async function LocaleLayout({
@@ -20,15 +22,20 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
+  const { locale } = await params;
+  if (!locales.includes(locale as Locale)) notFound();
   const messages = await getMessages();
   return (
     <NextIntlClientProvider messages={messages}>
       <TrpcProvider>
         <AnalyticsTracker />
-        <div lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className={locale === "fa" ? "font-vazir" : "font-inter"}>
+        <div
+          lang={locale}
+          dir={locale === "fa" ? "rtl" : "ltr"}
+          className={locale === "fa" ? "font-vazir" : "font-inter"}
+        >
           {children}
         </div>
       </TrpcProvider>

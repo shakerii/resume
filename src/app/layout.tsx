@@ -1,5 +1,8 @@
 import type * as React from "react";
 import localFont from "next/font/local";
+import type { Metadata } from "next";
+import { getLocale } from "next-intl/server";
+import { siteUrl } from "~/utils/seo";
 
 import "./globals.css";
 
@@ -16,13 +19,22 @@ const vazir = localFont({
   display: "swap",
 });
 
-export default function RootLayout({
+export const metadata: Metadata = {
+  metadataBase: siteUrl,
+};
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
   return (
-    <html className={`${inter.variable} ${vazir.variable}`}>
+    <html
+      lang={locale}
+      dir={locale === "fa" ? "rtl" : "ltr"}
+      className={`${inter.variable} ${vazir.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
