@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { SkillChart } from "~/components/charts/skill-chart";
+import { ContactForm } from "~/components/contact/contact-form";
 import { ExportPdfButton } from "~/components/resume/resume-pdf";
 import { ViewModeToggle } from "~/components/resume/resume-shell";
 import type { ResumeData } from "~/components/resume/types";
@@ -150,6 +151,7 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
             .join(locale === "fa" ? "، " : ", ")}
         </p>
       </section>
+      <ContactForm />
     </main>
   );
 }

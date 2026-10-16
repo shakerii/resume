@@ -2,6 +2,7 @@ import { router } from "~/server/api/trpc";
 import { adminRouter } from "~/server/api/routers/admin";
 import { analyticsRouter } from "~/server/api/routers/analytics";
 import { basicInfoRouter } from "~/server/api/routers/basic-info";
+import { contactRouter } from "~/server/api/routers/contact";
 import { educationRouter } from "~/server/api/routers/education";
 import { experienceRouter } from "~/server/api/routers/experience";
 import { languageRouter } from "~/server/api/routers/language";
@@ -12,6 +13,7 @@ import { skillGroupRouter } from "~/server/api/routers/skill-group";
 export const appRouter = router({
   admin: adminRouter,
   analytics: analyticsRouter,
+  contact: contactRouter,
   basicInfo: basicInfoRouter,
   experience: experienceRouter,
   project: projectRouter,

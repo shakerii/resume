@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { ContactForm } from "~/components/contact/contact-form";
 import { Soundtrack } from "~/components/future/soundtrack";
 import { SkillMatrix } from "~/components/future/skill-matrix";
 import { Starfield } from "~/components/future/starfield";
@@ -281,6 +282,8 @@ export function FutureResume({ locale, data }: { locale: Locale; data: ResumeDat
             </TiltCard>
           </Reveal>
         </section>
+
+        <ContactForm variant="future" />
 
         <footer className="mt-20 border-t border-cyan-400/20 pt-6 text-center font-mono text-[10px] uppercase tracking-[0.4em] text-slate-500">
           ◢ EOF ◣

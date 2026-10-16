@@ -100,6 +100,16 @@ function getIdentity() {
   return { visitorId, session };
 }
 
+export function getContactAnalyticsIdentity() {
+  if (
+    navigator.doNotTrack === "1" ||
+    (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl
+  )
+    return undefined;
+  const { visitorId, session } = getIdentity();
+  return { visitorId, sessionId: session.id };
+}
+
 function targetName(element: Element) {
   const label = element.getAttribute("data-analytics");
   if (label) return label.slice(0, 160);

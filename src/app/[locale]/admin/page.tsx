@@ -12,6 +12,7 @@ export default function AdminHomePage() {
   const skills = api.skill.all.useQuery(undefined, browserQuery);
   const education = api.education.all.useQuery(undefined, browserQuery);
   const languages = api.language.all.useQuery(undefined, browserQuery);
+  const contacts = api.contact.count.useQuery(undefined, browserQuery);
   return (
     <ContentChart
       title={t("overview")}
@@ -22,6 +23,7 @@ export default function AdminHomePage() {
         { label: t("skills"), value: skills.data?.length ?? 0 },
         { label: t("education"), value: education.data?.length ?? 0 },
         { label: t("languages"), value: languages.data?.length ?? 0 },
+        { label: t("contacts"), value: contacts.data ?? 0 },
       ]}
     />
   );

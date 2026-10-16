@@ -15,6 +15,7 @@ import type { Locale } from "~/utils/navigation";
 const links = [
   ["home", ""],
   ["analytics", "/analytics"],
+  ["contacts", "/contacts"],
   ["basicInfo", "/basic-info"],
   ["experiences", "/experiences"],
   ["projects", "/projects"],
