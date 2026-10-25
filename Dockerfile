@@ -27,24 +27,9 @@ ENV NODE_ENV=production
 ARG NODE_OPTIONS="--max-old-space-size=2048"
 ENV NODE_OPTIONS=$NODE_OPTIONS
 
-# binaries.prisma.sh often resets the TLS connection mid-download. Prisma then
-# throws that ECONNRESET as an uncaught exception and exits while retriesLeft
-# is still 2, so the CLI never retries. Retry the official CDN here, and only
-# if it keeps failing use the npmmirror copy of the same engine commit.
-RUN --mount=type=cache,id=resume-prisma,target=/root/.cache/prisma \
-    set -eu; \
-    attempt=1; \
-    while [ "$attempt" -le 3 ]; do \
-      if pnpm db:generate; then \
-        exit 0; \
-      fi; \
-      echo "prisma generate failed (attempt ${attempt}/3)"; \
-      sleep $((attempt * 3)); \
-      attempt=$((attempt + 1)); \
-    done; \
-    echo "prisma generate failed against binaries.prisma.sh; trying npmmirror"; \
-    PRISMA_ENGINES_MIRROR=https://registry.npmmirror.com/-/binary/prisma \
-      pnpm db:generate
+# binaries.prisma.sh resets the TLS connection mid-download.
+ENV PRISMA_ENGINES_MIRROR=https://registry.npmmirror.com/-/binary/prisma
+RUN --mount=type=cache,id=resume-prisma,target=/root/.cache/prisma pnpm db:generate
 RUN pnpm db:migrate:deploy && pnpm db:seed
 RUN --mount=type=cache,id=resume-next,target=/app/.next/cache pnpm build
 
