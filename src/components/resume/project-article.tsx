@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { ViewModeToggle } from "~/components/resume/resume-shell";
-import { SwitchLocales } from "~/components/resume/switch-locales";
+import { ResumeControls } from "~/components/resume/resume-shell";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { plainText } from "~/utils/html";
@@ -28,13 +27,15 @@ export async function ProjectArticle({
           <Link href={`/${locale}`}>{admin("back")}</Link>
         </Button>
         <div className="flex flex-wrap items-center gap-2">
-          <SwitchLocales />
-          <ViewModeToggle />
+          <ResumeControls locale={locale} showAdmin={false} />
         </div>
       </div>
       <h1 className="mt-6 text-4xl font-bold">{title}</h1>
       {plainText(excerpt) ? (
-        <div className="prose mt-3 text-muted-foreground" dangerouslySetInnerHTML={{ __html: excerpt }} />
+        <div
+          className="prose mt-3 text-muted-foreground"
+          dangerouslySetInnerHTML={{ __html: excerpt }}
+        />
       ) : null}
       {technologies.length ? (
         <p className="mt-4">
@@ -45,7 +46,10 @@ export async function ProjectArticle({
           ))}
         </p>
       ) : null}
-      <article className="prose mt-8" dangerouslySetInnerHTML={{ __html: content }} />
+      <article
+        className="prose mt-8"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </main>
   );
 }

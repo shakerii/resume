@@ -13,7 +13,7 @@ export function SkillChart({ groups }: { groups: ResumeData["skillGroups"] }) {
     <div className="mt-4 grid gap-x-8 gap-y-5 sm:grid-cols-2">
       {groups.map((group) => (
         <div key={group.id}>
-          <h3 className="text-sm font-semibold">{group.name}</h3>
+          <p className="text-sm font-semibold">{group.name}</p>
           <ul className="mt-2 flex flex-wrap gap-1.5">
             {group.skills.map((skill) => (
               <li key={skill.id}>

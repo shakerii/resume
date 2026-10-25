@@ -1,5 +1,6 @@
 import { AdminFrame } from "~/components/forms/admin-frame";
 import type { Metadata } from "next";
+import { TrpcProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -12,5 +13,9 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <AdminFrame>{children}</AdminFrame>;
+  return (
+    <TrpcProvider>
+      <AdminFrame>{children}</AdminFrame>
+    </TrpcProvider>
+  );
 }

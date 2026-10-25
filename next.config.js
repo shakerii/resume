@@ -23,6 +23,8 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import("next").NextConfig} */
 const config = {
+  poweredByHeader: false,
+  agentRules: false,
   output: "standalone",
   outputFileTracingRoot: root,
   serverExternalPackages: ["@prisma/client"],
@@ -31,6 +33,7 @@ const config = {
   },
   experimental: {
     cpus: 2,
+    globalNotFound: true,
     webpackMemoryOptimizations: true,
   },
 

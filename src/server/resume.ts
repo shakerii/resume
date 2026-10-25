@@ -1,16 +1,26 @@
+import { unstable_cache } from "next/cache";
 import { cache } from "react";
 import { TRPCError } from "@trpc/server";
+import type { ResumeData } from "~/components/resume/types";
+import { appRouter } from "~/server/api/root";
 import { createCaller } from "~/server/api/caller";
+import { resumeCacheSeconds, resumeCacheTag } from "~/server/resume-cache";
+import { prisma } from "~/server/db";
 import { localize } from "~/utils/localized";
 import type { Locale } from "~/utils/navigation";
-import type { ResumeData } from "~/components/resume/types";
 
 function text(value: unknown, locale: Locale) {
   return localize(value, locale);
 }
 
-export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
-  const caller = await createCaller();
+function publicCaller() {
+  return appRouter.createCaller({ prisma, isAdmin: false });
+}
+
+const cacheOptions = { tags: [resumeCacheTag], revalidate: resumeCacheSeconds };
+
+async function readResume(locale: Locale): Promise<ResumeData> {
+  const caller = publicCaller();
   const [info, experiences, projects, groups, education, languages] =
     await Promise.all([
       caller.basicInfo.all(),
@@ -70,18 +80,97 @@ export const loadResume = cache(async (locale: Locale): Promise<ResumeData> => {
       level: text(item.level, locale),
     })),
   };
-});
+}
 
-export const loadProject = cache(async (slug: string) => {
-  const caller = await createCaller();
+const readCachedResume = unstable_cache(readResume, ["resume"], cacheOptions);
+
+export const loadResume = cache((locale: Locale) => readCachedResume(locale));
+
+export type SitemapProject = { slug: string; updatedAt: string };
+
+async function readSitemapProjects(): Promise<SitemapProject[]> {
+  const projects = await prisma.project.findMany({
+    where: { active: true },
+    select: { slug: true, updatedAt: true },
+    orderBy: { slug: "asc" },
+  });
+  return projects.map((project) => ({
+    slug: project.slug,
+    updatedAt: project.updatedAt.toISOString(),
+  }));
+}
+
+export const loadSitemapProjects = unstable_cache(
+  readSitemapProjects,
+  ["resume-sitemap"],
+  cacheOptions,
+);
+
+type CachedProject = {
+  slug: string;
+  title: unknown;
+  excerpt: unknown;
+  content: unknown;
+  technologies: Array<{ name: unknown }>;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type PublicProject = {
+  slug: string;
+  title: unknown;
+  excerpt: unknown;
+  content: unknown;
+  technologies: Array<{ name: unknown }>;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+async function readPublicProject(slug: string): Promise<CachedProject | null> {
   try {
-    const [project, session] = await Promise.all([
-      caller.project.bySlug({ slug }),
-      caller.admin.me(),
-    ]);
-    return { project, isAdmin: session.isAdmin };
+    const project = await publicCaller().project.bySlug({ slug });
+    return {
+      slug: project.slug,
+      title: project.title,
+      excerpt: project.excerpt,
+      content: project.content,
+      technologies: project.technologies.map((item) => ({ name: item.name })),
+      createdAt: project.createdAt.toISOString(),
+      updatedAt: project.updatedAt.toISOString(),
+    };
   } catch (error) {
     if (error instanceof TRPCError && error.code === "NOT_FOUND") return null;
     throw error;
   }
+}
+
+const readCachedPublicProject = unstable_cache(
+  readPublicProject,
+  ["resume-project"],
+  cacheOptions,
+);
+
+function reviveProject(project: CachedProject): PublicProject {
+  return {
+    ...project,
+    createdAt: new Date(project.createdAt),
+    updatedAt: new Date(project.updatedAt),
+  };
+}
+
+export const loadProject = cache(async (slug: string) => {
+  const caller = await createCaller();
+  const session = await caller.admin.me();
+  if (session.isAdmin) {
+    try {
+      const project = await caller.project.bySlug({ slug });
+      return { project, isAdmin: true as const };
+    } catch (error) {
+      if (error instanceof TRPCError && error.code === "NOT_FOUND") return null;
+      throw error;
+    }
+  }
+  const project = await readCachedPublicProject(slug);
+  if (!project) return null;
+  return { project: reviveProject(project), isAdmin: false as const };
 });

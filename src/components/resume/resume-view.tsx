@@ -2,12 +2,9 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { SkillChart } from "~/components/charts/skill-chart";
 import { ContactForm } from "~/components/contact/contact-form";
-import { ExportPdfButton } from "~/components/resume/resume-pdf";
-import { ViewModeToggle } from "~/components/resume/resume-shell";
+import { ResumeControls } from "~/components/resume/resume-shell";
 import type { ResumeData } from "~/components/resume/types";
-import { SwitchLocales } from "~/components/resume/switch-locales";
 import { Badge } from "~/components/ui/badge";
-import { Button } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import { plainText } from "~/utils/html";
 import type { Locale } from "~/utils/navigation";
@@ -16,22 +13,29 @@ function linkLabel(url: string) {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 }
 
-export async function ResumeView({ locale, data }: { locale: Locale; data: ResumeData }) {
+export async function ResumeView({
+  locale,
+  data,
+}: {
+  locale: Locale;
+  data: ResumeData;
+}) {
   const t = await getTranslations("resume");
-  const nav = await getTranslations("nav");
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
       <div className="mb-6 flex flex-wrap items-center justify-end gap-2">
-        <SwitchLocales />
-        <ExportPdfButton data={data} />
-        <ViewModeToggle />
-        <Button variant="outline" size="sm" asChild>
-          <Link href={`/${locale}/admin`}>{nav("admin")}</Link>
-        </Button>
+        <ResumeControls locale={locale} data={data} />
       </div>
       <header>
-        <h1 className="text-4xl font-bold">{data.name}</h1>
-        {data.title ? <p className="mt-1 text-lg font-semibold">{data.title}</p> : null}
+        <h1 className="text-4xl font-bold">
+          {data.name}
+          {data.title ? (
+            <span className="mt-1 block text-lg font-semibold">
+              <span className="sr-only">, </span>
+              {data.title}
+            </span>
+          ) : null}
+        </h1>
         <div className="mt-3 space-y-1 text-sm text-muted-foreground">
           {data.website ? (
             <p>
@@ -44,7 +48,10 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
           {data.email ? (
             <p>
               {t("email")}:{" "}
-              <a className="text-primary underline" href={`mailto:${data.email}`}>
+              <a
+                className="text-primary underline"
+                href={`mailto:${data.email}`}
+              >
                 {data.email}
               </a>
             </p>
@@ -52,7 +59,10 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
           {data.phone ? (
             <p>
               {t("phone")}:{" "}
-              <a className="text-primary underline" href={`tel:${data.phone.replace(/\s/g, "")}`}>
+              <a
+                className="text-primary underline"
+                href={`tel:${data.phone.replace(/\s/g, "")}`}
+              >
                 {data.phone}
               </a>
             </p>
@@ -71,20 +81,29 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
             </p>
           ) : null}
         </div>
-        {data.summary ? <p className="mt-4 italic text-muted-foreground">{data.summary}</p> : null}
+        {data.summary ? (
+          <p className="mt-4 italic text-muted-foreground">{data.summary}</p>
+        ) : null}
       </header>
 
       <section className="mt-8">
-        <h2 className="border-b pb-1 text-xl font-semibold">{t("experience")}</h2>
+        <h2 className="border-b pb-1 text-xl font-semibold">
+          {t("experience")}
+        </h2>
         <div className="mt-4 space-y-4">
           {data.experiences.map((item) => (
             <article key={item.id}>
               <h3 className="font-semibold">
                 {item.company} - {item.role}
               </h3>
-              {item.period ? <p className="text-xs text-muted-foreground">{item.period}</p> : null}
+              {item.period ? (
+                <p className="text-xs text-muted-foreground">{item.period}</p>
+              ) : null}
               {plainText(item.description) ? (
-                <div className="prose mt-1" dangerouslySetInnerHTML={{ __html: item.description }} />
+                <div
+                  className="prose mt-1"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                />
               ) : null}
             </article>
           ))}
@@ -96,13 +115,19 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
         <div className="mt-4 space-y-4">
           {data.projects.map((project) => (
             <article key={project.id}>
-              <h3 className="font-semibold">
-                <Link className="text-primary underline" href={`/${locale}/projects/${project.slug}`}>
+              <p className="font-semibold">
+                <Link
+                  className="text-primary underline"
+                  href={`/${locale}/projects/${project.slug}`}
+                >
                   {project.title}
                 </Link>
-              </h3>
+              </p>
               {plainText(project.excerpt) ? (
-                <div className="prose mt-1 text-sm" dangerouslySetInnerHTML={{ __html: project.excerpt }} />
+                <div
+                  className="prose mt-1 text-sm"
+                  dangerouslySetInnerHTML={{ __html: project.excerpt }}
+                />
               ) : null}
               {project.technologies.length ? (
                 <p className="mt-2 text-sm">
@@ -127,7 +152,9 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
       <Separator className="my-8" />
 
       <section>
-        <h2 className="border-b pb-1 text-xl font-semibold">{t("education")}</h2>
+        <h2 className="border-b pb-1 text-xl font-semibold">
+          {t("education")}
+        </h2>
         <div className="mt-4 space-y-2">
           {data.education.map((item) => (
             <article key={item.id}>
@@ -136,7 +163,10 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
                 {item.institution ? `, ${item.institution}` : ""}
               </p>
               {plainText(item.description) ? (
-                <div className="prose mt-1" dangerouslySetInnerHTML={{ __html: item.description }} />
+                <div
+                  className="prose mt-1"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                />
               ) : null}
             </article>
           ))}
@@ -144,10 +174,14 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
       </section>
 
       <section className="mt-8">
-        <h2 className="border-b pb-1 text-xl font-semibold">{t("languages")}</h2>
+        <h2 className="border-b pb-1 text-xl font-semibold">
+          {t("languages")}
+        </h2>
         <p className="mt-4 text-sm">
           {data.languages
-            .map((item) => (item.level ? `${item.name} (${item.level})` : item.name))
+            .map((item) =>
+              item.level ? `${item.name} (${item.level})` : item.name,
+            )
             .join(locale === "fa" ? "، " : ", ")}
         </p>
       </section>

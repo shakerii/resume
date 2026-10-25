@@ -1,8 +1,11 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { createContext, useContext, useEffect, useState } from "react";
+import { ExportPdfButton } from "~/components/resume/resume-pdf";
+import { SwitchLocales } from "~/components/resume/switch-locales";
 import type { ResumeData } from "~/components/resume/types";
 import { Button } from "~/components/ui/button";
 import type { Locale } from "~/utils/navigation";
@@ -53,12 +56,16 @@ const futureLoading = () => (
 );
 
 const FutureResume = dynamic(
-  () => import("~/components/future/future-resume").then((mod) => mod.FutureResume),
+  () =>
+    import("~/components/future/future-resume").then((mod) => mod.FutureResume),
   { ssr: false, loading: futureLoading },
 );
 
 const FutureProjectArticle = dynamic(
-  () => import("~/components/future/future-project").then((mod) => mod.FutureProjectArticle),
+  () =>
+    import("~/components/future/future-project").then(
+      (mod) => mod.FutureProjectArticle,
+    ),
   { ssr: false, loading: futureLoading },
 );
 
@@ -77,7 +84,11 @@ export function ViewModeProvider({ children }: { children: React.ReactNode }) {
     window.localStorage.setItem(STORAGE_KEY, next);
   }
 
-  return <ViewModeContext.Provider value={{ mode, setMode }}>{children}</ViewModeContext.Provider>;
+  return (
+    <ViewModeContext.Provider value={{ mode, setMode }}>
+      {children}
+    </ViewModeContext.Provider>
+  );
 }
 
 function ModeSwitch({
@@ -102,7 +113,10 @@ export function ResumeShell({
 }) {
   return (
     <ViewModeProvider>
-      <ModeSwitch classic={classic} future={<FutureResume locale={locale} data={data} />} />
+      <ModeSwitch
+        classic={classic}
+        future={<FutureResume locale={locale} data={data} />}
+      />
     </ViewModeProvider>
   );
 }
@@ -113,6 +127,49 @@ export type ProjectArticleData = {
   content: string;
   technologies: string[];
 };
+
+export function ResumeControls({
+  locale,
+  data,
+  variant = "classic",
+  showAdmin = true,
+}: {
+  locale: Locale;
+  data?: ResumeData;
+  variant?: "classic" | "future";
+  showAdmin?: boolean;
+}) {
+  const nav = useTranslations("nav");
+  if (variant === "future") {
+    return (
+      <>
+        <SwitchLocales variant="future" />
+        {data ? <ExportPdfButton data={data} variant="future" /> : null}
+        <ViewModeToggle />
+        {showAdmin ? (
+          <Link
+            href={`/${locale}/admin`}
+            className="flex h-8 items-center rounded-md border border-slate-600/60 bg-slate-900/60 px-3 font-mono text-xs uppercase tracking-widest text-slate-300 transition hover:border-slate-400"
+          >
+            {nav("admin")}
+          </Link>
+        ) : null}
+      </>
+    );
+  }
+  return (
+    <>
+      <SwitchLocales />
+      {data ? <ExportPdfButton data={data} /> : null}
+      <ViewModeToggle />
+      {showAdmin ? (
+        <Button variant="outline" size="sm" asChild>
+          <Link href={`/${locale}/admin`}>{nav("admin")}</Link>
+        </Button>
+      ) : null}
+    </>
+  );
+}
 
 export function ProjectShell({
   locale,

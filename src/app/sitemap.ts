@@ -1,16 +1,10 @@
 import type { MetadataRoute } from "next";
-import { prisma } from "~/server/db";
+import { loadSitemapProjects } from "~/server/resume";
 import { locales } from "~/utils/navigation";
 import { languageAlternates, localizedUrl } from "~/utils/seo";
 
-export const dynamic = "force-dynamic";
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const projects = await prisma.project.findMany({
-    where: { active: true },
-    select: { slug: true, updatedAt: true },
-    orderBy: { slug: "asc" },
-  });
+  const projects = await loadSitemapProjects();
   return locales.flatMap((locale) => [
     {
       url: localizedUrl(locale),

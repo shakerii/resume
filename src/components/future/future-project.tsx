@@ -4,10 +4,16 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Soundtrack } from "~/components/future/soundtrack";
 import { Starfield } from "~/components/future/starfield";
-import { GlitchText, Reveal, TiltCard, Typewriter } from "~/components/future/widgets";
-import type { ProjectArticleData } from "~/components/resume/resume-shell";
-import { ViewModeToggle } from "~/components/resume/resume-shell";
-import { SwitchLocales } from "~/components/resume/switch-locales";
+import {
+  GlitchText,
+  Reveal,
+  TiltCard,
+  Typewriter,
+} from "~/components/future/widgets";
+import {
+  ResumeControls,
+  type ProjectArticleData,
+} from "~/components/resume/resume-shell";
 import { hasMarkup, plainText } from "~/utils/html";
 import type { Locale } from "~/utils/navigation";
 
@@ -27,7 +33,10 @@ export function FutureProjectArticle({
       dir={activeLocale === "fa" ? "rtl" : "ltr"}
     >
       <Starfield />
-      <div className="scanlines pointer-events-none fixed inset-0 z-10" aria-hidden />
+      <div
+        className="scanlines pointer-events-none fixed inset-0 z-10"
+        aria-hidden
+      />
       <div
         className="pointer-events-none fixed inset-x-0 top-0 z-10 h-64 bg-gradient-to-b from-fuchsia-500/10 to-transparent"
         aria-hidden
@@ -44,8 +53,11 @@ export function FutureProjectArticle({
           </Link>
           <div className="flex flex-wrap items-center gap-2">
             <Soundtrack />
-            <SwitchLocales variant="future" />
-            <ViewModeToggle />
+            <ResumeControls
+              locale={locale}
+              variant="future"
+              showAdmin={false}
+            />
           </div>
         </div>
 

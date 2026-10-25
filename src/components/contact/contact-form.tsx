@@ -7,10 +7,22 @@ import { getContactAnalyticsIdentity } from "~/components/analytics/analytics-tr
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Textarea } from "~/components/ui/textarea";
-import { api } from "~/trpc/react";
+import { api, TrpcProvider } from "~/trpc/react";
 import { cn } from "~/utils/cn";
 
 export function ContactForm({
+  variant = "classic",
+}: {
+  variant?: "classic" | "future";
+}) {
+  return (
+    <TrpcProvider>
+      <ContactFormFields variant={variant} />
+    </TrpcProvider>
+  );
+}
+
+function ContactFormFields({
   variant = "classic",
 }: {
   variant?: "classic" | "future";

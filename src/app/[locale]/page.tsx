@@ -8,8 +8,6 @@ import { StructuredData } from "~/components/resume/structured-data";
 import { plainText } from "~/utils/html";
 import { localizedUrl, pageMetadata, siteUrl } from "~/utils/seo";
 
-export const dynamic = "force-dynamic";
-
 function asLocale(value: string): Locale {
   return locales.includes(value as Locale) ? (value as Locale) : "fa";
 }
@@ -20,11 +18,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const current = asLocale(locale);
   const t = await getTranslations({
-    locale: asLocale(locale),
+    locale: current,
     namespace: "global",
   });
-  const data = await loadResume(asLocale(locale));
+  const data = await loadResume(current);
   const title =
     data.name && data.title ? `${data.name} - ${data.title}` : t("title");
   return pageMetadata({

@@ -1,4 +1,4 @@
-export default function NotFoundPage() {
+export default function GlobalNotFound() {
   return (
     <html lang="en">
       <body style={{ fontFamily: "sans-serif", padding: "2rem" }}>

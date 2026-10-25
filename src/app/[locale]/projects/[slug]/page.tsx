@@ -10,8 +10,7 @@ import { locales, type Locale } from "~/utils/navigation";
 import { StructuredData } from "~/components/resume/structured-data";
 import { plainText } from "~/utils/html";
 import { localizedUrl, pageMetadata, siteUrl } from "~/utils/seo";
-
-export const dynamic = "force-dynamic";
+import { TrpcProvider } from "~/trpc/react";
 
 function asLocale(value: string): Locale {
   return locales.includes(value as Locale) ? (value as Locale) : "fa";
@@ -23,9 +22,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
+  const current = asLocale(locale);
   const loaded = await loadProject(slug);
   if (!loaded) notFound();
-  const current = asLocale(locale);
   const t = await getTranslations({ locale: current, namespace: "global" });
   const data = await loadResume(current);
   const title = localize(loaded.project.title, current);
@@ -52,24 +51,27 @@ export default async function ProjectPage({
   const current = asLocale(locale);
   const loaded = await loadProject(slug);
   if (!loaded) notFound();
-  const { project, isAdmin } = loaded;
-  if (isAdmin) {
+  if (loaded.isAdmin) {
+    const { project } = loaded;
     return (
-      <ProjectStudio
-        project={{
-          id: project.id,
-          slug: project.slug,
-          active: project.active,
-          title: asLocalized(project.title),
-          excerpt: asLocalized(project.excerpt),
-          content: asLocalized(project.content),
-          technologies: project.technologies.map((item) =>
-            asLocalized(item.name),
-          ),
-        }}
-      />
+      <TrpcProvider>
+        <ProjectStudio
+          project={{
+            id: project.id,
+            slug: project.slug,
+            active: project.active,
+            title: asLocalized(project.title),
+            excerpt: asLocalized(project.excerpt),
+            content: asLocalized(project.content),
+            technologies: project.technologies.map((item) =>
+              asLocalized(item.name),
+            ),
+          }}
+        />
+      </TrpcProvider>
     );
   }
+  const { project } = loaded;
   const article = {
     title: localize(project.title, current),
     excerpt: localize(project.excerpt, current),
