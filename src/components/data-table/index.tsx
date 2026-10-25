@@ -94,7 +94,7 @@ function columnLabel<Row>(column: Column<Row>) {
 }
 
 function renderAggregate(value: unknown) {
-  if (value === null || value === undefined) return "—";
+  if (value === null || value === undefined) return "-";
   if (Array.isArray(value)) return value.map(String).join(", ");
   if (value instanceof Date) return value.toISOString();
   return String(value);

@@ -99,7 +99,7 @@ export function AnalyticsReport() {
   );
   const formatNumber = useCallback(
     (value: unknown) =>
-      typeof value === "number" ? value.toLocaleString(locale) : "—",
+      typeof value === "number" ? value.toLocaleString(locale) : "-",
     [locale],
   );
 
@@ -191,13 +191,13 @@ export function AnalyticsReport() {
       {
         accessorKey: "target",
         header: t("target"),
-        cell: ({ getValue }) => getValue<string | null>() ?? "—",
+        cell: ({ getValue }) => getValue<string | null>() ?? "-",
         enableGrouping: false,
       },
       {
         accessorKey: "value",
         header: t("value"),
-        cell: ({ getValue }) => getValue<number | null>() ?? "—",
+        cell: ({ getValue }) => getValue<number | null>() ?? "-",
         enableGrouping: false,
         aggregationFn: "mean",
         aggregatedCell: ({ getValue }) =>

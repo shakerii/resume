@@ -26,7 +26,7 @@ export async function generateMetadata({
   });
   const data = await loadResume(asLocale(locale));
   const title =
-    data.name && data.title ? `${data.name} — ${data.title}` : t("title");
+    data.name && data.title ? `${data.name} - ${data.title}` : t("title");
   return pageMetadata({
     locale: asLocale(locale),
     title,

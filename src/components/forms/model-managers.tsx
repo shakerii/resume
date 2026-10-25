@@ -74,7 +74,7 @@ export function ExperienceManager() {
         { name: "period", label: t("period"), kind: "localized" },
         { name: "description", label: t("description"), kind: "localized", rich: true },
       ]}
-      labelOf={(item) => `${localize(item.company, locale)} — ${localize(item.role, locale)}`}
+      labelOf={(item) => `${localize(item.company, locale)} - ${localize(item.role, locale)}`}
       detailOf={(item) => localize(item.period, locale)}
       onCreate={(values) => create.mutateAsync(values as never)}
       onUpdate={(id, values) => update.mutateAsync({ id, ...values } as never)}

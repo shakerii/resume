@@ -2,8 +2,8 @@
   {
     "slug": "sabi",
     "title": {
-      "en": "SABI — Smart Assistant for Business Intelligence",
-      "fa": "SABI — دستیار هوشمند هوش تجاری"
+      "en": "SABI - Smart Assistant for Business Intelligence",
+      "fa": "SABI - دستیار هوشمند هوش تجاری"
     },
     "excerpt": {
       "en": "Conversational assistant that answers questions about company data with charts, tables, and written analysis, under row-level access control.",
@@ -68,8 +68,8 @@
   {
     "slug": "fis",
     "title": {
-      "en": "FIS — Farbonyan Intelligent Sales",
-      "fa": "FIS — فروش هوشمند فربنیان"
+      "en": "FIS - Farbonyan Intelligent Sales",
+      "fa": "FIS - فروش هوشمند فربنیان"
     },
     "excerpt": {
       "en": "Next.js B2B platform for automotive-parts sales, inventory, and shipment, with access-controlled tabs and a virtualized data table for very large catalogs.",
@@ -155,8 +155,8 @@
   {
     "slug": "hms",
     "title": {
-      "en": "HMS — Holding Management System",
-      "fa": "HMS — سامانه مدیریت هلدینگ"
+      "en": "HMS - Holding Management System",
+      "fa": "HMS - سامانه مدیریت هلدینگ"
     },
     "excerpt": {
       "en": "Holding dashboard over a nightly MSSQL warehouse, with pivot reports, charts, and a generator that scaffolds models, forms, and tRPC APIs.",

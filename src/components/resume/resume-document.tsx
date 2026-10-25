@@ -55,7 +55,7 @@ export function ResumeDocument({
           <Text style={styles.heading}>{labels.experience}</Text>
           {data.experiences.map((item) => (
             <Text key={item.id} style={styles.item}>
-              {item.company} — {item.role}
+              {item.company} - {item.role}
               {item.period ? ` (${item.period})` : ""}
               {plainText(item.description) ? ` ${plainText(item.description)}` : ""}
             </Text>
@@ -66,7 +66,7 @@ export function ResumeDocument({
           {data.projects.map((project) => (
             <Text key={project.id} style={styles.item}>
               {project.title}
-              {plainText(project.excerpt) ? ` — ${plainText(project.excerpt)}` : ""}
+              {plainText(project.excerpt) ? ` - ${plainText(project.excerpt)}` : ""}
               {project.technologies.length ? ` (${labels.tech}: ${project.technologies.join(", ")})` : ""}
             </Text>
           ))}

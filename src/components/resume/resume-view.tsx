@@ -80,7 +80,7 @@ export async function ResumeView({ locale, data }: { locale: Locale; data: Resum
           {data.experiences.map((item) => (
             <article key={item.id}>
               <h3 className="font-semibold">
-                {item.company} — {item.role}
+                {item.company} - {item.role}
               </h3>
               {item.period ? <p className="text-xs text-muted-foreground">{item.period}</p> : null}
               {plainText(item.description) ? (

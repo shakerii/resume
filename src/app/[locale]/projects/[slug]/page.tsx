@@ -33,7 +33,7 @@ export async function generateMetadata({
     ...pageMetadata({
       locale: current,
       path: `/projects/${encodeURIComponent(loaded.project.slug)}`,
-      title: data.name ? `${title} — ${data.name}` : title,
+      title: data.name ? `${title} - ${data.name}` : title,
       description:
         plainText(localize(loaded.project.excerpt, current)) ||
         plainText(localize(loaded.project.content, current)) ||

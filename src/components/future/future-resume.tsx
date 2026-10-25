@@ -249,7 +249,7 @@ export function FutureResume({ locale, data }: { locale: Locale; data: ResumeDat
                     <p>
                       <span className="font-bold text-amber-200">{item.degree}</span>
                       {item.institution ? (
-                        <span className="text-slate-400"> — {item.institution}</span>
+                        <span className="text-slate-400"> - {item.institution}</span>
                       ) : null}
                     </p>
                     {plainText(item.description) ? (

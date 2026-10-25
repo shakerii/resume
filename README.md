@@ -90,7 +90,7 @@ Persian (Native), English (Fluent)
 
 ## Work Experience
 
-### Farbonyan — Full-stack & AI Developer / Software Engineer & AI Developer
+### Farbonyan - Full-stack & AI Developer / Software Engineer & AI Developer
 
 **Feb 2024 – Present**
 
@@ -98,7 +98,7 @@ Developing AI-powered data analysis and reporting tools with LangChain and Next.
 
 The role is divided into 40% frontend, 30% backend, and 30% AI/data.
 
-#### FIS (Farbonyan Intelligent Solution / Farbonyan Intelligent Sales) — frontend
+#### FIS (Farbonyan Intelligent Solution / Farbonyan Intelligent Sales) - frontend
 
 React-based B2B e-commerce platform for car parts sales, inventory, and shipment management. Improved user workflows and automated order handling. The platform supports hundreds of SKUs and multiple vendors.
 
@@ -126,7 +126,7 @@ The platform has 200 vendors, of which 20 are active. The number of orders is no
 
 The input is the name of the part, in Persian. The attributes to extract are defined dynamically in the admin panel. The model architecture is Torch, developed with the assistance of AI, and the service is implemented with Flask and Torch. The model was trained personally. The dataset is the set of pre-defined parts in the platform. Token search, implemented with handwritten logic, was also used to seed the first attributes. The dataset contains 2,000 parts. The output is an array of predicted attributes. Accuracy is low, roughly estimated at around 70%. The extractor is integrated as a separate service. A personal note in the source states that this work is not considered a strong portfolio case study.
 
-#### HMS (Holding Management System) — full-stack
+#### HMS (Holding Management System) - full-stack
 
 Holding management admin dashboard with a data warehouse and with data gathered from subsidiary companies.
 
@@ -235,7 +235,7 @@ The system reads the database first and extracts all tables and columns. The use
 
 ---
 
-### Interactive 10 (Remote) — Team Lead & Software Engineer / CTO & Software Engineer
+### Interactive 10 (Remote) - Team Lead & Software Engineer / CTO & Software Engineer
 
 **Jun 2022 – Feb 2024**
 
@@ -267,7 +267,7 @@ Led two frontend developers (one mid-level and one junior), one designer, and on
 
 ---
 
-### Matap — Team Lead & Backend Developer / CTO & Full-Stack Developer
+### Matap - Team Lead & Backend Developer / CTO & Full-Stack Developer
 
 **Mar 2022 – Jun 2022**
 
@@ -277,7 +277,7 @@ The same period is also described as designing architecture for B2B web platform
 
 ---
 
-### Freelance — Full-Stack Developer
+### Freelance - Full-Stack Developer
 
 **2020 – 2022**
 
@@ -291,7 +291,7 @@ Worked on two to three startups and ideas. None of them worked out:
 
 ---
 
-### Raymon Co. — WordPress & ReactJS Developer
+### Raymon Co. - WordPress & ReactJS Developer
 
 **2019 – 2020**
 
@@ -303,7 +303,7 @@ Created an admin panel and a simple panel for customers.
 
 ---
 
-### Tinext Co. — Laravel Developer
+### Tinext Co. - Laravel Developer
 
 **2018**
 
@@ -311,7 +311,7 @@ Created an online order-tracking application with HTML, CSS, JavaScript, and PHP
 
 ---
 
-### Amirkabir IoT Lab — Research & Development
+### Amirkabir IoT Lab - Research & Development
 
 **2016 – 2017**
 
@@ -321,7 +321,7 @@ While at Amirkabir University, worked on the IoT team. Worked on a service-based
 
 ## Other Projects
 
-### Smart Catalog Builder — full-stack (freelance)
+### Smart Catalog Builder - full-stack (freelance)
 
 Admin dashboard that lets companies design interactive product catalogs with dynamic filters and exports. Usability was improved with drag-and-drop components and a real-time preview.
 
@@ -347,7 +347,7 @@ tRPC was chosen for type safety. The database listed as MySQL was in fact Postgr
 
 ---
 
-### Ping Enhancement — team lead (freelance)
+### Ping Enhancement - team lead (freelance)
 
 Game ping enhancement application with a router service, written in Golang with MongoDB, that checks policies for games before a connection is established. The policies cover game, voice, and chat.
 
