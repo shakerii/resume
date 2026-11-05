@@ -1,12 +1,16 @@
+Personal Website
+  - Update project descriptions
+  - Backup
+Github Page
+  - Create
+LinkedIn
+  - Update Info
+  - Plan Posts
+
 Projects:
-  1. AI Language Learner (Duolingo)
+  1. AI Language Learner
   2. AI Planner (Money, Workout, Side: Piano, English, Portfolio)
   3. Server Side Data Table
   4. UI Builder (Data Table, Form, Page, Menu)
   5. Workflow Automation (Dashboard, Tab-base Website)
   6. Smart Catalog Builder
-
-Update:
-  - Personal Website
-  - Github Page
-  - LinkedIn
